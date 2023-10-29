@@ -12,7 +12,7 @@
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](/differentpage)
+[Project 3 Title](/different_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
