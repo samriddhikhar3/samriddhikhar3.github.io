@@ -1,8 +1,17 @@
 ## Work Experience 
 
-**PennPraxis**, Design Fellow
+**ESI Center for the Future of Cities**, Research and Analysis  
+_Philadelphia, PA_                                                                             
+June 2022 – Present
 
-Philadelphia, PA                                                                             February 2022 – December 2022
+- Developed a Climate Resilience Index
+- Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure 
+- Coordinated stakeholder meetings for activists and public school stakeholders
+
+
+**PennPraxis**, Design Fellow
+_Philadelphia, PA_                                                                             
+February 2022 – December 2022
 
 - Developed a vulnerability to closure index for Philadelphia’s school for local government and school districts to inform their facilities planning process
 - Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure 
