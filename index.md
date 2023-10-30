@@ -1,6 +1,8 @@
+<img src="images/white1.png?raw=true"/>
+
 ## [Resume](/resume)
 
 ## [Projects](/projects)
 
-hi, im sam. data analytics and city planning
 
+<img src="images/white1.png?raw=true"/>
