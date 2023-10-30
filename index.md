@@ -15,7 +15,7 @@ hi, im sam. data analytics and city planning
 This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
 
 
-<img src="images/tod2.png?raw=true"/>
+<img src="images/tod2.jpg?raw=true"/>
 
 ---
 [Project 3 Title](/different_page)
