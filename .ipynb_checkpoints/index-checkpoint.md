@@ -10,8 +10,8 @@ hi, im sam. data analytics and city planning
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Boston TOD](/projects/khare_samriddhi_assignment2.html)
+<img src="images/tod1.png?raw=true"/>
 
 ---
 [Project 3 Title](/different_page)
