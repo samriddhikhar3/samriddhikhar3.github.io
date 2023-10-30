@@ -2,7 +2,7 @@
 
 ---
 
-### Category Name 1 
+### title here 
 
 hi, im sam. data analytics and city planning
 
@@ -10,8 +10,12 @@ hi, im sam. data analytics and city planning
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Boston TOD](/projects/khare_samriddhi_assignment2.html)
-<img src="images/tod1.png?raw=true"/>
+#### [Transit Oriented Development: Analyzing Boston’s Rapid Transit](/projects/khare_samriddhi_assignment2.html)
+
+This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
+
+
+<img src="images/tod2.png?raw=true"/>
 
 ---
 [Project 3 Title](/different_page)
