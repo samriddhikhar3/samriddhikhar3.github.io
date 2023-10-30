@@ -5,7 +5,9 @@
 Philadelphia, PA                                                                             February 2022 – December 2022
 
 •	Developed a vulnerability to closure index for Philadelphia’s school for local government and school districts to inform their facilities planning process
+
 •	Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure 
+
 •	Coordinated stakeholder meetings for activists and public school stakeholders
 
 
