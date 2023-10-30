@@ -10,7 +10,7 @@ hi, im sam. data analytics and city planning
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-#### [Transit Oriented Development: Analyzing Boston’s Rapid Transit](/projects/khare_samriddhi_assignment2.html)
+#### [Transit Oriented Development: Analyzing Boston’s Rapid Transit](/projects/khare_samriddhi_assignment2.html){:target="_blank"}
 
 This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
 
