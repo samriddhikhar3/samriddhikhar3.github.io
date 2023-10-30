@@ -7,7 +7,6 @@
 hi, im sam. data analytics and city planning
 
 ## [Resume](/resume)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ## [Projects](/projects)
 
