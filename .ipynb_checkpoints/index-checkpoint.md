@@ -4,7 +4,9 @@
 
 ### Category Name 1 
 
-[Project 1 Title](/sample_page)
+hi, im sam. data analytics and city planning
+
+[Resume](/resume)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
