@@ -1,4 +1,10 @@
-## Projects
+## [Resume](/resume)
+
+## [City Planning and Design](/projects)
+
+---
+
+## Spatial Analytics
 
 ---
 
