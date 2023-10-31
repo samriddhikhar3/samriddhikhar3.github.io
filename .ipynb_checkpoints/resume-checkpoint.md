@@ -1,3 +1,9 @@
+## [Resume](/resume)
+
+## [City Planning and Design](/projects)
+
+---
+
 ## Resume
 
 ---
