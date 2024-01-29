@@ -19,7 +19,7 @@ about:
   links:
     - icon: journal-code
       text: Full Analysis
-      href: https://skycheng17.github.io/portfolio/3_Zillow/Zillow.html  
+      href: https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html  
 format:
   html:
     toc: true
@@ -32,63 +32,10 @@ In this project, I had the opportunity to explore Boston’s rapid transit syste
 
 This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
 
-::: {.grid}
+## Project Outcome
 
-::: {.g-col-7}
-![My team and I with our final prototypes. From left to right: Gustell Preston, Stephanie Cheng, Shreya Bansal, Noah Johnson.](team.png){width=7in}
-:::
+*Click the full analysis button at the top to view at full screen.*
 
-::: {.g-col-5}
-![In creating our prototypes, we also used laser cutting, soldering, and countless different wiring and coding configurations to achieve our desired digital playground installations.](test.png){width=5in}
-:::
-
-::: 
-
-DigiPlay works to solve this challenge of inequitable access to play by transforming dull play spacing into interactive, digitally-latent ones that encourage movement and serve as another avenue for learning and education in schools. Our solution has three major components, outfitting schools that already had some play equipment with DigiPlay sensors, Creating digital experiences for schools with no play equipment, and layering on educational components of the playground. Additionally, our solution is cost effective for schools to adopt, with 1-3 interactive installations on a playground costing about ~$300 to install and another ~$100 to maintain on a yearly basis. Thus, DigiPlay is an inexpensive way to explore the transformative potential of embedded technologies in our built environment.
-
-This project is a culmination of the skills gained in the Spring 2023 [Sensing the City](https://www.sensingthecity.com/) class taught by my instructor and advisor, Professor Allison Lassiter. Find the full post of the DigiPlay project on that website [here](https://www.sensingthecity.com/digiplay-interactive-playground/).
-
-
-### Exploratory Analysis
-
-In our exploratory analysis, particularly when identifying which schools to employ this project, we looked at the proximity of playgrounds to schools and environmental features. To test our pilot, we chose a school closer to base called the Albert M. Greenfield playground.
-
-::: {.grid}
-
-::: {.g-col-6}
-![](Playgrounds_1.webp){width=6in}
-:::
-
-::: {.g-col-6}
-![](Selected_Playgrounds_1-1.webp){width=6in}
-
-::: 
-
-::: {.g-col-12}
-![](image.webp){width=12in}
-:::
-
-:::
-
-
-
-### Project Outcomes
-
-In total, we designed and prototyped four digital playground installations:
-
-
-#### Heart-rate sensor wall module and Musical jungle gym
-![](junglegym.webp)
-
-#### Interactive playfield
-![](image-4-edited.webp)
-
-![](image-5.webp)
-
-#### Prototype testing
-
-{{< video https://www.youtube.com/embed/dlxA9tKSt9A?si=wFGxwEO307pFE3av >}}
-
-<br>
-
-The DigiPlay [full project](https://www.sensingthecity.com/digiplay-interactive-playground/) and [presentation slidedeck](https://docs.google.com/presentation/d/1bXqZRkV4wXU2qx7BLHlziYEQLyRpM2ULZ16K3bLJTJo/edit?usp=sharing) include more information, such as technical specifications, wiring and Arduino code tutorials, project phasing and scaling, etc.
+<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
+  <p>Hi SOF</p>
+</iframe>
