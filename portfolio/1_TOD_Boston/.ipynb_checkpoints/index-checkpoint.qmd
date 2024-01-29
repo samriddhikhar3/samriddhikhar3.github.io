@@ -1,47 +1,36 @@
 ---
-title: "DigiPlay: Interactive Playground"
+title: "Transit Oriented Development: How Boston Moves"
+resources: 
+- "portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html"
 author:
-- Stephanie Cheng
-- Noah Johnson
-- Shreya Bansal
-- Gustell Preston
+- Samriddhi Khare
 date: 2023-05-03
-image: noborder.png
+image: cover.jpg
 categories:
-  - C++
-  - Arduino
-  - Urban Sensor
+  - R
   - GIS
-subtitle: "A prototype interactive playground installation and business proposal forwarding physical activity, equitable access to play, and STEM education for kids 2-12 across Philadelphia."
+  - Machine Learning
+  - Transportation
+subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
 about:
   id: hero-heading
   image-width: 0em
   template: solana
   links:
-    - icon: link
-      text: Full Project
-      href: https://www.sensingthecity.com/digiplay-interactive-playground/
-    - icon: youtube
-      text: Youtube Tutorial
-      href: https://youtu.be/dlxA9tKSt9A
-    - icon: file-earmark-slides
-      text: Slidedeck
-      href: https://docs.google.com/presentation/d/1bXqZRkV4wXU2qx7BLHlziYEQLyRpM2ULZ16K3bLJTJo/edit?usp=sharing
+    - icon: journal-code
+      text: Full Analysis
+      href: https://skycheng17.github.io/portfolio/3_Zillow/Zillow.html  
+format:
+  html:
+    toc: true
 
 ---
 
 ### Project Brief
 
-In this project, my team and I had the opportunity to explore an urban issue and tackle it using urban sensors we designed and created ourselves. A few key issues we identified and wanted to address:
+In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
 
-1. Many kids are playing on tattered playgrounds or abandoned parking lots on the sides of public schools. 
-2. Updating playground equipment can cost **$8,000-$50,000**.
-3. There is no substantial line item in the Philadelphia School District’s annual budget to support upgrading playgrounds. 
-4. Currently, a piecemeal system of public-private partnerships funds the handful of schoolyard-improvement projects 
-5. 1 in 5 youth in Philadelphia, the majority of whom are black or Hispanic, are overweight or obese. 70% in North Philly which is nearly double the obesity and overweight rate for youth in the United States. ([Source](https://www.phila.gov/media/20181106124818/chart-v2e8.pdf))
-
-In response to these findings, we prototyped a suite of interactive playground installations that we believe would not only support physical activity and learning, but could work as a powerful pilot program for transforming underserved schools and communities across the city of Philadelphia: DigiPlay.
-
+This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
 
 ::: {.grid}
 
