@@ -1,0 +1,59 @@
+---
+title: "Stephanie Cheng"
+subtitle: "Urban Planner and Data Analyst"
+---
+
+## Education
+
+#### <b>University of Pennsylvania</b>  *Philadelphia, PA*
+###### Master of City Planning; Concentration in Urban Technology and Data Analytics (2022-2024)
+* Relevant coursework: data visualization, geospatial analysis, policy research/dev., transportation planning, climate and energy markets
+* Climate Leaders at Penn Fellow (2023-2024)
+* GPA: 3.89
+
+#### <b>University of Warwick</b>  *Coventry, UK*
+###### Bachelor of Laws (LLB) (2019-2022)
+* Grade: First Class Honours (Summa Cum Laude equivalent)
+* “The Legitimacy of Legal Egalitarianism”: research paper presented at BCUR 2021 (British Conference of Undergraduate Research)
+* “Protests: The Spatial Choreographies of Public Space”: podcast on the impact of urban design on protest movements and public dissent
+* Extra-curricular roles: Koan Records (Legal Advisor), Association of British/Chinese University Students (Marketing Director)
+
+#### <b>University of California, Berkeley</b>  *Berkeley, CA*
+###### Disc* Program (Design & Innovation for Sustainable Cities) (July-August 2021)
+* 5-week course with an interdisciplinary approach to urban innovation, design, and analysis: produced an 80-year resilience plan of urban designs focused on climate change adaptation and natural disaster mitigation in Singapore
+
+## Professional Experience
+
+#### <b>New York City Economic Development Corporation (NYCEDC)</b>  *New York, NY*
+###### Transportation and Offshore Wind Intern (June-August 2023)
+* Facilitated two grant applications for Staten Island offshore wind sites: one to secure $500,000 of pre-development funding to support one site's development as a manufacturing and assembling site for wind turbine components, and another to secure $20 million of capital infrastructure improvement funding for another site as a marine highway and potential offshore wind site
+* Analyzed community benefit agreements of airport redevelopments (LAX and ATL) as models for JFK Airport’s “A New JFK” project
+* Researched current NYC energy policy, objectives, and barriers regarding the city’s sustainability goals, namely 2050 carbon neutrality
+* Facilitated the planning, marketing, and execution of 5 events as part of the “Summer of Offshore Wind” educational community engagement initiatives: engaged with 25-60 NYC residents per event about upcoming offshore wind site developments and job growth
+
+#### <b>ECOLAND Planning & Design</b>  *Beijing, China*
+###### Freelance Editorial Advisor (May 2022-June 2023)
+* Edited and revised 12 project deliverables of the Tongzhou, Beijing Sustainable Waterfront Park development project to the 2022 British Association of Landscape Industries competition and 2023 Rosa Barba Casanovas International Landscape Architecture Prize
+* Edited and revised a presentation and project narrative for the American Society of Landscape Architects Communications competition 
+
+## Leadership Experience
+
+#### <b>Urban Tech Club</b>  *University of Pennsylvania*
+###### Treasurer    (September 2023-Present)
+* Supported the founding of UPenn’s first Urban Tech Club, supporting peer mentorship, careers advancement, and urban tech academia
+* Organized 4 events including professional practice speaker events and tech/coding workshops
+* Managed club finances: recorded initial $500 club budget spending on events and applied for external funding sources
+
+#### <b>Warwick K-pop Society</b>  *University of Warwick*
+###### Founder, President, Dance Production Leader of KONCEPT K-pop dance team (September 2019-May 2022)
+* Founded Warwick's first K-pop Society: developed branding and social media presence, gathered support from interested students, secured sponsorships with 3 relevant local businesses, organised 13 events in one academic year with an attendance of 40-60 students each
+* Recruited six other executive team members and achieved recognition from the Warwick Students' Union as an official student society
+
+## Skills and Interests
+* <b>Data Analysis/Programming Skills:</b> R, Python, SQL, C/C++, ESRI ArcGIS Pro/Online, Excel, HTML, CSS
+* <b>Media Skills:</b> Adobe Photoshop/Illustrator/InDesign, Final Cut Pro X, Logic Pro X
+* <b>Legal Research:</b> LexisLibrary Foundation and Advanced Certifications (legal research database)
+* <b>Professional Interests:</b> Digital Equity, Fair Algorithms, Transportation Planning, Climate Tech, Renewable Energy, Climate Change Mitigation/Adaptation, Urban Data, Smart Cities, Urban Sensors
+* <b>Other Interests:</b> A cappella (performed at the 2022 National Tree Lighting Ceremony in Washington D.C.), bass guitar, maps, K-pop
+
+#### [See my portfolio &rarr;](/portfolio/portfolio.html)

@@ -1,0 +1,75 @@
+---
+title: "Zillow Home Value Predictions"
+resources: 
+- "portfolio/3_Zillow/Zillow.html"
+author: 
+- Stephanie Cheng
+- Shreya Bansal
+date: 2023-10-23
+image: featured.png
+categories:
+  - R
+  - GIS
+  - Housing
+  - Real Estate
+  - Machine Learning
+subtitle: "A hedonic home price prediction model to help Zillow better predict housing value."
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: journal-code
+      text: Full Analysis
+      href: https://skycheng17.github.io/portfolio/3_Zillow/Zillow.html  
+format:
+  html:
+    toc: true
+
+---
+
+### Project Brief
+
+This project aims to help Zillow better predict its housing market predictions through a hedonic model. The project emphasizes on local knowledge, a novel way of looking at the data and creative factors that might enhance predictability of Zillow’s modeling. While Zillow's model works satisfactorily, this approach offers a different lens into how the model could be built stronger with intel from a variety of internal and external factors, such as amenities like schools, parks, public spaces, as well as demographic data like poverty rates, median income, crime, etc.
+
+In addition to the hedonic model, this project focussed on cross validation through evaluating mean absolute error/percent error and conducting Moran's I testing. The full analysis and model can be found below or by clicking the Full Analysis link above.
+
+## Exploratory Analysis
+
+The project conducted a very thorough exploratory analysis with feature engineering on a range of variables. Some external variables are visualized below:
+
+::: {.grid}
+
+::: {.g-col-5}
+![Play streets are visibly more concentrated in center city, with other nodes of concentration across the city.](play.png){width=5in}
+:::
+
+::: {.g-col-5}
+![Grocery stores are well-spread throughout, with certain pockets of concentration in the typically dense areas (center city, university city) as well as a particular node in North Philadelphia.](grocers.png){width=5in}
+:::
+
+::: {.g-col-5}
+![Crime (the crime identified in this set are those self-chosen as crimes that would most affect residential areas, i.e. violent or property crime) has a distinct concentration in South Philadelphia and parts of North Philadelphia.](crimes.png){width=5in}
+:::
+
+::: {.g-col-5}
+![The greatest density of trees exist across central Philadelphia, across center city and university city, as well as various parts of northwest Philadelphia. Trees are more scarce in other areas.](trees.png){width=5in}
+:::
+
+
+::: 
+
+![Our final model resulted in a prediction home value with this level of similarity.](featured.png)
+
+## Project Outcome
+
+*Click the full analysis button at the top to view at full screen.*
+
+<iframe src="Zillow.html" width="800" height="800">
+  <p>Hi SOF</p>
+</iframe>
+
+## Data Sources
+* [Zillow](https://www.zillow.com/), wrangled by Michael Fichman [here](https://github.com/mafichman/musa_5080_2023/blob/main/Midterm/data/2023/studentData.geojson)
+* [OpenDataPhilly](https://opendataphilly.org)
+* [Census Bureau](https://census.gov)
