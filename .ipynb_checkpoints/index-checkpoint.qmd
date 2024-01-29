@@ -19,7 +19,7 @@ listing:
     filter-ui: [title, date, categories]
     page-size: 3
     image-align: left
-    image-height: 1.75in
+    image-height: 1 in
     
 about:
   template: solana
