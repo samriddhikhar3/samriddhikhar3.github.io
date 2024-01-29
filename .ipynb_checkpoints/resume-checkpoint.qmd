@@ -36,12 +36,16 @@ subtitle: "Urban Planner and Spatial Analyst"
 #### <b>Center for the Living City, OAN Fellow</b> *Scranton, PA + New Delhi/Nagpur/Bangalore, India*
 * Conducted interview based research on gender, sexuality and housing and public space
 * Led branding, social marketing, workshops and outreach
-#### <b>15 Minute City Competition, Honorary Mention</b> *The Charette, International Competition*                                     
+
+#### <b>15 Minute City Competition, Honorary Mention</b> *The Charette, International Competition*                               
 * Developing a context driven solution to urban issues in Nagpur, India focusing on planning amenities within a 15 minute walkability radius  
+
 #### <b>Berkeley Essay Prize, Fourth Place</b> *University of California, Berkeley*
 * Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
+
 #### <b>Public Policy Forum, Merit Scholar</b> *GovLab, New York University*                                                     
 * 1 of 3 scholars in a cohort of 40 engaged in policy simulations related to participatory budgeting, public policy and equity
+
 #### <b>SURF 2020 Conference, Presenter</b> *Bearys Institute of Technology, Mangalore, India*                                   
 * Publication titled “Chitar Oli and the Analysis of Caste” studying the developmental manifestation of caste-based income inequality and residential segregation 
 
