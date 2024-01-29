@@ -1,26 +1,20 @@
 ---
-title: "Stephanie Cheng"
-subtitle: "Urban Planner and Data Analyst"
+title: "Samriddhi Khare"
+subtitle: "Urban Planner and Spatial Analyst"
 ---
 
 ## Education
 
 #### <b>University of Pennsylvania</b>  *Philadelphia, PA*
-###### Master of City Planning; Concentration in Urban Technology and Data Analytics (2022-2024)
-* Relevant coursework: data visualization, geospatial analysis, policy research/dev., transportation planning, climate and energy markets
-* Climate Leaders at Penn Fellow (2023-2024)
-* GPA: 3.89
+###### Master of City Planning; Concentration in Urban Technology and Spatial Analytics 
+* Relevant coursework: Quantitative Planning Methods, Land Use and Environmental Modeling, Geospatial Analysis in Python, Public Policy Analytics, Communication in Urban Spatial Analytics, Geospatial Cloud Computing, Machine Learning in Remote Sensing, Planning Workshop
+* Honors/Awards: Dean’s Merit Scholarship ($50,000) 
 
-#### <b>University of Warwick</b>  *Coventry, UK*
-###### Bachelor of Laws (LLB) (2019-2022)
-* Grade: First Class Honours (Summa Cum Laude equivalent)
-* “The Legitimacy of Legal Egalitarianism”: research paper presented at BCUR 2021 (British Conference of Undergraduate Research)
-* “Protests: The Spatial Choreographies of Public Space”: podcast on the impact of urban design on protest movements and public dissent
-* Extra-curricular roles: Koan Records (Legal Advisor), Association of British/Chinese University Students (Marketing Director)
 
-#### <b>University of California, Berkeley</b>  *Berkeley, CA*
-###### Disc* Program (Design & Innovation for Sustainable Cities) (July-August 2021)
-* 5-week course with an interdisciplinary approach to urban innovation, design, and analysis: produced an 80-year resilience plan of urban designs focused on climate change adaptation and natural disaster mitigation in Singapore
+#### <b>Visvesvarya National Institute of Technology</b>  *Coventry, UK*
+###### Bachelor of Architecture 
+* Honors/Awards: Graduated 95th Percentile. Awarded distinction in Architecture Design, Landscape Design, Urban Planning and Design, and Climatology
+* Elected Batch Representative, 2017; Elected English Literary Secretary, Collegiate Magazine, 2020
 
 ## Professional Experience
 
@@ -36,24 +30,25 @@ subtitle: "Urban Planner and Data Analyst"
 * Edited and revised 12 project deliverables of the Tongzhou, Beijing Sustainable Waterfront Park development project to the 2022 British Association of Landscape Industries competition and 2023 Rosa Barba Casanovas International Landscape Architecture Prize
 * Edited and revised a presentation and project narrative for the American Society of Landscape Architects Communications competition 
 
-## Leadership Experience
 
-#### <b>Urban Tech Club</b>  *University of Pennsylvania*
-###### Treasurer    (September 2023-Present)
-* Supported the founding of UPenn’s first Urban Tech Club, supporting peer mentorship, careers advancement, and urban tech academia
-* Organized 4 events including professional practice speaker events and tech/coding workshops
-* Managed club finances: recorded initial $500 club budget spending on events and applied for external funding sources
+## Fellowships and Awards
 
-#### <b>Warwick K-pop Society</b>  *University of Warwick*
-###### Founder, President, Dance Production Leader of KONCEPT K-pop dance team (September 2019-May 2022)
-* Founded Warwick's first K-pop Society: developed branding and social media presence, gathered support from interested students, secured sponsorships with 3 relevant local businesses, organised 13 events in one academic year with an attendance of 40-60 students each
-* Recruited six other executive team members and achieved recognition from the Warwick Students' Union as an official student society
+#### <b>Center for the Living City, OAN Fellow</b> *Scranton, PA + New Delhi/Nagpur/Bangalore, India*
+* Conducted interview based research on gender, sexuality and housing and public space
+* Led branding, social marketing, workshops and outreach
+#### <b>15 Minute City Competition, Honorary Mention</b> *The Charette, International Competition*                                     
+* Developing a context driven solution to urban issues in Nagpur, India focusing on planning amenities within a 15 minute walkability radius  
+#### <b>Berkeley Essay Prize, Fourth Place</b> *University of California, Berkeley*
+* Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
+#### <b>Public Policy Forum, Merit Scholar</b> *GovLab, New York University*                                                     
+* 1 of 3 scholars in a cohort of 40 engaged in policy simulations related to participatory budgeting, public policy and equity
+#### <b>SURF 2020 Conference, Presenter</b> *Bearys Institute of Technology, Mangalore, India*                                   
+* Publication titled “Chitar Oli and the Analysis of Caste” studying the developmental manifestation of caste-based income inequality and residential segregation 
+
 
 ## Skills and Interests
 * <b>Data Analysis/Programming Skills:</b> R, Python, SQL, C/C++, ESRI ArcGIS Pro/Online, Excel, HTML, CSS
-* <b>Media Skills:</b> Adobe Photoshop/Illustrator/InDesign, Final Cut Pro X, Logic Pro X
-* <b>Legal Research:</b> LexisLibrary Foundation and Advanced Certifications (legal research database)
+* <b>Media Skills:</b> Adobe Photoshop/Illustrator/InDesign
 * <b>Professional Interests:</b> Digital Equity, Fair Algorithms, Transportation Planning, Climate Tech, Renewable Energy, Climate Change Mitigation/Adaptation, Urban Data, Smart Cities, Urban Sensors
-* <b>Other Interests:</b> A cappella (performed at the 2022 National Tree Lighting Ceremony in Washington D.C.), bass guitar, maps, K-pop
 
 #### [See my portfolio &rarr;](/portfolio/portfolio.html)

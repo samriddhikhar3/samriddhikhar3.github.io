@@ -13,7 +13,6 @@ website:
   repo-url: "samriddhikhar3.github.io"
   repo-actions: [source]
   description: "Urban Planner and Spatial Analyst"
-  favicon: images/cell_towers.png
   page-navigation: true
   back-to-top-navigation: true
   twitter-card: true
