@@ -1,0 +1,153 @@
+---
+title: "Exploring Digital Equity Through Cell Tower Data"
+author:
+  - Stephanie Cheng
+  - Jarred Randall
+  - Alec Jacobs
+date: 2023-12-27
+image: cell_towers.png
+categories:
+  - Python
+  - Urban Technology
+  - Equity
+subtitle: "A look at the internet access landscape at the international, federal, and state level through geospatial data analysis"
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: link
+      text: Full Project
+      href: https://musa-550-fall-2023.github.io/exploring-digital-equity/
+format:
+  html: 
+    grid:
+      sidebar-width: 250px
+      body-width: 800px
+      margin-width: 250px
+      gutter-width: 1.5rem
+---
+
+### Project Brief
+
+As the world continually modernizes, the "digital divide" - a term describing disparity in access to technology - persists, placing certain groups at a distinct disadvantage. In particular, the recent global pandemic shed light on the inequality of digital access worldwide. Due to a substantial reliance on the internet for communication by a significant portion of the global population, individuals without access experienced even greater social and mental burdens during the pandemic. As a result, our team sought out to understand the varied digital equity landscape at the international, federal, and state levels through geospatial data analysis. In our project, we followed a set of guiding questions:
+
+- What international metrics may inform digital equity in developed vs developing countries?
+- Is there equitable access of ICT technology across the United States?
+- How does the digital divide persist in rural vs urban areas at various scales?
+
+A large part of the conversation about resolving the digital divide focuses on Information and Communications Technology (ICT) as well as telecommunications availability. As a result, we selected our main data source - a cell tower location database provided by [OpenCellID](https://opencellid.com). Managed by [Unwired Labs](https://unwiredlabs.com), this collaborative initiative aggregates data from registered contributors.
+
+
+### Exploratory Analysis
+
+In our exploratory analysis, we created over a dozen data visualizations to evaluate cell tower data at the international, federal, and state level. These visualizations condensed over 200 million data points into comprehensible and actionable information. Here are a few visualizations that I contributed to the section I lead, the international cell tower coverage section: 
+
+![Every cell tower in the world, mapped using OpenCellID data.](cell_towers.png)
+
+This map is a product of big data wrangling and data shading/condensing, and provides an overarching understanding of the cell tower coverage across different countries and regions.
+
+```{python}
+#| code-fold: true
+
+import warnings
+warnings.filterwarnings("ignore")
+
+import numpy as np
+import pandas as pd
+import altair as alt
+import geopandas as gpd
+
+color_key = {"GSM": "#707390",
+             "CDMA": "#93b7be",
+             "UMTS": "#e0ca3c",
+             "LTE": "#b59ab8",
+             "NR": "#048a81"}
+
+gdp_per_capita = pd.read_csv("./Data/gdp_per_capita.csv") #data from world bank
+gdp_per_capita = gdp_per_capita[['Country Name', '2021 [YR2021]']]
+gdp_per_capita = gdp_per_capita.rename(columns={
+    'Country Name': 'country',
+    '2021 [YR2021]': 'gdp_per_capita'
+})
+gdp_per_capita = gdp_per_capita.dropna(subset=['country'])
+population = pd.read_csv("./data/population.csv") #data from world bank
+population = population[['Country Name', '2021 [YR2021]']]
+population = population.rename(columns={
+    'Country Name': 'country',
+    '2021 [YR2021]': 'population'
+})
+population = population.dropna(subset=['country'])
+gpc_pop = population.merge(gdp_per_capita, how='left', on='country')
+
+countries_towers = pd.read_csv("./Data/international_cell_towers.csv")
+
+merge = countries_towers.merge(gpc_pop, how='left', on='country')
+merge.rename(columns={'UMES': 'UMTS'}, inplace=True)
+
+tower_types = ['UMTS', 'GSM', 'LTE', 'CDMA']
+merge['dominant_tower_type'] = merge[tower_types].idxmax(axis=1)
+
+merge['cell_towers'] = pd.to_numeric(merge['cell_towers'], errors='coerce')
+merge['population'] = pd.to_numeric(merge['population'], errors='coerce')
+merge['gdp_per_capita'] = pd.to_numeric(merge['gdp_per_capita'], errors='coerce')
+merge['ctw_per_capita'] = merge['cell_towers'] / merge['population']
+
+merge_df = pd.DataFrame(merge)
+merge_df = merge_df.dropna()
+
+brush = alt.selection_interval(encodings=['x'])
+click = alt.selection_point(encodings=['color'])
+
+points = alt.Chart(merge_df).mark_circle().encode(
+    alt.X("gdp_per_capita:Q",
+    scale=alt.Scale(zero=False, type="log"),
+    title="Log GDP per Capita"),
+    alt.Y("ctw_per_capita:Q",
+    scale=alt.Scale(type="log"),
+    title="Log Cell Towers per Capita"),
+    size=alt.Size("population:Q", title="Population"),
+    color=alt.condition(brush,
+    alt.Color("dominant_tower_type:N",
+    title="Dominant Tower Type",
+    scale=alt.Scale(domain=list(color_key.keys()), 
+    range=list(color_key.values())),), alt.value('grey')),
+    tooltip="country",
+).properties(width=500,
+height=350).add_selection(brush).transform_filter(
+    click
+)
+
+bars = alt.Chart(merge_df).mark_bar().encode(
+    x='count()',
+    y=alt.Y("dominant_tower_type:N", title="Dominant Tower Type"),
+    color=alt.condition(brush,
+    alt.Color("dominant_tower_type:N",
+    title="Dominant Tower Type"),
+    alt.value('lightgray')),
+).transform_filter(brush).properties(width=550).add_params(
+    click
+)
+
+# Combine charts
+alt.vconcat(points, bars, title="World Cell Tower Coverage")
+```
+
+In this interactive chart, we can analyze different countries’ advancement in cell tower technology with respect to their population, GDP per capita, and cell tower per capita. Interact with the chart by selecting sections of the scatter plot to see counts of countries’ dominant tower types (only GSM, LTE, UMTS), or click on each of the dominant tower types on the bar plot to see only countries of that tower type. The size of the countries’ populations are also represented through the size of the points, which you can hover over to find the country name. Note that GDP per capita and cell towers per capita on the scatter plot have been logged. Click the arrow above the charts to unfold the code.
+
+The accompanying chart reveals not only a correlation between the logarithmic representation of cell towers per capita and GDP per capita but also a discernible trend. Less developed countries, as indicated by the GDP per capita metric, tend to exhibit a dominance of less advanced tower types such as GSM (2G), in contrast to more developed countries that are more inclined to have UMTS (3G) or LTE (4G) as the type most prevalent. 
+
+### Project Outcomes
+
+This project and its code has been posted on the [MUSA 550 Fall 2023](musa-550-fall-2023.github.io) website created by my instructor, Dr. Nick Hand. Find the full post of the Exploring Digital Equity project [here](https://musa-550-fall-2023.github.io/exploring-digital-equity/).
+
+In conclusion, our project successfully explored digital equity through cell tower data at multiple levels. The analysis not only provided a global understanding of technology distribution but also examined into the complexity of cellular landscapes in the United States and the challenges faced by rural areas. The project’s use of geospatial data science and analysis showcased the power of data science in uncovering patterns, correlations, and disparities related to cellular infrastructure. Ultimately, the findings contribute valuable insights to the ongoing conversation about bridging the digital divide and ensuring equitable access to technology on a global scale.
+
+
+### Data Sources
+- [OpenCellID](https://opencellid.com)
+- [World Bank](https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.PCAP.CD&country=#)
+- [Federal Communications Commission (FCC)](https://hifld-geoplatform.opendata.arcgis.com/datasets/geoplatform::cellular-towers/about)
+- [Center For Rural Pennsylvania](https://www.rural.pa.gov/home)
+- [Pennsylvania Spatial Data Access](https://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=24)
+- [United States Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)

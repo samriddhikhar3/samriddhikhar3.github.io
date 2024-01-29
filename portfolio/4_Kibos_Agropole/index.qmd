@@ -1,0 +1,33 @@
+---
+title: "Kibos Agropole: Agriculture-led Industrialization in Kisumu, Kenya"
+author:
+  - Stephanie Cheng
+  - Jingyi Cai
+  - Shuting Li
+  - Tao Chen
+date: 2023-12-14
+image: full.png
+categories:
+  - Transportation
+  - Real Estate
+  - Urban Design
+  - Masterplanning
+subtitle: "A masterplanned agro-food park supporting job creation, affordable housing, and economic growth in an underutilized agriculture tradiing hub."
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: file-earmark-slides
+      text: Slide deck
+      href: https://docs.google.com/presentation/d/1VChSU62-FlUlAEBUNH6FnpEWULC2yhamrGjduXI25ZI/edit?usp=sharing
+---
+
+### Project Brief
+
+Under construction.
+
+See slide deck for full presentation.
+
+![](full.png)
+
