@@ -10,25 +10,38 @@ subtitle: "Urban Planner and Spatial Analyst"
 * Relevant coursework: Quantitative Planning Methods, Land Use and Environmental Modeling, Geospatial Analysis in Python, Public Policy Analytics, Communication in Urban Spatial Analytics, Geospatial Cloud Computing, Machine Learning in Remote Sensing, Planning Workshop
 * Honors/Awards: Dean’s Merit Scholarship ($50,000) 
 
-
-#### <b>Visvesvarya National Institute of Technology</b>  *Coventry, UK*
+#### <b>Visvesvarya National Institute of Technology</b>  *Nagpur, India*
 ###### Bachelor of Architecture 
 * Honors/Awards: Graduated 95th Percentile. Awarded distinction in Architecture Design, Landscape Design, Urban Planning and Design, and Climatology
 * Elected Batch Representative, 2017; Elected English Literary Secretary, Collegiate Magazine, 2020
 
 ## Professional Experience
 
-#### <b>New York City Economic Development Corporation (NYCEDC)</b>  *New York, NY*
-###### Transportation and Offshore Wind Intern (June-August 2023)
-* Facilitated two grant applications for Staten Island offshore wind sites: one to secure $500,000 of pre-development funding to support one site's development as a manufacturing and assembling site for wind turbine components, and another to secure $20 million of capital infrastructure improvement funding for another site as a marine highway and potential offshore wind site
-* Analyzed community benefit agreements of airport redevelopments (LAX and ATL) as models for JFK Airport’s “A New JFK” project
-* Researched current NYC energy policy, objectives, and barriers regarding the city’s sustainability goals, namely 2050 carbon neutrality
-* Facilitated the planning, marketing, and execution of 5 events as part of the “Summer of Offshore Wind” educational community engagement initiatives: engaged with 25-60 NYC residents per event about upcoming offshore wind site developments and job growth
+#### <b>Econsult Solutions: Center for the Future of Cities</b>  *Philadelphia, PA*
+###### Research and Analysis Intern (June 2023 – Present)
+* Developed a climate resilience index for major US Cities using qualitative and quantitative research, tested the data using sensitivity training minimizing errors and 
+* Wrote multiple articles on urban planning and data using data privacy 
 
-#### <b>ECOLAND Planning & Design</b>  *Beijing, China*
-###### Freelance Editorial Advisor (May 2022-June 2023)
-* Edited and revised 12 project deliverables of the Tongzhou, Beijing Sustainable Waterfront Park development project to the 2022 British Association of Landscape Industries competition and 2023 Rosa Barba Casanovas International Landscape Architecture Prize
-* Edited and revised a presentation and project narrative for the American Society of Landscape Architects Communications competition 
+#### <b>PennPraxis</b>  *Philadelphia, PA*
+###### Analysis and Design Intern (February 2023 – Present)
+* Developed a vulnerability to closure index for Philadelphia’s school for local government and school districts to inform their facilities planning process
+* Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure 
+* Coordinated stakeholder meetings for activists and public school stakeholders
+
+#### <b>Netter Center for Community Partnerships</b>  *Philadelphia, PA*
+###### Programming Intern (August 2022 – December 2022)
+* Worked with a network of Philadelphia High Schools to develop curricula and mentor students for personal and professional development 
+* Conducted research to support the production of materials for partner schools and students for grant applications, and research/policy briefs
+
+#### <b>City for All: Alliance Française and Social Design Collaborative</b>  *New Delhi, India*
+###### Program Facilitator (May 2022 – June 2022)
+* Facilitated trans-national focus group discussions between French and Indian city planners and lower-income queer communities in New Delhi
+* Mapped different marginalized groups’ access to public spaces across multiple cities in India and France to be published as open source data 
+
+#### <b>Saving Ajni</b>  *Nagpur, India*
+###### GIS Consultant (October 2021 – January 2022)
+* Mobilized groups of over 200 volunteers and professionals to prevent the felling of 500+ acres of green buffer 
+* Worked on alternate site proposal using GIS analyses (NDVI and LST comparisons and projections), managed press, petitions and campaigns 
 
 
 ## Fellowships and Awards
@@ -51,6 +64,7 @@ subtitle: "Urban Planner and Spatial Analyst"
 
 
 ## Skills and Interests
+
 * <b>Data Analysis/Programming Skills:</b> R, Python, SQL, C/C++, ESRI ArcGIS Pro/Online, Excel, HTML, CSS
 * <b>Media Skills:</b> Adobe Photoshop/Illustrator/InDesign
 * <b>Professional Interests:</b> Digital Equity, Fair Algorithms, Transportation Planning, Climate Tech, Renewable Energy, Climate Change Mitigation/Adaptation, Urban Data, Smart Cities, Urban Sensors
