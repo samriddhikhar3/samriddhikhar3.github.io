@@ -54,7 +54,7 @@ execute:
 
 ::: {#hero-heading}
 <br>
-Hi! I'm Stephanie. I love exploring how our built environment shapes <br>
+Hi! I'm Samriddhi. I love exploring how our built environment shapes <br>
 the way we live, work, and play. I am passionate about using my <br>
 urban planning and geospatial analysis skills to leverage key urban <br>
 data for equitable and sustainable use to improve our cities.
