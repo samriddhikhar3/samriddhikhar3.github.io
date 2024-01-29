@@ -1,6 +1,6 @@
 ---
-title: "Stephanie Cheng"
-subtitle: "Urban Planner and Data Analyst"
+title: "Samriddhi Khare"
+subtitle: "Urban Planner and Spatial Analyst"
 image: images/cell_towers.png
 resources: 
   - "portfolio/1_DigiPlay/index.qmd"
