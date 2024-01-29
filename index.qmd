@@ -29,16 +29,16 @@ about:
   links:
     - icon: envelope
       text: Email
-      href: mailto:skycheng@design.upenn.edu
+      href: mailto:skhare@design.upenn.edu
     - icon: file-pdf
       text: Resume
-      href: https://skycheng17.github.io/resume
+      href: https://samriddhikhar3.github.io/resume
     - icon: github
       text: GitHub
-      href: https://github.com/skycheng17
+      href: https://github.com/samriddhikhar3
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/skycheng17/  
+      href: https://www.linkedin.com/in/samriddhi-khare-3668821b1/ 
 page-layout: full
 toc: false
 
