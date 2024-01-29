@@ -1,6 +1,6 @@
 
 ---
-title: "Stephanie Cheng"
+title: "Samriddhi Khare"
 subtitle: "Urban Planner and Data Analyst"
 comments: false
 image: images/stephaniepng.jpeg
@@ -24,7 +24,7 @@ about:
 ::: {#hero-heading}
 <br><br>
 
-Stephanie is an Urban Planner, Data Analyst, and Smart City Enthusiast with a background in Law. Having lived in Mainland China, Singapore, Hong Kong, UK, and now USA, Stephanie is inspired by a range of urban issues in cities across the world. She is particularly interested in how technology and data can be effectively and equitably used to solve urban and environmental issues. Stephanie most recently worked as the Offshore Wind Intern at New York City Economic Development Corporation, and is passionate about supporting the global shift towards renewable energy.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 Stephanie is a current Master of City Planning candidate at the University of Pennsylvania (expected May 2024), with a First Class Bachelor of Laws (LLB) from the University of Warwick (2022).
 

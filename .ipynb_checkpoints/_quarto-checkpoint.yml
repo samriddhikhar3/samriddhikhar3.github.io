@@ -10,7 +10,7 @@ project:
 website:
   title: "Samriddhi Khare"
   site-url: "https://samriddhikhar3.github.io/"
-  repo-url: "https://github.com/samriddhikhar3/samriddhikhar3.github.io"
+  repo-url: "samriddhikhar3.github.io"
   repo-actions: [source]
   description: "Urban Planner and Spatial Analyst"
   favicon: images/cell_towers.png
