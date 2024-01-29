@@ -8,11 +8,11 @@ project:
     - "portfolio/2_ON_TRACK/ON_TRACK.html"
 
 website:
-  title: "Stephanie Cheng"
-  site-url: "https://skycheng17.github.io"
-  repo-url: "skycheng17.github.io"
+  title: "Samriddhi Khare"
+  site-url: "https://samriddhikhar3.github.io/"
+  repo-url: "https://github.com/samriddhikhar3/samriddhikhar3.github.io"
   repo-actions: [source]
-  description: "Urban Planner and Data Scientist"
+  description: "Urban Planner and Spatial Analyst"
   favicon: images/cell_towers.png
   page-navigation: true
   back-to-top-navigation: true
@@ -22,7 +22,7 @@ website:
     type: overlay
   comments: 
     utterances: 
-      repo: skycheng17/skycheng17.github.io
+      repo: samriddhikhar3/samriddhikhar3.github.io
       label: utterances
       theme: body-light
       issue-term: title
@@ -31,9 +31,9 @@ website:
     logo: images/cell_towers.png
     tools:
     - icon: github
-      href: https://github.com/skycheng17/skycheng17.github.io
+      href: https://github.com/samriddhikhar3
     - icon: linkedin
-      href: https://linkedin.com/in/skycheng17
+      href: https://www.linkedin.com/in/samriddhi-khare-3668821b1/
     right:
       - text: About
         aria-label: "About"
@@ -43,7 +43,7 @@ website:
         href: resume.qmd
       - text: Portfolio
         aria-label: "Portfolio"
-        href: "portfolio/portfolio.qmd"
+        href: portfolio/portfolio.qmd
   
   page-footer:  
     center: >-
