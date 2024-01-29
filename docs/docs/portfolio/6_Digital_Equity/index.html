@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.536">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stephanie Cheng">
+<meta name="author" content="Jarred Randall">
+<meta name="author" content="Alec Jacobs">
+<meta name="dcterms.date" content="2023-12-27">
+
+<title>Exploring Digital Equity Through Cell Tower Data | Stephanie Cheng</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/cell_towers.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<meta name="twitter:title" content="Exploring Digital Equity Through Cell Tower Data | Stephanie Cheng">
+<meta name="twitter:description" content="A look at the internet access landscape at the international, federal, and state level through geospatial data analysis">
+<meta name="twitter:image" content="https://skycheng17.github.io/portfolio/6_Digital_Equity/cell_towers.png">
+<meta name="twitter:image-height" content="648">
+<meta name="twitter:image-width" content="1096">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/cell_towers.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Stephanie Cheng</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../portfolio/portfolio.html"> 
+<span class="menu-text">Portfolio</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+    <a href="https://github.com/skycheng17/skycheng17.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://linkedin.com/in/skycheng17" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+  <ul>
+  <li><a href="#project-brief" id="toc-project-brief" class="nav-link active" data-scroll-target="#project-brief">Project Brief</a></li>
+  <li><a href="#exploratory-analysis" id="toc-exploratory-analysis" class="nav-link" data-scroll-target="#exploratory-analysis">Exploratory Analysis</a></li>
+  <li><a href="#project-outcomes" id="toc-project-outcomes" class="nav-link" data-scroll-target="#project-outcomes">Project Outcomes</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="skycheng17.github.io/blob/main/portfolio/6_Digital_Equity/index.qmd" class="toc-action"><i class="bi bi-git"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<div class="quarto-about-solana content page-columns page-full">
+  <div class="about-entity page-columns page-full">
+    <div class="entity-contents page-columns page-full">
+      <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exploring Digital Equity Through Cell Tower Data</h1>
+<p class="subtitle lead">A look at the internet access landscape at the international, federal, and state level through geospatial data analysis</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Urban Technology</div>
+    <div class="quarto-category">Equity</div>
+  </div>
+  </div>
+<div class="quarto-title-meta">
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Stephanie Cheng </p>
+             <p>Jarred Randall </p>
+             <p>Alec Jacobs </p>
+          </div>
+  </div>
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 27, 2023</p>
+    </div>
+  </div>
+  </div>
+</header> <div class="about-links">
+  <a href="https://musa-550-fall-2023.github.io/exploring-digital-equity/" class="about-link" rel="" target="">
+    <i class="bi bi-link"></i>
+     <span class="about-link-text">Full Project</span>
+  </a>
+</div>
+      <div class="about-contents page-columns page-full"><main class="content page-columns page-full" id="quarto-document-content">
+
+<section id="project-brief" class="level3">
+<h3 data-anchor-id="project-brief">Project Brief</h3>
+<p>As the world continually modernizes, the “digital divide” - a term describing disparity in access to technology - persists, placing certain groups at a distinct disadvantage. In particular, the recent global pandemic shed light on the inequality of digital access worldwide. Due to a substantial reliance on the internet for communication by a significant portion of the global population, individuals without access experienced even greater social and mental burdens during the pandemic. As a result, our team sought out to understand the varied digital equity landscape at the international, federal, and state levels through geospatial data analysis. In our project, we followed a set of guiding questions:</p>
+<ul>
+<li>What international metrics may inform digital equity in developed vs developing countries?</li>
+<li>Is there equitable access of ICT technology across the United States?</li>
+<li>How does the digital divide persist in rural vs urban areas at various scales?</li>
+</ul>
+<p>A large part of the conversation about resolving the digital divide focuses on Information and Communications Technology (ICT) as well as telecommunications availability. As a result, we selected our main data source - a cell tower location database provided by <a href="https://opencellid.com">OpenCellID</a>. Managed by <a href="https://unwiredlabs.com">Unwired Labs</a>, this collaborative initiative aggregates data from registered contributors.</p>
+</section>
+<section id="exploratory-analysis" class="level3 page-columns page-full">
+<h3 data-anchor-id="exploratory-analysis">Exploratory Analysis</h3>
+<p>In our exploratory analysis, we created over a dozen data visualizations to evaluate cell tower data at the international, federal, and state level. These visualizations condensed over 200 million data points into comprehensible and actionable information. Here are a few visualizations that I contributed to the section I lead, the international cell tower coverage section:</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="cell_towers.png" class="img-fluid figure-img column-body"></p>
+<figcaption>Every cell tower in the world, mapped using OpenCellID data.</figcaption>
+</figure>
+</div>
+<p>This map is a product of big data wrangling and data shading/condensing, and provides an overarching understanding of the cell tower coverage across different countries and regions.</p>
+<div id="aca12823" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>color_key <span class="op">=</span> {<span class="st">"GSM"</span>: <span class="st">"#707390"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"CDMA"</span>: <span class="st">"#93b7be"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">"UMTS"</span>: <span class="st">"#e0ca3c"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>             <span class="st">"LTE"</span>: <span class="st">"#b59ab8"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>             <span class="st">"NR"</span>: <span class="st">"#048a81"</span>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="op">=</span> pd.read_csv(<span class="st">"./Data/gdp_per_capita.csv"</span>) <span class="co">#data from world bank</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="op">=</span> gdp_per_capita[[<span class="st">'Country Name'</span>, <span class="st">'2021 [YR2021]'</span>]]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="op">=</span> gdp_per_capita.rename(columns<span class="op">=</span>{</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Country Name'</span>: <span class="st">'country'</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2021 [YR2021]'</span>: <span class="st">'gdp_per_capita'</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="op">=</span> gdp_per_capita.dropna(subset<span class="op">=</span>[<span class="st">'country'</span>])</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> pd.read_csv(<span class="st">"./data/population.csv"</span>) <span class="co">#data from world bank</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> population[[<span class="st">'Country Name'</span>, <span class="st">'2021 [YR2021]'</span>]]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> population.rename(columns<span class="op">=</span>{</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Country Name'</span>: <span class="st">'country'</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2021 [YR2021]'</span>: <span class="st">'population'</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> population.dropna(subset<span class="op">=</span>[<span class="st">'country'</span>])</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>gpc_pop <span class="op">=</span> population.merge(gdp_per_capita, how<span class="op">=</span><span class="st">'left'</span>, on<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>countries_towers <span class="op">=</span> pd.read_csv(<span class="st">"./Data/international_cell_towers.csv"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>merge <span class="op">=</span> countries_towers.merge(gpc_pop, how<span class="op">=</span><span class="st">'left'</span>, on<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>merge.rename(columns<span class="op">=</span>{<span class="st">'UMES'</span>: <span class="st">'UMTS'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>tower_types <span class="op">=</span> [<span class="st">'UMTS'</span>, <span class="st">'GSM'</span>, <span class="st">'LTE'</span>, <span class="st">'CDMA'</span>]</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>merge[<span class="st">'dominant_tower_type'</span>] <span class="op">=</span> merge[tower_types].idxmax(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>merge[<span class="st">'cell_towers'</span>] <span class="op">=</span> pd.to_numeric(merge[<span class="st">'cell_towers'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>merge[<span class="st">'population'</span>] <span class="op">=</span> pd.to_numeric(merge[<span class="st">'population'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>merge[<span class="st">'gdp_per_capita'</span>] <span class="op">=</span> pd.to_numeric(merge[<span class="st">'gdp_per_capita'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>merge[<span class="st">'ctw_per_capita'</span>] <span class="op">=</span> merge[<span class="st">'cell_towers'</span>] <span class="op">/</span> merge[<span class="st">'population'</span>]</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>merge_df <span class="op">=</span> pd.DataFrame(merge)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>merge_df <span class="op">=</span> merge_df.dropna()</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>brush <span class="op">=</span> alt.selection_interval(encodings<span class="op">=</span>[<span class="st">'x'</span>])</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>click <span class="op">=</span> alt.selection_point(encodings<span class="op">=</span>[<span class="st">'color'</span>])</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> alt.Chart(merge_df).mark_circle().encode(</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">"gdp_per_capita:Q"</span>,</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"log"</span>),</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Log GDP per Capita"</span>),</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">"ctw_per_capita:Q"</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">"log"</span>),</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Log Cell Towers per Capita"</span>),</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span>alt.Size(<span class="st">"population:Q"</span>, title<span class="op">=</span><span class="st">"Population"</span>),</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>alt.condition(brush,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">"dominant_tower_type:N"</span>,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Dominant Tower Type"</span>,</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span><span class="bu">list</span>(color_key.keys()), </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">range</span><span class="op">=</span><span class="bu">list</span>(color_key.values())),), alt.value(<span class="st">'grey'</span>)),</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">500</span>,</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>height<span class="op">=</span><span class="dv">350</span>).add_selection(brush).transform_filter(</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    click</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> alt.Chart(merge_df).mark_bar().encode(</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'count()'</span>,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>alt.Y(<span class="st">"dominant_tower_type:N"</span>, title<span class="op">=</span><span class="st">"Dominant Tower Type"</span>),</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>alt.condition(brush,</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    alt.Color(<span class="st">"dominant_tower_type:N"</span>,</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Dominant Tower Type"</span>),</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    alt.value(<span class="st">'lightgray'</span>)),</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>).transform_filter(brush).properties(width<span class="op">=</span><span class="dv">550</span>).add_params(</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    click</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine charts</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>alt.vconcat(points, bars, title<span class="op">=</span><span class="st">"World Cell Tower Coverage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<style>
+  #altair-viz-b57275496e94470ea4135371c9a0fa9c.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+  #altair-viz-b57275496e94470ea4135371c9a0fa9c.vega-embed details,
+  #altair-viz-b57275496e94470ea4135371c9a0fa9c.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-b57275496e94470ea4135371c9a0fa9c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-b57275496e94470ea4135371c9a0fa9c") {
+      outputDiv = document.getElementById("altair-viz-b57275496e94470ea4135371c9a0fa9c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.14.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.14.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "circle"}, "encoding": {"color": {"condition": {"param": "param_7", "field": "dominant_tower_type", "scale": {"domain": ["GSM", "CDMA", "UMTS", "LTE", "NR"], "range": ["#707390", "#93b7be", "#e0ca3c", "#b59ab8", "#048a81"]}, "title": "Dominant Tower Type", "type": "nominal"}, "value": "grey"}, "size": {"field": "population", "title": "Population", "type": "quantitative"}, "tooltip": {"field": "country", "type": "nominal"}, "x": {"field": "gdp_per_capita", "scale": {"type": "log", "zero": false}, "title": "Log GDP per Capita", "type": "quantitative"}, "y": {"field": "ctw_per_capita", "scale": {"type": "log"}, "title": "Log Cell Towers per Capita", "type": "quantitative"}}, "height": 350, "name": "view_7", "transform": [{"filter": {"param": "param_8"}}], "width": 500}, {"mark": {"type": "bar"}, "encoding": {"color": {"condition": {"param": "param_7", "field": "dominant_tower_type", "title": "Dominant Tower Type", "type": "nominal"}, "value": "lightgray"}, "x": {"aggregate": "count", "type": "quantitative"}, "y": {"field": "dominant_tower_type", "title": "Dominant Tower Type", "type": "nominal"}}, "name": "view_8", "transform": [{"filter": {"param": "param_7"}}], "width": 550}], "data": {"name": "data-5069cb74c7b99a0ce20ad8117007673d"}, "params": [{"name": "param_7", "select": {"type": "interval", "encodings": ["x"]}, "views": ["view_7"]}, {"name": "param_8", "select": {"type": "point", "encodings": ["color"]}, "views": ["view_8"]}], "title": "World Cell Tower Coverage", "$schema": "https://vega.github.io/schema/vega-lite/v5.14.1.json", "datasets": {"data-5069cb74c7b99a0ce20ad8117007673d": [{"country": "Afghanistan", "cell_towers": 12349, "GSM": 8212, "CDMA": 0, "UMTS": 4007, "LTE": 130, "population": 40099462.0, "gdp_per_capita": 363.674087113049, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00030795924394197606}, {"country": "Albania", "cell_towers": 16643, "GSM": 5564, "CDMA": 0, "UMTS": 8878, "LTE": 2201, "population": 2811666.0, "gdp_per_capita": 6377.20309553753, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005919266370898962}, {"country": "Algeria", "cell_towers": 117878, "GSM": 46965, "CDMA": 0, "UMTS": 62099, "LTE": 8814, "population": 44177969.0, "gdp_per_capita": 3700.31119460857, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.002668253038069722}, {"country": "American Samoa", "cell_towers": 355, "GSM": 44, "CDMA": 0, "UMTS": 117, "LTE": 194, "population": 45035.0, "gdp_per_capita": 15743.3107582991, "dominant_tower_type": "LTE", "ctw_per_capita": 0.007882757855001666}, {"country": "Andorra", "cell_towers": 940, "GSM": 244, "CDMA": 0, "UMTS": 517, "LTE": 179, "population": 79034.0, "gdp_per_capita": 42072.341103463, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.011893615406027786}, {"country": "Angola", "cell_towers": 28834, "GSM": 17819, "CDMA": 0, "UMTS": 9448, "LTE": 1567, "population": 34503774.0, "gdp_per_capita": 1903.71740495688, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0008356767001777834}, {"country": "Antigua and Barbuda", "cell_towers": 512, "GSM": 255, "CDMA": 0, "UMTS": 129, "LTE": 128, "population": 93219.0, "gdp_per_capita": 16740.3481963818, "dominant_tower_type": "GSM", "ctw_per_capita": 0.005492442527810854}, {"country": "Argentina", "cell_towers": 314839, "GSM": 54430, "CDMA": 0, "UMTS": 208496, "LTE": 51913, "population": 45808747.0, "gdp_per_capita": 10636.1155301986, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006872901369688195}, {"country": "Armenia", "cell_towers": 20375, "GSM": 6268, "CDMA": 0, "UMTS": 11654, "LTE": 2453, "population": 2790974.0, "gdp_per_capita": 4966.51347122366, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.007300318813432157}, {"country": "Aruba", "cell_towers": 1776, "GSM": 402, "CDMA": 8, "UMTS": 1086, "LTE": 280, "population": 106537.0, "gdp_per_capita": 29342.1007300268, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.016670264790636116}, {"country": "Australia", "cell_towers": 641959, "GSM": 37624, "CDMA": 0, "UMTS": 291957, "LTE": 310678, "population": 25688079.0, "gdp_per_capita": 60444.5023551978, "dominant_tower_type": "LTE", "ctw_per_capita": 0.024990541332421158}, {"country": "Austria", "cell_towers": 567811, "GSM": 192622, "CDMA": 0, "UMTS": 259385, "LTE": 115799, "population": 8955797.0, "gdp_per_capita": 53637.7057109897, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.06340150407607498}, {"country": "Azerbaijan", "cell_towers": 30248, "GSM": 11826, "CDMA": 0, "UMTS": 17404, "LTE": 1018, "population": 10137750.0, "gdp_per_capita": 5408.04535175023, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0029836995388523094}, {"country": "Bahrain", "cell_towers": 35246, "GSM": 6681, "CDMA": 0, "UMTS": 20845, "LTE": 7720, "population": 1463265.0, "gdp_per_capita": 26860.0725018105, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.024087229585891823}, {"country": "Bangladesh", "cell_towers": 155730, "GSM": 89296, "CDMA": 1, "UMTS": 58984, "LTE": 7449, "population": 169356251.0, "gdp_per_capita": 2457.92404902236, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0009195409031580417}, {"country": "Barbados", "cell_towers": 2696, "GSM": 746, "CDMA": 0, "UMTS": 1847, "LTE": 103, "population": 281200.0, "gdp_per_capita": 17225.4623044097, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.009587482219061166}, {"country": "Belarus", "cell_towers": 213129, "GSM": 61869, "CDMA": 0, "UMTS": 131434, "LTE": 19787, "population": 9302585.0, "gdp_per_capita": 7489.71894713888, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.022910728577056807}, {"country": "Belgium", "cell_towers": 344057, "GSM": 140610, "CDMA": 0, "UMTS": 121277, "LTE": 82167, "population": 11592952.0, "gdp_per_capita": 51268.3880373598, "dominant_tower_type": "GSM", "ctw_per_capita": 0.02967811822217499}, {"country": "Belize", "cell_towers": 2480, "GSM": 861, "CDMA": 0, "UMTS": 1377, "LTE": 242, "population": 400031.0, "gdp_per_capita": 6228.26730928353, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006199519537235864}, {"country": "Benin", "cell_towers": 6195, "GSM": 3129, "CDMA": 0, "UMTS": 2685, "LTE": 381, "population": 12996895.0, "gdp_per_capita": 1361.10074905831, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0004766523081089753}, {"country": "Bermuda", "cell_towers": 323, "GSM": 67, "CDMA": 0, "UMTS": 252, "LTE": 4, "population": 63764.0, "gdp_per_capita": 111774.669092278, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005065554231227652}, {"country": "Bhutan", "cell_towers": 1182, "GSM": 627, "CDMA": 0, "UMTS": 549, "LTE": 6, "population": 777486.0, "gdp_per_capita": 3266.36277371286, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0015202846096264112}, {"country": "Bolivia", "cell_towers": 56351, "GSM": 11110, "CDMA": 0, "UMTS": 36331, "LTE": 8908, "population": 12079472.0, "gdp_per_capita": 3345.19658838387, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.004665021782409033}, {"country": "Bosnia and Herzegovina", "cell_towers": 22499, "GSM": 10237, "CDMA": 0, "UMTS": 10262, "LTE": 2000, "population": 3270943.0, "gdp_per_capita": 7230.19816280366, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006878444534190904}, {"country": "Botswana", "cell_towers": 11812, "GSM": 7383, "CDMA": 0, "UMTS": 4167, "LTE": 262, "population": 2588423.0, "gdp_per_capita": 7238.79609591086, "dominant_tower_type": "GSM", "ctw_per_capita": 0.004563396322780318}, {"country": "Brazil", "cell_towers": 1867081, "GSM": 329880, "CDMA": 0, "UMTS": 1264107, "LTE": 273093, "population": 214326223.0, "gdp_per_capita": 7696.78553127562, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.008711397858207952}, {"country": "Bulgaria", "cell_towers": 115831, "GSM": 27277, "CDMA": 0, "UMTS": 69039, "LTE": 19515, "population": 6877743.0, "gdp_per_capita": 12222.235645941, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.016841426031766527}, {"country": "Burkina Faso", "cell_towers": 8984, "GSM": 4957, "CDMA": 0, "UMTS": 3902, "LTE": 125, "population": 22100683.0, "gdp_per_capita": 893.077195986297, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0004065032741295823}, {"country": "Burundi", "cell_towers": 2295, "GSM": 1475, "CDMA": 0, "UMTS": 806, "LTE": 14, "population": 12551213.0, "gdp_per_capita": 221.15780340632, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00018285085274228076}, {"country": "Cambodia", "cell_towers": 54112, "GSM": 18511, "CDMA": 0, "UMTS": 27867, "LTE": 7734, "population": 16589023.0, "gdp_per_capita": 1625.2350215138, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.003261916027242834}, {"country": "Cameroon", "cell_towers": 48413, "GSM": 33655, "CDMA": 0, "UMTS": 12907, "LTE": 1851, "population": 27198628.0, "gdp_per_capita": 1666.93280948232, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0017799794901419293}, {"country": "Canada", "cell_towers": 1012012, "GSM": 145188, "CDMA": 8622, "UMTS": 431477, "LTE": 426688, "population": 38226498.0, "gdp_per_capita": 52358.6216405155, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.02647409658085865}, {"country": "Cayman Islands", "cell_towers": 734, "GSM": 159, "CDMA": 0, "UMTS": 391, "LTE": 184, "population": 68136.0, "gdp_per_capita": 88475.6008787475, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.010772572502054715}, {"country": "Central African Republic", "cell_towers": 1124, "GSM": 702, "CDMA": 0, "UMTS": 422, "LTE": 0, "population": 5457154.0, "gdp_per_capita": 461.137510928519, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00020596816582416403}, {"country": "Chad", "cell_towers": 1740, "GSM": 1282, "CDMA": 0, "UMTS": 458, "LTE": 0, "population": 17179740.0, "gdp_per_capita": 685.690314996613, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00010128209157996571}, {"country": "Chile", "cell_towers": 201399, "GSM": 31322, "CDMA": 0, "UMTS": 138347, "LTE": 31730, "population": 19493184.0, "gdp_per_capita": 16247.4010150765, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.010331765195465246}, {"country": "China", "cell_towers": 1001585, "GSM": 385955, "CDMA": 16, "UMTS": 187951, "LTE": 426089, "population": 1412360000.0, "gdp_per_capita": 12617.5049863004, "dominant_tower_type": "LTE", "ctw_per_capita": 0.0007091570137925174}, {"country": "Colombia", "cell_towers": 274839, "GSM": 64228, "CDMA": 2, "UMTS": 174550, "LTE": 36057, "population": 51516562.0, "gdp_per_capita": 6182.70709867969, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005334963928687633}, {"country": "Comoros", "cell_towers": 365, "GSM": 110, "CDMA": 0, "UMTS": 253, "LTE": 2, "population": 821625.0, "gdp_per_capita": 1577.47084066118, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0004442415944013388}, {"country": "Costa Rica", "cell_towers": 83792, "GSM": 22580, "CDMA": 0, "UMTS": 53693, "LTE": 7519, "population": 5153957.0, "gdp_per_capita": 12537.2567461753, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.016257799589713302}, {"country": "Croatia", "cell_towers": 126099, "GSM": 32645, "CDMA": 0, "UMTS": 54001, "LTE": 39453, "population": 3879000.0, "gdp_per_capita": 17747.7892862107, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.03250812064965197}, {"country": "Cyprus", "cell_towers": 31627, "GSM": 10512, "CDMA": 0, "UMTS": 16116, "LTE": 4999, "population": 1244188.0, "gdp_per_capita": 31552.03515625, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.025419791864252025}, {"country": "Denmark", "cell_towers": 309989, "GSM": 62482, "CDMA": 0, "UMTS": 157508, "LTE": 89999, "population": 5856733.0, "gdp_per_capita": 68007.7566732954, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0529286549344148}, {"country": "Djibouti", "cell_towers": 827, "GSM": 268, "CDMA": 0, "UMTS": 406, "LTE": 153, "population": 1105557.0, "gdp_per_capita": 3050.30628163732, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.000748039223667346}, {"country": "Dominica", "cell_towers": 414, "GSM": 166, "CDMA": 0, "UMTS": 214, "LTE": 34, "population": 72412.0, "gdp_per_capita": 7668.15813216962, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00571728442799536}, {"country": "Dominican Republic", "cell_towers": 54249, "GSM": 18777, "CDMA": 10, "UMTS": 27760, "LTE": 7701, "population": 11117873.0, "gdp_per_capita": 8476.7496882797, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.004879440518883423}, {"country": "Ecuador", "cell_towers": 81720, "GSM": 22112, "CDMA": 2, "UMTS": 50625, "LTE": 8981, "population": 17797737.0, "gdp_per_capita": 5965.13287054416, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.004591594987609942}, {"country": "El Salvador", "cell_towers": 44505, "GSM": 13355, "CDMA": 0, "UMTS": 27935, "LTE": 3215, "population": 6314167.0, "gdp_per_capita": 4664.31122268385, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.007048435684390356}, {"country": "Equatorial Guinea", "cell_towers": 928, "GSM": 605, "CDMA": 0, "UMTS": 321, "LTE": 2, "population": 1634466.0, "gdp_per_capita": 7506.66786103709, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0005677695345146366}, {"country": "Estonia", "cell_towers": 44339, "GSM": 12467, "CDMA": 0, "UMTS": 18237, "LTE": 13635, "population": 1330932.0, "gdp_per_capita": 27943.701219882, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.03331424896238125}, {"country": "Ethiopia", "cell_towers": 18839, "GSM": 10683, "CDMA": 0, "UMTS": 7408, "LTE": 748, "population": 120283026.0, "gdp_per_capita": 925.000697216762, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0001566222652230249}, {"country": "Faroe Islands", "cell_towers": 836, "GSM": 202, "CDMA": 0, "UMTS": 486, "LTE": 148, "population": 52889.0, "gdp_per_capita": 69010.1662014429, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.015806689481744785}, {"country": "Fiji", "cell_towers": 5183, "GSM": 1596, "CDMA": 0, "UMTS": 2193, "LTE": 1394, "population": 924610.0, "gdp_per_capita": 4646.53792141919, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005605606688225306}, {"country": "Finland", "cell_towers": 280260, "GSM": 54493, "CDMA": 0, "UMTS": 132863, "LTE": 92889, "population": 5541017.0, "gdp_per_capita": 53489.7520190898, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.05057916263386306}, {"country": "France", "cell_towers": 2281579, "GSM": 537901, "CDMA": 6, "UMTS": 1110546, "LTE": 633071, "population": 67749632.0, "gdp_per_capita": 43658.9789781222, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0336766257269117}, {"country": "French Polynesia", "cell_towers": 1957, "GSM": 487, "CDMA": 0, "UMTS": 1106, "LTE": 364, "population": 304032.0, "gdp_per_capita": 19999.0767593202, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006436822439743185}, {"country": "Gabon", "cell_towers": 9570, "GSM": 2858, "CDMA": 0, "UMTS": 4888, "LTE": 1824, "population": 2341179.0, "gdp_per_capita": 8635.7971437495, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.004087684025869017}, {"country": "Georgia", "cell_towers": 40894, "GSM": 14929, "CDMA": 0, "UMTS": 17065, "LTE": 8900, "population": 3708610.0, "gdp_per_capita": 5023.27438368985, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.011026772834026765}, {"country": "Germany", "cell_towers": 2991199, "GSM": 1302374, "CDMA": 0, "UMTS": 1180803, "LTE": 507297, "population": 83196078.0, "gdp_per_capita": 51203.5544731043, "dominant_tower_type": "GSM", "ctw_per_capita": 0.035953605889931496}, {"country": "Ghana", "cell_towers": 58530, "GSM": 25714, "CDMA": 0, "UMTS": 31183, "LTE": 1632, "population": 32833031.0, "gdp_per_capita": 2410.87730858166, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.001782656008822335}, {"country": "Greece", "cell_towers": 307040, "GSM": 70299, "CDMA": 0, "UMTS": 169290, "LTE": 67451, "population": 10641221.0, "gdp_per_capita": 20192.5963039061, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.028853831717243726}, {"country": "Greenland", "cell_towers": 251, "GSM": 61, "CDMA": 0, "UMTS": 143, "LTE": 47, "population": 56653.0, "gdp_per_capita": 57116.4138715706, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.004430480292305791}, {"country": "Grenada", "cell_towers": 231, "GSM": 123, "CDMA": 0, "UMTS": 108, "LTE": 0, "population": 124610.0, "gdp_per_capita": 9010.5127999358, "dominant_tower_type": "GSM", "ctw_per_capita": 0.001853783805473076}, {"country": "Guam", "cell_towers": 2488, "GSM": 428, "CDMA": 9, "UMTS": 1134, "LTE": 917, "population": 170534.0, "gdp_per_capita": 35904.8635462723, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.01458946603023444}, {"country": "Guatemala", "cell_towers": 79939, "GSM": 23330, "CDMA": 0, "UMTS": 47817, "LTE": 8791, "population": 17109746.0, "gdp_per_capita": 5029.47733808268, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0046721324793483196}, {"country": "Guinea", "cell_towers": 12027, "GSM": 9468, "CDMA": 0, "UMTS": 2529, "LTE": 30, "population": 13531906.0, "gdp_per_capita": 1189.17599946636, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0008887883199898078}, {"country": "Guinea-Bissau", "cell_towers": 2266, "GSM": 1276, "CDMA": 0, "UMTS": 983, "LTE": 7, "population": 2060721.0, "gdp_per_capita": 795.118605034735, "dominant_tower_type": "GSM", "ctw_per_capita": 0.001099615134702854}, {"country": "Guyana", "cell_towers": 1746, "GSM": 821, "CDMA": 0, "UMTS": 923, "LTE": 2, "population": 804567.0, "gdp_per_capita": 9998.54431136155, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0021701113766783874}, {"country": "Haiti", "cell_towers": 7070, "GSM": 2176, "CDMA": 0, "UMTS": 4684, "LTE": 210, "population": 11447569.0, "gdp_per_capita": 1823.74222440796, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0006175983739429743}, {"country": "Honduras", "cell_towers": 40718, "GSM": 8667, "CDMA": 0, "UMTS": 27258, "LTE": 4793, "population": 10278345.0, "gdp_per_capita": 2771.72261645247, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.003961532717572722}, {"country": "Hungary", "cell_towers": 224762, "GSM": 57030, "CDMA": 0, "UMTS": 99192, "LTE": 68539, "population": 9709891.0, "gdp_per_capita": 18772.1411117581, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.023147736673872033}, {"country": "Iceland", "cell_towers": 14109, "GSM": 2925, "CDMA": 0, "UMTS": 6375, "LTE": 4809, "population": 372520.0, "gdp_per_capita": 68594.0081044426, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.03787447653817245}, {"country": "India", "cell_towers": 2615387, "GSM": 1454941, "CDMA": 15, "UMTS": 705062, "LTE": 453989, "population": 1407563842.0, "gdp_per_capita": 2238.12713873311, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00185809476057854}, {"country": "Indonesia", "cell_towers": 1417373, "GSM": 326274, "CDMA": 971, "UMTS": 875338, "LTE": 214787, "population": 273753191.0, "gdp_per_capita": 4334.21598260314, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005177557912009873}, {"country": "Iraq", "cell_towers": 55945, "GSM": 30524, "CDMA": 3, "UMTS": 23635, "LTE": 1783, "population": 43533592.0, "gdp_per_capita": 4770.83534274738, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0012850995617361416}, {"country": "Ireland", "cell_towers": 189221, "GSM": 37372, "CDMA": 0, "UMTS": 111561, "LTE": 40286, "population": 5033165.0, "gdp_per_capita": 100172.079253421, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.03759483346959617}, {"country": "Israel", "cell_towers": 209481, "GSM": 34778, "CDMA": 0, "UMTS": 138195, "LTE": 36508, "population": 9364700.0, "gdp_per_capita": 52166.8121647134, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.022369216312321805}, {"country": "Italy", "cell_towers": 1448500, "GSM": 255746, "CDMA": 0, "UMTS": 834238, "LTE": 358514, "population": 59109668.0, "gdp_per_capita": 35770.0496120858, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.024505297509030164}, {"country": "Jamaica", "cell_towers": 17345, "GSM": 6664, "CDMA": 1, "UMTS": 10248, "LTE": 432, "population": 2827695.0, "gdp_per_capita": 5183.58110028848, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006133971308786838}, {"country": "Japan", "cell_towers": 2225819, "GSM": 556, "CDMA": 514, "UMTS": 345045, "LTE": 1873700, "population": 125681593.0, "gdp_per_capita": 39827.1267678179, "dominant_tower_type": "LTE", "ctw_per_capita": 0.01770998399105269}, {"country": "Jordan", "cell_towers": 83108, "GSM": 21203, "CDMA": 0, "UMTS": 49290, "LTE": 12615, "population": 11148278.0, "gdp_per_capita": 4046.93146710672, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.007454783599763121}, {"country": "Kazakhstan", "cell_towers": 177707, "GSM": 60558, "CDMA": 0, "UMTS": 85307, "LTE": 31842, "population": 19000988.0, "gdp_per_capita": 10373.7897924367, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.009352513669289197}, {"country": "Kenya", "cell_towers": 210722, "GSM": 154304, "CDMA": 5, "UMTS": 52025, "LTE": 4386, "population": 53005614.0, "gdp_per_capita": 2069.66113651418, "dominant_tower_type": "GSM", "ctw_per_capita": 0.003975465693124506}, {"country": "Kiribati", "cell_towers": 34, "GSM": 10, "CDMA": 0, "UMTS": 20, "LTE": 4, "population": 128874.0, "gdp_per_capita": 1766.14394497188, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0002638235796204044}, {"country": "Kuwait", "cell_towers": 63537, "GSM": 6792, "CDMA": 0, "UMTS": 29018, "LTE": 27727, "population": 4250114.0, "gdp_per_capita": 32186.7654076734, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.014949481355088357}, {"country": "Latvia", "cell_towers": 44445, "GSM": 12083, "CDMA": 0, "UMTS": 17795, "LTE": 14567, "population": 1884490.0, "gdp_per_capita": 21080.1774491839, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.023584630324384848}, {"country": "Lebanon", "cell_towers": 37228, "GSM": 8223, "CDMA": 0, "UMTS": 21065, "LTE": 7940, "population": 5592631.0, "gdp_per_capita": 4136.14657516013, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006656616537010935}, {"country": "Lesotho", "cell_towers": 1761, "GSM": 538, "CDMA": 0, "UMTS": 1059, "LTE": 164, "population": 2281454.0, "gdp_per_capita": 1040.30862270774, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0007718761807163326}, {"country": "Liberia", "cell_towers": 3036, "GSM": 1977, "CDMA": 0, "UMTS": 993, "LTE": 66, "population": 5193416.0, "gdp_per_capita": 675.66318584916, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0005845863300763891}, {"country": "Libya", "cell_towers": 11690, "GSM": 7603, "CDMA": 0, "UMTS": 2851, "LTE": 1236, "population": 6735277.0, "gdp_per_capita": 5908.9513231651, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0017356375988693562}, {"country": "Liechtenstein", "cell_towers": 1258, "GSM": 551, "CDMA": 0, "UMTS": 568, "LTE": 139, "population": 39039.0, "gdp_per_capita": 184083.321373984, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.032224186070339916}, {"country": "Lithuania", "cell_towers": 69047, "GSM": 17188, "CDMA": 0, "UMTS": 29419, "LTE": 22440, "population": 2800839.0, "gdp_per_capita": 23712.5357765275, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.024652255984724578}, {"country": "Luxembourg", "cell_towers": 10950, "GSM": 6158, "CDMA": 0, "UMTS": 2096, "LTE": 2696, "population": 640064.0, "gdp_per_capita": 133590.146975586, "dominant_tower_type": "GSM", "ctw_per_capita": 0.017107664233576642}, {"country": "Madagascar", "cell_towers": 7939, "GSM": 3768, "CDMA": 0, "UMTS": 3615, "LTE": 556, "population": 28915653.0, "gdp_per_capita": 503.352081144811, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0002745571749667905}, {"country": "Malawi", "cell_towers": 16399, "GSM": 6748, "CDMA": 0, "UMTS": 5568, "LTE": 4083, "population": 19889742.0, "gdp_per_capita": 633.609733286822, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0008244953604727502}, {"country": "Malaysia", "cell_towers": 609065, "GSM": 134264, "CDMA": 0, "UMTS": 326535, "LTE": 147770, "population": 33573874.0, "gdp_per_capita": 11109.2652881747, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.018141040262437395}, {"country": "Maldives", "cell_towers": 2932, "GSM": 507, "CDMA": 0, "UMTS": 2193, "LTE": 232, "population": 521457.0, "gdp_per_capita": 10366.2567800183, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005622707145555626}, {"country": "Mali", "cell_towers": 17731, "GSM": 8478, "CDMA": 0, "UMTS": 8890, "LTE": 363, "population": 21904983.0, "gdp_per_capita": 881.510088639799, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0008094505254808917}, {"country": "Malta", "cell_towers": 15831, "GSM": 3684, "CDMA": 0, "UMTS": 8952, "LTE": 3195, "population": 518536.0, "gdp_per_capita": 34218.2147417968, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.030530184982334882}, {"country": "Marshall Islands", "cell_towers": 18, "GSM": 18, "CDMA": 0, "UMTS": 0, "LTE": 0, "population": 42050.0, "gdp_per_capita": 6172.14506539834, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0004280618311533888}, {"country": "Mauritania", "cell_towers": 3252, "GSM": 1872, "CDMA": 0, "UMTS": 1360, "LTE": 20, "population": 4614974.0, "gdp_per_capita": 2166.04479650543, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0007046626914907863}, {"country": "Mauritius", "cell_towers": 9930, "GSM": 2888, "CDMA": 0, "UMTS": 5648, "LTE": 1394, "population": 1266334.0, "gdp_per_capita": 9062.72247588818, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00784153311843479}, {"country": "Mexico", "cell_towers": 839113, "GSM": 130615, "CDMA": 820, "UMTS": 509667, "LTE": 198005, "population": 126705138.0, "gdp_per_capita": 10045.676371041, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00662256490340589}, {"country": "Moldova", "cell_towers": 23342, "GSM": 4561, "CDMA": 0, "UMTS": 15279, "LTE": 3502, "population": 2615199.0, "gdp_per_capita": 5235.63604416292, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00892551580204795}, {"country": "Monaco", "cell_towers": 381, "GSM": 80, "CDMA": 0, "UMTS": 246, "LTE": 55, "population": 36686.0, "gdp_per_capita": 234317.084818276, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.010385433135255955}, {"country": "Mongolia", "cell_towers": 8362, "GSM": 1327, "CDMA": 0, "UMTS": 5803, "LTE": 1232, "population": 3347782.0, "gdp_per_capita": 4566.14013102675, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.002497773152493203}, {"country": "Montenegro", "cell_towers": 342, "GSM": 97, "CDMA": 0, "UMTS": 222, "LTE": 23, "population": 619211.0, "gdp_per_capita": 9465.96640819442, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0005523157695841967}, {"country": "Morocco", "cell_towers": 147445, "GSM": 44953, "CDMA": 0, "UMTS": 71881, "LTE": 30611, "population": 37076584.0, "gdp_per_capita": 3795.38696289063, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0039767687336028585}, {"country": "Mozambique", "cell_towers": 18825, "GSM": 6661, "CDMA": 0, "UMTS": 12036, "LTE": 128, "population": 32077072.0, "gdp_per_capita": 491.83907494798, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0005868677789543883}, {"country": "Myanmar", "cell_towers": 37712, "GSM": 8123, "CDMA": 4, "UMTS": 27688, "LTE": 1897, "population": 53798084.0, "gdp_per_capita": 1210.5406876897, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0007009915074298929}, {"country": "Namibia", "cell_towers": 6963, "GSM": 2640, "CDMA": 0, "UMTS": 4068, "LTE": 255, "population": 2530151.0, "gdp_per_capita": 4919.18895548026, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0027520096626644022}, {"country": "Nepal", "cell_towers": 20603, "GSM": 11148, "CDMA": 0, "UMTS": 8654, "LTE": 801, "population": 30034989.0, "gdp_per_capita": 1229.39420520705, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0006859666237933365}, {"country": "Netherlands", "cell_towers": 1315, "GSM": 275, "CDMA": 0, "UMTS": 619, "LTE": 421, "population": 17533044.0, "gdp_per_capita": 57708.1112134322, "dominant_tower_type": "UMTS", "ctw_per_capita": 7.500123766300934e-05}, {"country": "New Caledonia", "cell_towers": 1999, "GSM": 897, "CDMA": 0, "UMTS": 766, "LTE": 336, "population": 274660.0, "gdp_per_capita": 36668.4253519191, "dominant_tower_type": "GSM", "ctw_per_capita": 0.007278089274011505}, {"country": "New Zealand", "cell_towers": 102893, "GSM": 13664, "CDMA": 0, "UMTS": 63089, "LTE": 26140, "population": 5111400.0, "gdp_per_capita": 49996.4206725811, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.020130101342098056}, {"country": "Nicaragua", "cell_towers": 21597, "GSM": 6157, "CDMA": 0, "UMTS": 13123, "LTE": 2317, "population": 6850540.0, "gdp_per_capita": 2064.92511550317, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0031525981893398185}, {"country": "Niger", "cell_towers": 6823, "GSM": 3375, "CDMA": 0, "UMTS": 3196, "LTE": 252, "population": 25252722.0, "gdp_per_capita": 590.629481388087, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00027018869490584026}, {"country": "Nigeria", "cell_towers": 261749, "GSM": 162274, "CDMA": 0, "UMTS": 97129, "LTE": 2345, "population": 213401323.0, "gdp_per_capita": 2065.74906750923, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0012265575316981517}, {"country": "Norway", "cell_towers": 183574, "GSM": 47599, "CDMA": 0, "UMTS": 64013, "LTE": 71962, "population": 5408320.0, "gdp_per_capita": 90655.3910229392, "dominant_tower_type": "LTE", "ctw_per_capita": 0.033942887994793204}, {"country": "Oman", "cell_towers": 30552, "GSM": 6018, "CDMA": 0, "UMTS": 18695, "LTE": 5839, "population": 4520471.0, "gdp_per_capita": 19509.4664633867, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.006758587766628743}, {"country": "Pakistan", "cell_towers": 149353, "GSM": 75629, "CDMA": 1, "UMTS": 50995, "LTE": 22727, "population": 231402117.0, "gdp_per_capita": 1505.01019279459, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0006454262473320415}, {"country": "Palau", "cell_towers": 49, "GSM": 37, "CDMA": 0, "UMTS": 11, "LTE": 1, "population": 18024.0, "gdp_per_capita": 12083.8881491345, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0027185974256546826}, {"country": "Panama", "cell_towers": 57816, "GSM": 9545, "CDMA": 0, "UMTS": 34862, "LTE": 13409, "population": 4351267.0, "gdp_per_capita": 15491.2897902482, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.013287164405218066}, {"country": "Papua New Guinea", "cell_towers": 1667, "GSM": 803, "CDMA": 0, "UMTS": 802, "LTE": 62, "population": 9949437.0, "gdp_per_capita": 2644.53717330941, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00016754716874934733}, {"country": "Paraguay", "cell_towers": 49174, "GSM": 8638, "CDMA": 0, "UMTS": 36244, "LTE": 4292, "population": 6703799.0, "gdp_per_capita": 5959.44176327886, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0073352437923631065}, {"country": "Peru", "cell_towers": 191035, "GSM": 36658, "CDMA": 0, "UMTS": 117397, "LTE": 36980, "population": 33715471.0, "gdp_per_capita": 6635.46392344859, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005666093171292194}, {"country": "Philippines", "cell_towers": 288019, "GSM": 68021, "CDMA": 0, "UMTS": 148433, "LTE": 71114, "population": 113880328.0, "gdp_per_capita": 3460.53940077621, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0025291374292494137}, {"country": "Poland", "cell_towers": 1522524, "GSM": 467083, "CDMA": 0, "UMTS": 752837, "LTE": 302586, "population": 37747124.0, "gdp_per_capita": 17999.8322682985, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.04033483451613426}, {"country": "Portugal", "cell_towers": 174546, "GSM": 50195, "CDMA": 0, "UMTS": 90377, "LTE": 33973, "population": 10325147.0, "gdp_per_capita": 24598.4727937544, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.016904940917548197}, {"country": "Puerto Rico", "cell_towers": 47372, "GSM": 2813, "CDMA": 261, "UMTS": 17077, "LTE": 26676, "population": 3262693.0, "gdp_per_capita": 32601.5656391821, "dominant_tower_type": "LTE", "ctw_per_capita": 0.014519294337530377}, {"country": "Qatar", "cell_towers": 47331, "GSM": 7895, "CDMA": 0, "UMTS": 22880, "LTE": 16556, "population": 2688235.0, "gdp_per_capita": 66838.3276414802, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.017606719650625782}, {"country": "Romania", "cell_towers": 247711, "GSM": 72108, "CDMA": 0, "UMTS": 130210, "LTE": 45393, "population": 19119880.0, "gdp_per_capita": 14927.1168555732, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.012955677546093386}, {"country": "Russian Federation", "cell_towers": 2159623, "GSM": 577527, "CDMA": 8, "UMTS": 1170446, "LTE": 411633, "population": 143449286.0, "gdp_per_capita": 12593.1572265625, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.015054958168282553}, {"country": "Rwanda", "cell_towers": 9583, "GSM": 6965, "CDMA": 0, "UMTS": 2484, "LTE": 134, "population": 13461888.0, "gdp_per_capita": 821.228194072436, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0007118615160072643}, {"country": "Sao Tome and Principe", "cell_towers": 153, "GSM": 61, "CDMA": 0, "UMTS": 92, "LTE": 0, "population": 223107.0, "gdp_per_capita": 2360.54355385897, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0006857696083045355}, {"country": "Saudi Arabia", "cell_towers": 379083, "GSM": 66193, "CDMA": 0, "UMTS": 202005, "LTE": 110885, "population": 35950396.0, "gdp_per_capita": 24160.6760455307, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.010544612637924767}, {"country": "Senegal", "cell_towers": 34110, "GSM": 17925, "CDMA": 0, "UMTS": 13926, "LTE": 2259, "population": 16876720.0, "gdp_per_capita": 1633.56011880605, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0020211273280590068}, {"country": "Seychelles", "cell_towers": 808, "GSM": 332, "CDMA": 0, "UMTS": 374, "LTE": 102, "population": 99258.0, "gdp_per_capita": 12963.0646717088, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.008140401781216628}, {"country": "Sierra Leone", "cell_towers": 1845, "GSM": 833, "CDMA": 0, "UMTS": 986, "LTE": 26, "population": 8420641.0, "gdp_per_capita": 504.621272179526, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00021910446009989026}, {"country": "Singapore", "cell_towers": 103555, "GSM": 9045, "CDMA": 0, "UMTS": 52095, "LTE": 41965, "population": 5453566.0, "gdp_per_capita": 77710.0699565617, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.018988493033732425}, {"country": "Slovenia", "cell_towers": 47947, "GSM": 15752, "CDMA": 0, "UMTS": 22702, "LTE": 9493, "population": 2108079.0, "gdp_per_capita": 29291.4006234431, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.022744403791319017}, {"country": "Solomon Islands", "cell_towers": 111, "GSM": 30, "CDMA": 0, "UMTS": 80, "LTE": 1, "population": 707851.0, "gdp_per_capita": 2232.53695646531, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00015681266255186473}, {"country": "Somalia", "cell_towers": 3219, "GSM": 1439, "CDMA": 0, "UMTS": 1407, "LTE": 373, "population": 17065581.0, "gdp_per_capita": 446.98155963536, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00018862528032300804}, {"country": "South Africa", "cell_towers": 578635, "GSM": 150882, "CDMA": 2, "UMTS": 282403, "LTE": 145344, "population": 59392255.0, "gdp_per_capita": 7055.05517621298, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.009742600276753256}, {"country": "Spain", "cell_towers": 1052759, "GSM": 222155, "CDMA": 0, "UMTS": 612530, "LTE": 217902, "population": 47415750.0, "gdp_per_capita": 30103.513733191, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.022202727996499052}, {"country": "Sri Lanka", "cell_towers": 47842, "GSM": 15688, "CDMA": 0, "UMTS": 27044, "LTE": 5110, "population": 22156000.0, "gdp_per_capita": 3994.2469579056, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0021593247878678463}, {"country": "Sudan", "cell_towers": 17558, "GSM": 7872, "CDMA": 0, "UMTS": 8864, "LTE": 822, "population": 45657202.0, "gdp_per_capita": 749.706787109375, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00038456145429148286}, {"country": "Suriname", "cell_towers": 5504, "GSM": 1343, "CDMA": 0, "UMTS": 2802, "LTE": 1359, "population": 612985.0, "gdp_per_capita": 4869.13422621242, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00897901253701151}, {"country": "Sweden", "cell_towers": 488296, "GSM": 77693, "CDMA": 0, "UMTS": 252481, "LTE": 158119, "population": 10415811.0, "gdp_per_capita": 61143.2212428047, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.046880266932646915}, {"country": "Switzerland", "cell_towers": 283621, "GSM": 75201, "CDMA": 0, "UMTS": 125594, "LTE": 82825, "population": 8703405.0, "gdp_per_capita": 91991.6004583563, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.032587360923684465}, {"country": "Tajikistan", "cell_towers": 10020, "GSM": 3069, "CDMA": 0, "UMTS": 5453, "LTE": 1498, "population": 9750064.0, "gdp_per_capita": 916.691967061922, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.001027685561858876}, {"country": "Tanzania", "cell_towers": 63338, "GSM": 44243, "CDMA": 0, "UMTS": 17491, "LTE": 1604, "population": 63588334.0, "gdp_per_capita": 1146.03198242188, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0009960632087011431}, {"country": "Thailand", "cell_towers": 1309175, "GSM": 114006, "CDMA": 0, "UMTS": 865649, "LTE": 329514, "population": 71601103.0, "gdp_per_capita": 7060.89760941608, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0182842853691793}, {"country": "Togo", "cell_towers": 6350, "GSM": 2487, "CDMA": 0, "UMTS": 3852, "LTE": 11, "population": 8644829.0, "gdp_per_capita": 964.050010186895, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.0007345431586905883}, {"country": "Tonga", "cell_towers": 258, "GSM": 53, "CDMA": 0, "UMTS": 66, "LTE": 139, "population": 106017.0, "gdp_per_capita": 4425.9705910742, "dominant_tower_type": "LTE", "ctw_per_capita": 0.0024335719743060077}, {"country": "Trinidad and Tobago", "cell_towers": 16464, "GSM": 5960, "CDMA": 0, "UMTS": 10011, "LTE": 493, "population": 1525663.0, "gdp_per_capita": 16032.502767725, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.010791373979705872}, {"country": "Tunisia", "cell_towers": 73474, "GSM": 24338, "CDMA": 0, "UMTS": 42629, "LTE": 6507, "population": 12262946.0, "gdp_per_capita": 3807.18456310206, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.005991545587822045}, {"country": "Turks and Caicos Islands", "cell_towers": 554, "GSM": 239, "CDMA": 0, "UMTS": 239, "LTE": 76, "population": 45114.0, "gdp_per_capita": 23158.6378951102, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.012280001773285455}, {"country": "Tuvalu", "cell_towers": 1, "GSM": 1, "CDMA": 0, "UMTS": 0, "LTE": 0, "population": 11204.0, "gdp_per_capita": 5372.75676603732, "dominant_tower_type": "GSM", "ctw_per_capita": 8.925383791503035e-05}, {"country": "Uganda", "cell_towers": 60251, "GSM": 40491, "CDMA": 0, "UMTS": 17161, "LTE": 2599, "population": 45853778.0, "gdp_per_capita": 883.465728078128, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0013139811511278308}, {"country": "Ukraine", "cell_towers": 348952, "GSM": 169263, "CDMA": 0, "UMTS": 154542, "LTE": 25147, "population": 43792855.0, "gdp_per_capita": 4827.845703125, "dominant_tower_type": "GSM", "ctw_per_capita": 0.007968240481238321}, {"country": "United Arab Emirates", "cell_towers": 188990, "GSM": 38346, "CDMA": 0, "UMTS": 109498, "LTE": 41146, "population": 9365145.0, "gdp_per_capita": 44315.554183896, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.020180146703548105}, {"country": "United Kingdom", "cell_towers": 1706830, "GSM": 328071, "CDMA": 0, "UMTS": 988984, "LTE": 389746, "population": 67026300.0, "gdp_per_capita": 46585.8975644567, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.025465078633312595}, {"country": "Uruguay", "cell_towers": 25582, "GSM": 5814, "CDMA": 0, "UMTS": 16105, "LTE": 3663, "population": 3426260.0, "gdp_per_capita": 17923.9953327961, "dominant_tower_type": "UMTS", "ctw_per_capita": 0.00746645029857629}, {"country": "Uzbekistan", "cell_towers": 15231, "GSM": 9128, "CDMA": 0, "UMTS": 4404, "LTE": 1699, "population": 34915100.0, "gdp_per_capita": 1993.42447790795, "dominant_tower_type": "GSM", "ctw_per_capita": 0.00043622959693656897}, {"country": "Vanuatu", "cell_towers": 558, "GSM": 281, "CDMA": 0, "UMTS": 222, "LTE": 55, "population": 319137.0, "gdp_per_capita": 3044.57364031957, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0017484653926056835}, {"country": "Zambia", "cell_towers": 37746, "GSM": 29473, "CDMA": 0, "UMTS": 7380, "LTE": 892, "population": 19473125.0, "gdp_per_capita": 1137.34439483196, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0019383637705812499}, {"country": "Zimbabwe", "cell_towers": 24659, "GSM": 13247, "CDMA": 2, "UMTS": 9884, "LTE": 1526, "population": 15993524.0, "gdp_per_capita": 1773.92041088078, "dominant_tower_type": "GSM", "ctw_per_capita": 0.0015418115482241437}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+<p>In this interactive chart, we can analyze different countries’ advancement in cell tower technology with respect to their population, GDP per capita, and cell tower per capita. Interact with the chart by selecting sections of the scatter plot to see counts of countries’ dominant tower types (only GSM, LTE, UMTS), or click on each of the dominant tower types on the bar plot to see only countries of that tower type. The size of the countries’ populations are also represented through the size of the points, which you can hover over to find the country name. Note that GDP per capita and cell towers per capita on the scatter plot have been logged. Click the arrow above the charts to unfold the code.</p>
+<p>The accompanying chart reveals not only a correlation between the logarithmic representation of cell towers per capita and GDP per capita but also a discernible trend. Less developed countries, as indicated by the GDP per capita metric, tend to exhibit a dominance of less advanced tower types such as GSM (2G), in contrast to more developed countries that are more inclined to have UMTS (3G) or LTE (4G) as the type most prevalent.</p>
+</section>
+<section id="project-outcomes" class="level3">
+<h3 data-anchor-id="project-outcomes">Project Outcomes</h3>
+<p>This project and its code has been posted on the <a href="musa-550-fall-2023.github.io">MUSA 550 Fall 2023</a> website created by my instructor, Dr.&nbsp;Nick Hand. Find the full post of the Exploring Digital Equity project <a href="https://musa-550-fall-2023.github.io/exploring-digital-equity/">here</a>.</p>
+<p>In conclusion, our project successfully explored digital equity through cell tower data at multiple levels. The analysis not only provided a global understanding of technology distribution but also examined into the complexity of cellular landscapes in the United States and the challenges faced by rural areas. The project’s use of geospatial data science and analysis showcased the power of data science in uncovering patterns, correlations, and disparities related to cellular infrastructure. Ultimately, the findings contribute valuable insights to the ongoing conversation about bridging the digital divide and ensuring equitable access to technology on a global scale.</p>
+</section>
+<section id="data-sources" class="level3">
+<h3 data-anchor-id="data-sources">Data Sources</h3>
+<ul>
+<li><a href="https://opencellid.com">OpenCellID</a></li>
+<li><a href="https://databank.worldbank.org/reports.aspx?source=2&amp;series=NY.GDP.PCAP.CD&amp;country=#">World Bank</a></li>
+<li><a href="https://hifld-geoplatform.opendata.arcgis.com/datasets/geoplatform::cellular-towers/about">Federal Communications Commission (FCC)</a></li>
+<li><a href="https://www.rural.pa.gov/home">Center For Rural Pennsylvania</a></li>
+<li><a href="https://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=24">Pennsylvania Spatial Data Access</a></li>
+<li><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">United States Census Bureau</a></li>
+</ul>
+
+
+</section>
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
+    </div>
+    <img src="cell_towers.png" class="about-image
+  rounded " style="width: 0em;">
+  </div>
+</div>
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/skycheng17\.github\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="skycheng17/skycheng17.github.io" issue-term="title" theme="body-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2024 Stephanie Cheng ∙ Made with ❤️ and <a href="https://quarto.org">Quarto</a></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="skycheng17.github.io/blob/main/portfolio/6_Digital_Equity/index.qmd" class="toc-action"><i class="bi bi-git"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
