@@ -64,7 +64,7 @@ format:
     code-link: true
     code-copy: true
     toc: true
-    pagetitle: "{{< meta title >}} | Stephanie Cheng"
+    pagetitle: "{{< meta title >}} | Samriddhi Khare"
 
 execute: 
   freeze: auto
