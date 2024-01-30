@@ -4,11 +4,11 @@ subtitle: "Urban Planner and Spatial Analyst"
 image: images/cell_towers.png
 resources: 
   - "portfolio/1_TOD_Boston/index.qmd"
-  - "portfolio/2_ON_TRACK/index.qmd"
-  - "portfolio/3_Zillow/index.qmd"
-  - "portfolio/4_Kibos_Agropole/index.qmd"
-  - "portfolio/5_Flooding/index.qmd"
-  - "portfolio/6_Digital_Equity/index.qmd"
+  - "portfolio/2_DevTracker/index.qmd"
+  - "portfolio/3_MappingChallenge/index.qmd"
+  - "portfolio/4_SF_Park/index.qmd"
+  - "portfolio/5_Flood/index.qmd"
+  - "portfolio/6_FightKit/index.qmd"
 listing:
   - id: portfolio
     contents: "portfolio/**/index.qmd"
