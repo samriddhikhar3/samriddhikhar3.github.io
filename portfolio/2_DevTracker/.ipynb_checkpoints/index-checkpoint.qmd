@@ -13,7 +13,7 @@ categories:
   - Predictive Modelling 
   - Pollution
   - Machine Learning
-subtitle: 'A project using machine learning, environmental data, and [Philadelphia L&I Building and Zoning Permits](https://data.phila.gov/visualizations/li-building-permits) to forecast development.'
+subtitle: 'A project using machine learning, environmental data, and [Philadelphia L&I Building and Zoning Permits](https://data.phila.gov/visualizations/li-building-permits) to forecast development changes.'
 about:
   id: hero-heading
   image-width: 0em
@@ -21,16 +21,14 @@ about:
   links:
     - icon: journal-code
       text: Full Analysis
-      href: https://skycheng17.github.io/portfolio/2_ON_TRACK/ON_TRACK.html  
+      href: https://samriddhikhar3.github.io/portfolio/2_DevTracker/DevTracker.html  
     - icon: youtube
       text: Pechakucha Presentation
-      href: https://youtu.be/0V8Ebk3E6sA?si=Q4hulpzhflC7Jc_3
+      href: https://drive.google.com/file/d/1gPbtTOZXbNkBVF5i04Klw0S6gJ-eAwgp/view?usp=sharing
     - icon: window
-      text: Figma Wireframing
-      href: https://www.figma.com/proto/Bk7ORgaR4XeQm830dYbeWz/PPA?node-id=13-457&source=email_invite&mode=design&t=Zw661lbDtbzhUPqT-1
-    - icon: file-earmark-slides
-      text: Slidedeck
-      href: https://docs.google.com/presentation/d/12TAbDNmJrRJ4asHtRfg1bzuZPKZeka38F76zeve-3Z8/edit?usp=sharing
+      text: Slidedeck and Wireframing
+      href: https://drive.google.com/file/d/1m7YbwVsdcm0y7YHdzE8vEFSMXnid07dA/view?usp=sharing
+  
 format:
   html: 
     grid:
@@ -45,66 +43,35 @@ format:
 
 ### Project Brief
 
-NJ Transit is the primary transit authority in the state of New Jersey and has control over its rail systems and tracks. This project looks into the causes of delays and assumes that most of them might be attributed to climatic conditions. Particularly under very hot and very cold conditions, railways are prone to damages, which we hypothesized will cause more consequential delays that run for a longer period of time, sometimes even causing cancellations. **This project explores how addressing and predicting for these delays can help select those tracks that need more maintenance and checks.**
+Construction is one of the most polluting industries in Philadelphia. The Office of Sustainability has been actively addressing this concern by collaborating with the Department of Licenses and Inspections. Together, they aim to introduce sustainable practices and reduce the environmental impact of construction in the city.
 
-We created a government-facing website for NJ transit authority to predict where most train delays will happen to schedule checking, remodeling and upgradation of train tracks in those segments. We hope our forecast models will allow NJ Transit to optimize repair funding more efficiently and prevent delays. 
+Neighborhoods in Philadelphia exhibit varying historical and current development trends. Recognizing these differences is crucial for proposing context-based Green Building recommendations for future development. For instance, areas with historical significance may require preservation-focused green guidelines, while rapidly developing neighborhoods may benefit from stricter regulations for green building and incentives for sustainable urban planning.
 
-This analysis uses a simple Machine Learning model based on a linear regression, while employing a space-time panel with variables such as station, time, time lag, etc. We see great uses of a similar model in other cities like New York and Philadelphia to help predict for SEPTA and MTA delays to scale. 
+By understanding the unique characteristics of different neighborhoods, the Office of Sustainability can create targeted and effective recommendations which vary from neighborhood to neighborhood. This approach ensures that the proposed green building standards not only contribute to environmental conservation but also align with the specific needs and developmental nuances of each community. In doing so, this analysis aims to foster a more sustainable and resilient urban environment for the residents of Philadelphia. As the first step, this project aims to utilize historic data for construction to predict the areas where construction is most likely to occur. 
 
 ### Exploratory Analysis
 
-![We began our analysis by looking at where and by how long train delays occur.](delay.png)
+![We began our analysis by looking at where construction and demolition permits were being introduced.](EAD.png)
 
-In our exploratory analysis, we conducted various GIS analyses and correlation tests to determine how best to build our prediction model. Our approach focuses on climatic conditions and how they affect delay time. Variables used include wind, temperature, visibility, precipitation, etc.
+In our exploratory analysis, we conducted various GIS analyses and correlation tests to determine how best to build our prediction model. Our approach focuses on TEXT. Variables used include TEXT
 
-![As climate change continues to worsen, railway tracks are more often in need of repair.](climate.png)
-
-We created three regression models with different variables, and found our third regression most accurate:
-
-::: {.grid}
-
-::: {.g-col-5}
-<br><br><br>
-<br><br><br><br>
-```
-Regression 3 <- lm (delay_minutes ~
-station + hour + day of the week
-+ Temperature + Precipitation +
-Visibility + Wind_Speed + lagHour
-+ lag2Hours +lag3Hours +lag12Hours
-+ lag1day + holidayLag + holiday
-```
-:::
-
-::: {.g-col-7}
-![](error.png){width=7in}
-:::
-
-:::
-
-In conclusion, we believe our project is a proactive approach to track maintenance through the lens of delay consequences. It is cost reducing, and can increase resilience and customer satisfaction.
+In conclusion, TEXT
 
 ### Project Outcomes
 
-The project outcome and use case for this analysis was a prototype website to serve NJ Transit in making decisions on rail upgrades. See more in the presentation video, wireframing website prototype, and full analysis.
+To propose neighborhood specific green building recommendations and industry specific strategies.To develop targeted Green Building Training Programs for contractors in Philadelphia that are working on these development projects. See more in the presentation video, wireframing website prototype, and full analysis.
 
 #### Pechakucha Presentation
-{{< video https://www.youtube.com/embed/0V8Ebk3E6sA?si=intxhMFAYXFc2gh7 >}}
-
-#### Website Wireframing using Figma
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FBk7ORgaR4XeQm830dYbeWz%2FPPA%3Fnode-id%3D13-457%26source%3Demail_invite%26mode%3Ddesign%26t%3D3sLUGUBwsQADijTa-1" allowfullscreen></iframe>
-*It is recommended to click into the link or view fullscreen for a better experience of the prototype website.*
+{{< video https://drive.google.com/file/d/1gPbtTOZXbNkBVF5i04Klw0S6gJ-eAwgp/view?usp=sharing >}}
 
 #### Full Analysis
 
 *Click the full analysis button at the top to view at full screen.*
 
-<iframe src="ON_TRACK.html" width="800" height="800">
+<iframe src="DevTracker.html" width="800" height="800">
   <p>Hi SOF</p>
 </iframe>
 
 ### Data Sources
-* [Kaggle](kaggle.com/datasets/pranavbadami/nj-transit-amtrak-nec-performance)
-* [NJGIN Open Data](https://njogis-newjersey.opendata.arcgis.com/explore?collection=dataset&groupIds=60a4f9a1342f4f7a94ac986e8dd14892)
-* [Iowa Environment Mesonet](https://mesonet.agron.iastate.edu/request/download.phtml)
+* [City of Philadelphia](https://data.phila.gov/visualizations/li-building-permits)
+* [Philly Open Data](https://data-phl.opendata.arcgis.com/)
