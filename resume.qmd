@@ -8,7 +8,7 @@ about:
   links:
     - icon: journal-code
       text: PDF
-      href: https://samriddhikhar3.github.io/images/cv_fulltime.pdf
+      href: "images/cv_fulltime.pdf"
 ---
 
 ## Education
