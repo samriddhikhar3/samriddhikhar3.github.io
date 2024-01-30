@@ -27,7 +27,6 @@ website:
       issue-term: title
  
   navbar:
-    logo: images/cell_towers.png
     tools:
     - icon: github
       href: https://github.com/samriddhikhar3
