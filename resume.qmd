@@ -29,7 +29,7 @@ about:
 ###### Research and Analysis Intern (June 2023 – Present)
 * Developed a comprehensive climate resilience index using R for major US cities through statistical analysis and qualitative research to inform city policy, rigorously evaluating the data using sensitivity training to minimize errors and optimize accuracy.
 * Conducted queries on big data pipelines in Python and crafted policy memos for the City of Philadelphia. Topics included assessing the influence of smart city technology on housing equity and community engagement, analyzing the impact of work-from-home trends on American downtowns, and participatory planning. 
-* Authored multiple articles focusing on urban planning and data equity, with a particular emphasis on urban technology.
+* Authored multiple [articles](https://econsultsolutions.com/?s=samriddhi+khare) focusing on urban planning and data equity, with a particular emphasis on urban technology.
 * Conducted interviews with thought leadership senior advisors, gathering valuable insights to inform the creation of client-based reports.
 
 #### <b>PennPraxis</b>  *Philadelphia, PA*
