@@ -1,6 +1,14 @@
 ---
 title: "Samriddhi Khare"
 subtitle: "Urban Planner and Spatial Analyst"
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: journal-code
+      text: PDF
+      href: https://samriddhikhar3.github.io/images/cv_fulltime.pdf
 ---
 
 ## Education
@@ -19,30 +27,26 @@ subtitle: "Urban Planner and Spatial Analyst"
 
 #### <b>Econsult Solutions: Center for the Future of Cities</b>  *Philadelphia, PA*
 ###### Research and Analysis Intern (June 2023 – Present)
-* Developed a climate resilience index for major US Cities using qualitative and quantitative research, tested the data using sensitivity training minimizing errors and 
-* Wrote multiple articles on urban planning and data using data privacy 
+* Developed a comprehensive climate resilience index using R for major US cities through statistical analysis and qualitative research to inform city policy, rigorously evaluating the data using sensitivity training to minimize errors and optimize accuracy.
+* Conducted queries on big data pipelines in Python and crafted policy memos for the City of Philadelphia. Topics included assessing the influence of smart city technology on housing equity and community engagement, analyzing the impact of work-from-home trends on American downtowns, and participatory planning. 
+* Authored multiple articles focusing on urban planning and data equity, with a particular emphasis on urban technology.
+* Conducted interviews with thought leadership senior advisors, gathering valuable insights to inform the creation of client-based reports.
 
 #### <b>PennPraxis</b>  *Philadelphia, PA*
 ###### Analysis and Design Intern (February 2023 – Present)
-* Developed a vulnerability to closure index for Philadelphia’s school for local government and school districts to inform their facilities planning process
-* Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure 
-* Coordinated stakeholder meetings for activists and public school stakeholders
-
-#### <b>Netter Center for Community Partnerships</b>  *Philadelphia, PA*
-###### Programming Intern (August 2022 – December 2022)
-* Worked with a network of Philadelphia High Schools to develop curricula and mentor students for personal and professional development 
-* Conducted research to support the production of materials for partner schools and students for grant applications, and research/policy briefs
+* Analyzed spatial data in R and ArcGIS to determine a vulnerability to closure for Philadelphia’s school for local government and school districts to inform their facilities planning process.
+* Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure. 
+* Coordinated stakeholder meetings for activists and public school stakeholders.
 
 #### <b>City for All: Alliance Française and Social Design Collaborative</b>  *New Delhi, India*
 ###### Program Facilitator (May 2022 – June 2022)
-* Facilitated trans-national focus group discussions between French and Indian city planners and lower-income queer communities in New Delhi
-* Mapped different marginalized groups’ access to public spaces across multiple cities in India and France to be published as open source data 
+* Facilitated trans-national focus group discussions between French and Indian city planners and lower-income queer communities in New Delhi.
+* Mapped different marginalized groups’ access to public spaces across multiple cities in India and France to be published as open source data.
 
 #### <b>Saving Ajni</b>  *Nagpur, India*
 ###### GIS Consultant (October 2021 – January 2022)
-* Mobilized groups of over 200 volunteers and professionals to prevent the felling of 500+ acres of green buffer 
-* Worked on alternate site proposal using GIS analyses (NDVI and LST comparisons and projections), managed press, petitions and campaigns 
-
+* Worked on a site proposal using predictive spatial analysis using raster data (Landsat), Google Earth Engine and remote sensing in ArcGIS.  
+* Mobilized groups of over 200 volunteers and professionals to prevent the destruction of 500+ acres of green buffer. 
 
 ## Fellowships and Awards
 
@@ -58,17 +62,16 @@ subtitle: "Urban Planner and Spatial Analyst"
 #### <b>[Berkeley Essay Prize, Fourth Place](https://berkeleyprize.org/competition/essay/2022/winning-essays/samriddhi-khare-and-jiya-anand-essay)</b> *University of California, Berkeley*
 * Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
 
-#### <b>Public Policy Forum, Merit Scholar</b> *GovLab, New York University*                                                     
-* 1 of 3 scholars in a cohort of 40 engaged in policy simulations related to participatory budgeting, public policy and equity
-
 #### <b>SURF 2020 Conference, Presenter</b> *Bearys Institute of Technology, Mangalore, India*                                   
 * Publication titled “Chitar Oli and the Analysis of Caste” studying the developmental manifestation of caste-based income inequality and residential segregation 
 
 
 ## Skills and Interests
 
-* <b>Data Analysis/Programming Skills:</b> R, Python, SQL, C/C++, ESRI ArcGIS Pro/Online, Excel, HTML, CSS
-* <b>Media Skills:</b> Adobe Photoshop/Illustrator/InDesign
-* <b>Professional Interests:</b> Digital Equity, Fair Algorithms, Transportation Planning, Climate Tech, Renewable Energy, Climate Change Mitigation/Adaptation, Urban Data, Smart Cities, Urban Sensors
+* <b>Technical:</b> R, Python, SQL, ArcGIS, Google Earth Engine, MS Suite, Adobe Creative Suite, CAD, Rhino + Grasshopper
+* <b>Skills:</b> GIS Mapping and Spatial Analytics, Machine Learning Algorithms, Written and Verbal Communication, Data Visualization, Consensus Building, Public Outreach
+* <b>Professional Interests:</b> Digital Equity, Fair Algorithms, Transportation Planning, Climate Tech, Climate Change Mitigation/Adaptation, Urban Data, Smart Cities
+* <b>Languages:</b> English, Hindi
+
 
 #### [See my portfolio &rarr;](/portfolio/portfolio.html)
