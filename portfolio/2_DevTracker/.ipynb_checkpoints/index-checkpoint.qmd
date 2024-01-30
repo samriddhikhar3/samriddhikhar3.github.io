@@ -1,5 +1,5 @@
 ---
-title: 'Predicting NJ Transit train delays to schedule track maintenance and upgrades'
+title: 'Predicting Development Changes in Philadelphia to Create Targeted Green Building Policy'
 resources: 
   - "portfolio/2_DevTracker/DevTracker.html"
 author:
