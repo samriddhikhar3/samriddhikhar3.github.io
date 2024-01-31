@@ -23,7 +23,7 @@ listing:
     
 about:
   template: jolla
-  image-width: 30em
+  image-width: 40em
   image-shape: rounded
   id: hero-heading
   links:
@@ -48,7 +48,6 @@ execute:
   warning: false
 
 ---
-
 ::: {#hero-heading}
 <br>
 Hi! I'm Sam. I am an urban planner, spatial analyst, and map enthusiast. I am passionate about using my data and design skills to leverage urban data for building equitable and sustainable cities. 
