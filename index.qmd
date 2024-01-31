@@ -22,9 +22,9 @@ listing:
     image-height: 1 in
     
 about:
-  template: solana
+  template: jolla
   image-width: 35em
-  image-shape: rounded
+  image-shape: round
   id: hero-heading
   links:
     - icon: envelope
