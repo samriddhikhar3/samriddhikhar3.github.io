@@ -23,7 +23,7 @@ listing:
     
 about:
   template: jolla
-  image-width: 20em
+  image-width: 30em
   image-shape: rounded
   id: hero-heading
   links:
@@ -48,9 +48,6 @@ execute:
   warning: false
 
 ---
-
-<br><br>
-
 
 ::: {#hero-heading}
 <br>
