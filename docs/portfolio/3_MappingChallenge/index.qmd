@@ -38,3 +38,8 @@ This policy brief attempts to address the value and citzen settlement patterns o
 ![Another Lovely Image](9_skhare.png){group="my-gallery"}
 
 ![The Last Lovely Image](11_skhare.png){group="my-gallery"}
+
+
+![Image 1](11_skhare)
+![Image 2](2_skhare.png)
+![Image 3](9_skhare.png)
