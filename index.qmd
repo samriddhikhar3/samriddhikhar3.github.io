@@ -23,8 +23,8 @@ listing:
     
 about:
   template: jolla
-  image-width: 35em
-  image-shape: round
+  image-width: 20em
+  image-shape: rounded
   id: hero-heading
   links:
     - icon: envelope
