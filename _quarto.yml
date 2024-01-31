@@ -37,9 +37,6 @@ website:
     - icon: linkedin
       href: https://www.linkedin.com/in/samriddhi-khare-3668821b1/
     right:
-      - text: About
-        aria-label: "About"
-        href: about.qmd
       - text: Resume
         aria-label: "Resume"
         href: resume.qmd
