@@ -1,5 +1,5 @@
 ---
-title: "Transit Oriented Development: How Boston Moves"
+title: "30 Day Mapping Challenge: New York Tree Census"
 resources: 
 - "portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html"
 author:
@@ -7,11 +7,11 @@ author:
 date: 2023-09-22
 image: cover.jpg
 categories:
-  - R
-  - GIS
-  - Machine Learning
-  - Transportation
-subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
+  - Python
+  - ArcGIS
+  - Data Visualization
+  - Raster Analysis
+subtitle: "Data Visualization and Raster Analysis for the New York City Tree Census."
 about:
   id: hero-heading
   image-width: 0em
@@ -26,16 +26,15 @@ format:
 
 ---
 
-### Project Brief
+### Project Details
 
 In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
 
 This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
 
-## Project Outcome
 
-*Click the full analysis button at the top to view at full screen.*
+![A Lovely Image](2_skhare.png){group="my-gallery"}
 
-<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
-  <p>Hi SOF</p>
-</iframe>
+![Another Lovely Image](9_skhare.png){group="my-gallery"}
+
+![The Last Lovely Image](11_skhare.png){group="my-gallery"}
