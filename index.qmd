@@ -47,7 +47,7 @@ execute:
   echo: true
   warning: false
 ---
-:: {#hero-heading}
+::: {#hero-heading}
 <br>
 Hi! I'm Sam. I am an urban planner, spatial analyst, and map enthusiast. I am passionate about using my data and design skills to leverage urban data for building equitable and sustainable cities. 
 
