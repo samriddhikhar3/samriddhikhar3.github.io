@@ -1,7 +1,5 @@
 ---
-title: "Transit Oriented Development: How Boston Moves"
-resources: 
-- "portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html"
+title: "Analyzing Parking Trends in San Francisco, CA"
 author:
 - Samriddhi Khare
 date: 2023-09-22
@@ -11,7 +9,7 @@ categories:
   - GIS
   - Machine Learning
   - Transportation
-subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
+subtitle: "Using data analysis and visualizations to identify trends in parking supply and demand."
 about:
   id: hero-heading
   image-width: 0em
@@ -19,7 +17,7 @@ about:
   links:
     - icon: journal-code
       text: Full Analysis
-      href: https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html  
+      href: https://samriddhikhar3.github.io/PY_FINAL/
 format:
   html:
     toc: true
@@ -28,14 +26,8 @@ format:
 
 ### Project Brief
 
-In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
+San Francisco grapples with persistent challenges in its parking landscape, characterized by limited availability and high demand. The city’s densely populated neighborhoods often experience a shortage of parking spaces. These shortges are also reflective of certain social and demographic patterns in the city, as we have uncovered in this research.
 
-This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
+In response to these difficulties, the use of parking apps has gained prominence, offering real-time information on available spaces and facilitating a more efficient navigation of the city’s intricate parking network. Increasing the efficiency of such apps could be a significant use case of this analysis.
 
-## Project Outcome
-
-*Click the full analysis button at the top to view at full screen.*
-
-<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
-  <p>Hi SOF</p>
-</iframe>
+Moreover, the city has embraced innovative approaches to address parking issues. The implementation of smart parking meters, capable of adjusting rates based on demand and time of day, represents one such effort. Data from these parking meters has been included in our analysis. Additionally, there has been a push towards dynamic pricing strategies to incentivize turnover and optimize the utilization of parking spaces. These strategies can be more equitably informed if they take in to account how these policies are place within the larger sociodemographic framework of the city. As San Francisco continues to grapple with the complexities of urban parking, these trends underscore a broader shift towards sustainable transportation options and technological solutions in managing the city’s parking challenges.
