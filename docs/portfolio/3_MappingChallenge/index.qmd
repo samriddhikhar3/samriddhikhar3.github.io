@@ -43,7 +43,7 @@ In this project, I had the opportunity to visualize New York City's Tree Census.
 
 
 <style>
-.pdf {
+testt.pdf {
   max-width: 100%;
 	width: 600px;
 	height: 600px;
