@@ -23,7 +23,7 @@ listing:
     
 about:
   template: jolla
-  image-width: 100em
+  image-width: 40em
   image-shape: rounded
   id: hero-heading
   links:
