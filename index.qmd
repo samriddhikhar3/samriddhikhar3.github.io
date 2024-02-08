@@ -3,7 +3,7 @@ title: "Samriddhi Khare"
 subtitle: "Urban Planner and Spatial Analyst"
 image: images/cell_towers.png
 resources: 
-  - "docs/portfolio/1_TOD_Boston/index.html"
+  - "portfolio/1_TOD_Boston/index.qmd"
   - "portfolio/2_DevTracker/index.qmd"
   - "portfolio/3_MappingChallenge/index.qmd"
   - "portfolio/4_SF_Park/index.qmd"
@@ -23,7 +23,7 @@ listing:
     
 about:
   template: jolla
-  image-width: 60em
+  image-width: 40em
   image-shape: rounded
   id: hero-heading
   links:
