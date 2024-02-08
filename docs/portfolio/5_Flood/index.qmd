@@ -1,7 +1,7 @@
 ---
 title: "Transit Oriented Development: How Boston Moves"
 resources: 
-- "portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html"
+- "portfolio/5_Flood/CPLN675_Midterm_RScript_LH_4.5.html"
 author:
 - Samriddhi Khare
 date: 2023-09-22
@@ -19,7 +19,7 @@ about:
   links:
     - icon: journal-code
       text: Full Analysis
-      href: https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html  
+      href: https://samriddhikhar3.github.io/portfolio/5_Flood/CPLN675_Midterm_RScript_LH_4.5.html
 format:
   html:
     toc: true
