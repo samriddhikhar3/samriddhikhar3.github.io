@@ -17,7 +17,7 @@ about:
   image-width: 0em
   template: solana
   links:
-    - icon: journal-code
+    - icon: link
       text: Full Analysis
       href: https://www.phillyschoolsplan.space/
 format:
