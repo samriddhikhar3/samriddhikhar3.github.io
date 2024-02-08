@@ -9,7 +9,7 @@
 <meta name="author" content="Samriddhi Khare">
 <meta name="dcterms.date" content="2023-09-22">
 
-<title>30 Day Mapping Challenge: New York Tree Census | Samriddhi Khare</title>
+<title>Predictive Flood Modelling: Boise, Idaho | Samriddhi Khare</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,9 +62,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="30 Day Mapping Challenge: New York Tree Census | Samriddhi Khare">
-<meta name="twitter:description" content="Data Visualization and Raster Analysis for the New York City Tree Census.">
-<meta name="twitter:image" content="https://samriddhikhar3.github.io/portfolio/3_MappingChallenge/cover.jpg">
+<meta name="twitter:title" content="Predictive Flood Modelling: Boise, Idaho | Samriddhi Khare">
+<meta name="twitter:description" content="A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts.">
+<meta name="twitter:image" content="https://samriddhikhar3.github.io/portfolio/5_Flood/cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -114,10 +114,10 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
   <ul>
-  <li><a href="#project-details" id="toc-project-details" class="nav-link active" data-scroll-target="#project-details">Project Details</a></li>
-  <li><a href="#embed-from-url-only" id="toc-embed-from-url-only" class="nav-link" data-scroll-target="#embed-from-url-only">Embed from URL only</a></li>
+  <li><a href="#project-brief" id="toc-project-brief" class="nav-link active" data-scroll-target="#project-brief">Project Brief</a></li>
+  <li><a href="#project-outcome" id="toc-project-outcome" class="nav-link" data-scroll-target="#project-outcome">Project Outcome</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-git"></i></div><div class="action-links"><p><a href="samriddhikhar3.github.io/blob/main/portfolio/3_MappingChallenge/index.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-git"></i></div><div class="action-links"><p><a href="samriddhikhar3.github.io/blob/main/portfolio/5_Flood/index.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <div class="quarto-about-solana column-body">
@@ -125,13 +125,13 @@ ul.task-list li input[type="checkbox"] {
     <div class="entity-contents">
       <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">30 Day Mapping Challenge: New York Tree Census</h1>
-<p class="subtitle lead">Data Visualization and Raster Analysis for the New York City Tree Census.</p>
+<h1 class="title">Predictive Flood Modelling: Boise, Idaho</h1>
+<p class="subtitle lead">A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts.</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Python</div>
-    <div class="quarto-category">ArcGIS</div>
-    <div class="quarto-category">Data Visualization</div>
-    <div class="quarto-category">Raster Analysis</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">GIS</div>
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Transportation</div>
   </div>
   </div>
 <div class="quarto-title-meta">
@@ -149,31 +149,26 @@ ul.task-list li input[type="checkbox"] {
   </div>
   </div>
 </header> <div class="about-links">
-  <a href="https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html" class="about-link" rel="" target="">
+  <a href="https://samriddhikhar3.github.io/portfolio/5_Flood/CPLN675_Midterm_RScript_LH_4.5.html" class="about-link" rel="" target="">
     <i class="bi bi-journal-code"></i>
      <span class="about-link-text">Full Analysis</span>
   </a>
 </div>
       <div class="about-contents"><main class="content" id="quarto-document-content">
 
-<section id="project-details" class="level3">
-<h3 data-anchor-id="project-details">Project Details</h3>
-<p>In this project, I had the opportunity to visualize New York City’s Tree Census. This project was completed as part of the 2023 Mapping Challenge.</p>
-<p><img src="11_skhare.png" class="img-fluid" alt="Image 1"> <img src="2_skhare.png" class="img-fluid" alt="Image 2"> <img src="9_skhare.png" class="img-fluid" alt="Image 3"> <img src="13_skhare.png" class="img-fluid" alt="Image 3"> <img src="18_skhare.gif" class="img-fluid" alt="Image 3"> <img src="20_skhare.png" class="img-fluid" alt="Image 3"> <img src="21_skhare.png" class="img-fluid" alt="Image 3"> <img src="24_skhare.png" class="img-fluid" alt="Image 3"> <img src="25_skhare.png" class="img-fluid" alt="Image 3"> <img src="27_skhare.png" class="img-fluid" alt="Image 3"></p>
-<style>
-testt.pdf {
-  max-width: 100%;
-    width: 600px;
-    height: 600px;
-    border: 10px solid rgba(0,0,0,.2);
-    margin: 0;
-}
-</style>
+<section id="project-brief" class="level3">
+<h3 data-anchor-id="project-brief">Project Brief</h3>
+<p>In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?</p>
+<p>This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.</p>
 </section>
-<section id="embed-from-url-only" class="level2">
-<h2 data-anchor-id="embed-from-url-only">Embed from URL only</h2>
-<p><code>{{&lt; pdf testt.pdf &gt;}}</code></p>
-<p></p>
+<section id="project-outcome" class="level2">
+<h2 data-anchor-id="project-outcome">Project Outcome</h2>
+<p><em>Click the full analysis button at the top to view at full screen.</em></p>
+<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
+<p>
+Hi SOF
+</p>
+</iframe>
 
 
 </section>

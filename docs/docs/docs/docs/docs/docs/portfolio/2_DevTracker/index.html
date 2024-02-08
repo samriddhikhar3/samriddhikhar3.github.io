@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Samriddhi Khare">
+<meta name="author" content="Roshini Ganesh">
 <meta name="dcterms.date" content="2023-09-22">
 
-<title>30 Day Mapping Challenge: New York Tree Census | Samriddhi Khare</title>
+<title>Predicting Development Changes in Philadelphia to Create Targeted Green Building Policy | Samriddhi Khare</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,9 +65,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="30 Day Mapping Challenge: New York Tree Census | Samriddhi Khare">
-<meta name="twitter:description" content="Data Visualization and Raster Analysis for the New York City Tree Census.">
-<meta name="twitter:image" content="https://samriddhikhar3.github.io/portfolio/3_MappingChallenge/cover.jpg">
+<meta name="twitter:title" content="Predicting Development Changes in Philadelphia to Create Targeted Green Building Policy | Samriddhi Khare">
+<meta name="twitter:description" content="A project using machine learning, environmental data, and Philadelphia L&amp;I Building and Zoning Permits to forecast development changes.">
+<meta name="twitter:image" content="https://samriddhikhar3.github.io/portfolio/2_DevTracker/cover.png">
+<meta name="twitter:image-height" content="632">
+<meta name="twitter:image-width" content="1032">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -114,10 +119,12 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
   <ul>
-  <li><a href="#project-details" id="toc-project-details" class="nav-link active" data-scroll-target="#project-details">Project Details</a></li>
-  <li><a href="#embed-from-url-only" id="toc-embed-from-url-only" class="nav-link" data-scroll-target="#embed-from-url-only">Embed from URL only</a></li>
+  <li><a href="#project-brief" id="toc-project-brief" class="nav-link active" data-scroll-target="#project-brief">Project Brief</a></li>
+  <li><a href="#exploratory-analysis" id="toc-exploratory-analysis" class="nav-link" data-scroll-target="#exploratory-analysis">Exploratory Analysis</a></li>
+  <li><a href="#project-outcomes" id="toc-project-outcomes" class="nav-link" data-scroll-target="#project-outcomes">Project Outcomes</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-git"></i></div><div class="action-links"><p><a href="samriddhikhar3.github.io/blob/main/portfolio/3_MappingChallenge/index.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-git"></i></div><div class="action-links"><p><a href="samriddhikhar3.github.io/blob/main/portfolio/2_DevTracker/index.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <div class="quarto-about-solana column-body">
@@ -125,20 +132,22 @@ ul.task-list li input[type="checkbox"] {
     <div class="entity-contents">
       <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">30 Day Mapping Challenge: New York Tree Census</h1>
-<p class="subtitle lead">Data Visualization and Raster Analysis for the New York City Tree Census.</p>
+<h1 class="title">Predicting Development Changes in Philadelphia to Create Targeted Green Building Policy</h1>
+<p class="subtitle lead">A project using machine learning, environmental data, and <a href="https://data.phila.gov/visualizations/li-building-permits">Philadelphia L&amp;I Building and Zoning Permits</a> to forecast development changes.</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Python</div>
-    <div class="quarto-category">ArcGIS</div>
-    <div class="quarto-category">Data Visualization</div>
-    <div class="quarto-category">Raster Analysis</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">GIS</div>
+    <div class="quarto-category">Predictive Modelling</div>
+    <div class="quarto-category">Pollution</div>
+    <div class="quarto-category">Machine Learning</div>
   </div>
   </div>
 <div class="quarto-title-meta">
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
              <p>Samriddhi Khare </p>
+             <p>Roshini Ganesh </p>
           </div>
   </div>
     <div>
@@ -149,37 +158,68 @@ ul.task-list li input[type="checkbox"] {
   </div>
   </div>
 </header> <div class="about-links">
-  <a href="https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html" class="about-link" rel="" target="">
+  <a href="https://samriddhikhar3.github.io/portfolio/2_DevTracker/DevTracker.html" class="about-link" rel="" target="">
     <i class="bi bi-journal-code"></i>
      <span class="about-link-text">Full Analysis</span>
+  </a>
+  <a href="https://drive.google.com/file/d/1gPbtTOZXbNkBVF5i04Klw0S6gJ-eAwgp/view?usp=sharing" class="about-link" rel="" target="">
+    <i class="bi bi-youtube"></i>
+     <span class="about-link-text">Pechakucha Presentation</span>
+  </a>
+  <a href="https://drive.google.com/file/d/1m7YbwVsdcm0y7YHdzE8vEFSMXnid07dA/view?usp=sharing" class="about-link" rel="" target="">
+    <i class="bi bi-window"></i>
+     <span class="about-link-text">Slidedeck and Wireframing</span>
   </a>
 </div>
       <div class="about-contents"><main class="content" id="quarto-document-content">
 
-<section id="project-details" class="level3">
-<h3 data-anchor-id="project-details">Project Details</h3>
-<p>In this project, I had the opportunity to visualize New York City’s Tree Census. This project was completed as part of the 2023 Mapping Challenge.</p>
-<p><img src="11_skhare.png" class="img-fluid" alt="Image 1"> <img src="2_skhare.png" class="img-fluid" alt="Image 2"> <img src="9_skhare.png" class="img-fluid" alt="Image 3"> <img src="13_skhare.png" class="img-fluid" alt="Image 3"> <img src="18_skhare.gif" class="img-fluid" alt="Image 3"> <img src="20_skhare.png" class="img-fluid" alt="Image 3"> <img src="21_skhare.png" class="img-fluid" alt="Image 3"> <img src="24_skhare.png" class="img-fluid" alt="Image 3"> <img src="25_skhare.png" class="img-fluid" alt="Image 3"> <img src="27_skhare.png" class="img-fluid" alt="Image 3"></p>
-<style>
-testt.pdf {
-  max-width: 100%;
-    width: 600px;
-    height: 600px;
-    border: 10px solid rgba(0,0,0,.2);
-    margin: 0;
-}
-</style>
+<p><img src="cover.png" class="img-fluid"></p>
+<section id="project-brief" class="level3">
+<h3 data-anchor-id="project-brief">Project Brief</h3>
+<p>Construction is one of the most polluting industries in Philadelphia. The Office of Sustainability has been actively addressing this concern by collaborating with the Department of Licenses and Inspections. Together, they aim to introduce sustainable practices and reduce the environmental impact of construction in the city.</p>
+<p>Neighborhoods in Philadelphia exhibit varying historical and current development trends. Recognizing these differences is crucial for proposing context-based Green Building recommendations for future development. For instance, areas with historical significance may require preservation-focused green guidelines, while rapidly developing neighborhoods may benefit from stricter regulations for green building and incentives for sustainable urban planning.</p>
+<p>By understanding the unique characteristics of different neighborhoods, the Office of Sustainability can create targeted and effective recommendations which vary from neighborhood to neighborhood. This approach ensures that the proposed green building standards not only contribute to environmental conservation but also align with the specific needs and developmental nuances of each community. In doing so, this analysis aims to foster a more sustainable and resilient urban environment for the residents of Philadelphia. As the first step, this project aims to utilize historic data for construction to predict the areas where construction is most likely to occur.</p>
 </section>
-<section id="embed-from-url-only" class="level2">
-<h2 data-anchor-id="embed-from-url-only">Embed from URL only</h2>
-<p><code>{{&lt; pdf testt.pdf &gt;}}</code></p>
-<p></p>
+<section id="exploratory-analysis" class="level3">
+<h3 data-anchor-id="exploratory-analysis">Exploratory Analysis</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="EAD.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">We began our analysis by looking at where construction and demolition permits were being introduced.</figcaption>
+</figure>
+</div>
+<p>In our exploratory analysis, we conducted various GIS analyses and correlation tests to determine how best to build our prediction model. Our approach focuses on TEXT. Variables used include TEXT</p>
+<p>In conclusion, TEXT</p>
+</section>
+<section id="project-outcomes" class="level3">
+<h3 data-anchor-id="project-outcomes">Project Outcomes</h3>
+<p>To propose neighborhood specific green building recommendations and industry specific strategies.To develop targeted Green Building Training Programs for contractors in Philadelphia that are working on these development projects. See more in the presentation video, wireframing website prototype, and full analysis.</p>
+<section id="pechakucha-presentation" class="level4">
+<h4 data-anchor-id="pechakucha-presentation">Pechakucha Presentation</h4>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://drive.google.com/file/d/1gPbtTOZXbNkBVF5i04Klw0S6gJ-eAwgp/view?usp=sharing"></video></div>
+</section>
+<section id="full-analysis" class="level4">
+<h4 data-anchor-id="full-analysis">Full Analysis</h4>
+<p><em>Click the full analysis button at the top to view at full screen.</em></p>
+<iframe src="DevTracker.html" width="800" height="800">
+<p>
+Hi SOF
+</p>
+</iframe>
+</section>
+</section>
+<section id="data-sources" class="level3">
+<h3 data-anchor-id="data-sources">Data Sources</h3>
+<ul>
+<li><a href="https://data.phila.gov/visualizations/li-building-permits">City of Philadelphia</a></li>
+<li><a href="https://data-phl.opendata.arcgis.com/">Philly Open Data</a></li>
+</ul>
 
 
 </section>
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
     </div>
-    <img src="cover.jpg" class="about-image
+    <img src="cover.png" class="about-image
   rounded " style="width: 0em;">
   </div>
 </div>
@@ -438,6 +478,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
