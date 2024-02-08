@@ -5,10 +5,9 @@ author:
 date: 2023-09-22
 image: cover.jpg
 categories:
-  - R
+  - Python
   - GIS
   - Machine Learning
-  - Transportation
 subtitle: "Using data analysis and visualizations to identify trends in parking supply and demand."
 about:
   id: hero-heading
@@ -31,3 +30,5 @@ San Francisco grapples with persistent challenges in its parking landscape, char
 In response to these difficulties, the use of parking apps has gained prominence, offering real-time information on available spaces and facilitating a more efficient navigation of the city’s intricate parking network. Increasing the efficiency of such apps could be a significant use case of this analysis.
 
 Moreover, the city has embraced innovative approaches to address parking issues. The implementation of smart parking meters, capable of adjusting rates based on demand and time of day, represents one such effort. Data from these parking meters has been included in our analysis. Additionally, there has been a push towards dynamic pricing strategies to incentivize turnover and optimize the utilization of parking spaces. These strategies can be more equitably informed if they take in to account how these policies are place within the larger sociodemographic framework of the city. As San Francisco continues to grapple with the complexities of urban parking, these trends underscore a broader shift towards sustainable transportation options and technological solutions in managing the city’s parking challenges.
+
+![We began our analysis by looking at where construction and demolition permits were being introduced.](cover.jpg)
