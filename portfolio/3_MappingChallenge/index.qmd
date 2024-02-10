@@ -46,21 +46,16 @@ In this project, I had the opportunity to visualize New York City's Tree Census.
 testt.pdf {
   max-width: 100%;
 	width: 600px;
-	height: 600px;
+	height: 800px;
 	border: 10px solid rgba(0,0,0,.2);
 	margin: 0;
 }
 </style>
 
-<embed src="testt.pdf" width="600" height="600" type="application/pdf">
+<embed src="test2.pdf" width="600" height="600" type="application/pdf">
 {{< pdf "testt.pdf" >}}
 
 
-## Embed from URL only
-
-`{{{< pdf testt.pdf >}}}`
-
-{{< pdf testt.pdf >}}
 
 
 
