@@ -29,24 +29,15 @@ format:
 ### Project Details
 
 In this project, I had the opportunity to visualize New York City's Tree Census. This project was completed as part of the 2023 Mapping Challenge.  
-![Image 3](18_skhare.gif)
 
-![Image 1](11_skhare.png)
-![Image 2](2_skhare.png)
-![Image 3](9_skhare.png)
-![Image 3](13_skhare.png)
-![Image 3](20_skhare.png)
-![Image 3](21_skhare.png)
-![Image 3](24_skhare.png)
-![Image 3](25_skhare.png)
-![Image 3](27_skhare.png)
+
 
 
 <style>
 testt.pdf {
   max-width: 100%;
-	width: 600px;
-	height: 800px;
+	width: 800px;
+	height: 1000px;
 	border: 10px solid rgba(0,0,0,.2);
 	margin: 0;
 }
