@@ -13,7 +13,7 @@ listing:
   - id: portfolio
     contents: "portfolio/**/index.qmd"
     type: grid
-    fields: [title, categories, date, image]
+    fields: [title, categories, image]
     sort: "date desc"
     sort-ui: false
     filter-ui: [title, date, categories]
