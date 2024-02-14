@@ -66,5 +66,6 @@ I am a current Master of City Planning student at the University of Pennsylvania
 ## Portfolio
 
 ::: {#portfolio}
+:::
 
 #### [See more projects &rarr;](/portfolio/portfolio.html)
