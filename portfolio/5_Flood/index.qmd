@@ -8,10 +8,9 @@ date: 2023-09-22
 image: cover.jpg
 categories:
   - R
-  - GIS
   - Machine Learning
-  - Transportation
-subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
+  - Raster Analysis
+subtitle: "A Predictive Analysis for Flooding in boise, Idaho."
 about:
   id: hero-heading
   image-width: 0em
@@ -36,6 +35,6 @@ This policy brief attempts to address the value and citzen settlement patterns o
 
 *Click the full analysis button at the top to view at full screen.*
 
-<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
+<iframe src="CPLN675_Midterm_RScript_LH_4.5.html" width="800" height="800">
   <p>Hi SOF</p>
 </iframe>
