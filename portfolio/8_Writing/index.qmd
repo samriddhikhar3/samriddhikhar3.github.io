@@ -19,11 +19,7 @@ format:
 ---
 
 
-![1](cover.jpg)
-
-
-#### <b>[Berkeley Essay Prize, Fourth Place](https://berkeleyprize.org/competition/essay/2022/winning-essays/samriddhi-khare-and-jiya-anand-essay)</b> *University of California, Berkeley*
-* Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
+![_](1.png)
 
 #### <b>[Econsult Solutions Research Articles](https://econsultsolutions.com/?s=samriddhi+khare)</b> 
 * Authored multiple articles focusing on urban planning and data equity, with a particular emphasis on urban technology.
@@ -31,4 +27,6 @@ format:
 #### <b>[The Evolution of Smart Cities](https://github.com/samriddhikhar3/samriddhikhar3.github.io/blob/main/portfolio/8_Writing/khare_samriddhi_evolutionofsmartcities.pdf)</b>
 *  Since the beginning of planning history, there has been a sanguine belief in the possibilities of technology and its application to urban problems. However, there have always been processes and materials deemed “smart” by the relevant zeitgeist. In this essay, I trace the development of three such transitionary moments in history and the contexts in which they developed. 
 
+#### <b>[Berkeley Essay Prize, Fourth Place](https://berkeleyprize.org/competition/essay/2022/winning-essays/samriddhi-khare-and-jiya-anand-essay)</b> *University of California, Berkeley*
+* Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
 

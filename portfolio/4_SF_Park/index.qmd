@@ -3,7 +3,7 @@ title: "Analyzing Parking Trends in San Francisco, CA"
 author:
 - Samriddhi Khare
 - Roshini Ganesh
-date: 2023-12-22
+date: 2023-12-11
 image: cover.jpg
 categories:
   - Python
