@@ -9,6 +9,8 @@ resources:
   - "portfolio/4_SF_Park/index.qmd"
   - "portfolio/5_Flood/index.qmd"
   - "portfolio/6_FightKit/index.qmd"
+  - "portfolio/7_Ajni/index.qmd"
+  - "portfolio/8_Writing/index.qmd"
 listing:
   - id: portfolio
     contents: "portfolio/**/index.qmd"
