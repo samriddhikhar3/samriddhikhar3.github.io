@@ -27,9 +27,10 @@ format:
 
 ### Project Brief
 
-In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
+In our raster flood prediction analysis, we began by selecting two comperable cities for our study, opting for Calgary and Boise due to their similar topographies and vulnerability to flooding. Next, we identified influential factors affecting flooding based on a thorough review of relevant literature. Utilizing the chosen factors, we developed a Generalized Linear Regression (GLM) model, training it on the Calgary dataset and subsequently testing it on Boise. Despite the model's inclination to assign disproportionate weight to specific factors, it provided compelling insights. Throughout this analytical process, we prioritized effective data visualization techniques to enhance the accessibility and interpretability of our findings within the context of flood prediction dynamics.
 
-This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
+![Predicted Flooding for Calgary and Boise.](both.png)
+
 
 ## Project Outcome
 
