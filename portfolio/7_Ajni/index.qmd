@@ -1,0 +1,34 @@
+---
+title: "Saving Ajni: Using Data for Nature Community"
+author:
+- Samriddhi Khare
+date: 2021-05-22
+image: cover.jpg
+categories:
+  - GIS
+  - Community Engagement 
+  - Raster Analysis
+  - Data Visualization
+subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: link
+      text: Full Analysis
+      href: https://www.phillyschoolsplan.space/
+format:
+  html:
+    toc: true
+
+---
+
+### Project Brief
+
+The government of Maharashtra proposed the construction of a  disruptive 500-acre intermodal station, one that would destroy  over 40,000 trees, 20 housing quarters, and have catastrophic health implications on nearby residents. Citizen groups led by advocates, architects and planners were quick to mobilize and protest this mass deforestation while also developing an alternate site proposal, one that does not require massive felling of trees, is better connected to the transit network and would not lead to evictions and displacement of residents.  
+
+Using GIS technology we were able to justify the alternate site and facilitate sustainable and equitable urban development. 
+
+![Timeline of movement.](timeline.png)
+

@@ -2,7 +2,7 @@
 title: "Public Schools as Equity Infrastructure: Vulnerability Analysis"
 author:
 - Samriddhi Khare
-date: 2023-09-22
+date: 2023-05-22
 image: cover.jpg
 categories:
   - R
