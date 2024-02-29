@@ -18,7 +18,7 @@ website:
   repo-actions: [source]
   description: "Urban Planner and Spatial Analyst"
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   twitter-card: true
   search: 
     location: navbar
@@ -49,7 +49,7 @@ website:
   
   page-footer:  
     center: >-
-     &#169; 2024 Stephanie Cheng &#8729; Made with ❤️ and [Quarto](https://quarto.org)
+     Made with ❤️ and [Quarto](https://quarto.org)
 
 format: 
   html: 
