@@ -2,6 +2,7 @@
 title: "Analyzing Parking Trends in San Francisco, CA"
 author:
 - Samriddhi Khare
+- Roshini Ganesh
 date: 2023-12-22
 image: cover.jpg
 categories:
@@ -52,7 +53,7 @@ By conducting spatial joins for the data collected from various sets, we aimed t
 
  Using a Random Forest Model, we predict areas with high demand for parking using the factors defined in the previous step. 
 
- ![Random Forest Model.](5.jpeg)
+ ![Random Forest Model. The extremely high R squared value could be indicative of an overfit model, to mitigate this we ran iterative tests of generalizability on the data.](5.jpeg)
 
 
 ##### 4. Data Visualization 
