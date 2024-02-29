@@ -9,15 +9,15 @@ categories:
   - Community Engagement 
   - Raster Analysis
   - Data Visualization
-subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
+subtitle: "Designing a site proposal using predictive spatial analysis using raster data (Landsat), Google Earth Engine and remote sensing in ArcGIS."
 about:
   id: hero-heading
   image-width: 0em
   template: solana
   links:
     - icon: link
-      text: Full Analysis
-      href: https://www.phillyschoolsplan.space/
+      text: Media Coverage
+      href: https://studiosakha.org/save-ajni-vann
 format:
   html:
     toc: true
