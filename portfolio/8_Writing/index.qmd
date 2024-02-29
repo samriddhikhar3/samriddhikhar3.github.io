@@ -1,0 +1,32 @@
+---
+title: "Collected Writing Samples"
+author:
+- Samriddhi Khare
+date: 2021-05-22
+image: cover.jpg
+categories:
+  - Writing 
+  - Community Engagement 
+subtitle: "Academic and Professional Writing Samples on Urban and Data Equity."
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+format:
+  html:
+    toc: true
+
+---
+
+
+![1](cover.jpg)
+
+
+#### <b>[Berkeley Essay Prize, Fourth Place](https://berkeleyprize.org/competition/essay/2022/winning-essays/samriddhi-khare-and-jiya-anand-essay)</b> *University of California, Berkeley*
+* Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
+
+#### <b>[Econsult Solutions Research Articles](https://econsultsolutions.com/?s=samriddhi+khare)</b> 
+* Authored multiple articles focusing on urban planning and data equity, with a particular emphasis on urban technology.
+
+
+![Conditions.](conditions.png)
