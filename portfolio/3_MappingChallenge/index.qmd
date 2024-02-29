@@ -33,19 +33,6 @@ In this project, I had the opportunity to visualize New York City's Tree Census.
 <div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://e.issuu.com/embed.html?d=withbackcover&u=samriddhikhare"></iframe></div>
 
 
-<style>
-testt.pdf {
-  max-width: 100%;
-	width: 800px;
-	height: 1000px;
-	border: 10px solid rgba(0,0,0,.2);
-	margin: 0;
-}
-</style>
-
-<embed src="test2.pdf" width="600" height="600" type="application/pdf">
-{{< pdf "testt.pdf" >}}
-
 
 
 
