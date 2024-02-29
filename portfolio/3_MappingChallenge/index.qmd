@@ -16,10 +16,6 @@ about:
   id: hero-heading
   image-width: 0em
   template: solana
-  links:
-    - icon: journal-code
-      text: Full Analysis
-      href: https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html  
 format:
   html:
     toc: true
