@@ -29,7 +29,6 @@ format:
 
 ![Predicted Flooding for Calgary and Boise.](both.png)
 
-
 In our raster flood prediction analysis, we began by selecting two comperable cities for our study, opting for Calgary and Boise due to their similar topographies and vulnerability to flooding. Next, we identified influential factors affecting flooding based on a thorough review of relevant literature. Utilizing the chosen factors, we developed a Generalized Linear Regression (GLM) model, training it on the Calgary dataset and subsequently testing it on Boise. Despite the model's inclination to assign disproportionate weight to specific factors, it provided compelling insights. Throughout this analytical process, we prioritized effective data visualization techniques to enhance the accessibility and interpretability of our findings within the context of flood prediction dynamics.
 
 
