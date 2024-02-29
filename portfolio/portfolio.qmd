@@ -1,12 +1,12 @@
 ---
 title: "Portfolio"
 subtitle: |
-  This portfolio includes highlights of my mapping, data analysis, research, and machine learning projects. More projects to come! (Portfolio section under construction.)
+  This portfolio includes highlights of my mapping, data analysis, and machine learning projects. 
 listing:
   contents:
     - "**/index.qmd"
   fields: [title, categories, date, image]
-  sort: "date desc"
+  sort: "date asc"
   type: grid
   categories: unnumbered
   sort-ui: false
