@@ -8,6 +8,7 @@ categories:
   - Python
   - GIS
   - Machine Learning
+  - Transportation
 subtitle: "Using data analysis and visualizations to identify trends in parking supply and demand."
 about:
   id: hero-heading

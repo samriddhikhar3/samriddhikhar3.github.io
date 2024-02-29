@@ -1,5 +1,5 @@
 ---
-title: "Public Schools as Equity Infrastructure: Vulnerability Analysis"
+title: "Public Schools as Equity Infrastructure: Sayre High School Dashboard"
 author:
 - Samriddhi Khare
 date: 2023-05-22
@@ -37,7 +37,7 @@ With the school vulnerability map, local governments are able to identify school
 
 I furthered my analysis through a studio project titled "Healing by Design: School Community Planning for Sayre High School, Philadelphia."
 
-My team and I developed a Dashboard for members of the Sayre Community. The 
+My team and I developed a Dashboard for members of the Sayre Community. 
 
 ![Student Engagement](engagement.png)
 

@@ -5,7 +5,7 @@ subtitle: |
 listing:
   contents:
     - "**/index.qmd"
-  fields: [title, categories, date, image]
+  fields: [title, categories, subtitle, date, image]
   sort: "date asc"
   type: grid
   categories: unnumbered

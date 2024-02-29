@@ -10,8 +10,6 @@ image: cover.png
 categories:
   - R
   - GIS
-  - Predictive Modelling 
-  - Pollution
   - Machine Learning
 subtitle: 'A project using machine learning, environmental data, and [Philadelphia L&I Building and Zoning Permits](https://data.phila.gov/visualizations/li-building-permits) to forecast development changes.'
 about:

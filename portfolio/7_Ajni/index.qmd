@@ -8,7 +8,7 @@ categories:
   - GIS
   - Community Engagement 
   - Raster Analysis
-  - Data Visualization
+  - Transportation
 subtitle: "Designing a site proposal using predictive spatial analysis using raster data (Landsat), Google Earth Engine and remote sensing in ArcGIS."
 about:
   id: hero-heading
