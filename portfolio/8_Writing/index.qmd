@@ -2,7 +2,7 @@
 title: "Collected Writing Samples"
 author:
 - Samriddhi Khare
-date: 2021-05-22
+date: 2021-01-01
 image: cover.jpg
 categories:
   - Writing 
