@@ -6,7 +6,7 @@ date: 2023-12-22
 image: cover.jpg
 categories:
   - Python
-  - GIS
+  - Random Forest Modeling
   - Machine Learning
   - Transportation
 subtitle: "Using data analysis and visualizations to identify trends in parking supply and demand."
