@@ -35,12 +35,11 @@ My current work at Penn Praxis includes creating a counter-narrative to the opac
 
 With the school vulnerability map, local governments are able to identify schools at risk preemptively and plan for the placement of students afterward and the reuse of school buildings.
 
-I furthered my analysis through a studio project titled "Healing by Design: School Community Planning for Sayre High School, Philadelphia."
+I furthered my analysis through a studio project titled "School Community Planning for Sayre High School, Philadelphia."
 
-My team and I developed a Dashboard for members of the Sayre Community. 
+Through student engagement and data analysis, my team and I developed a [Resource Dashboard](https://sofiafasullo.github.io/sayre-plan/) for members of the Sayre Community. The dashboard contains interactive resources for students and teachers to find professional development tools and funding sources. 
 
 ![Student Engagement](engagement.png)
-
 
 ![Planning Process](developing.png)
 

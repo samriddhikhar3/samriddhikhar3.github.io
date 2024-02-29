@@ -8,7 +8,7 @@ date: 2023-09-21
 image: cover.jpg
 categories:
   - R
-  - GIS
+  - Linear Regression
   - Machine Learning
   - Transportation
 subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
@@ -28,14 +28,9 @@ format:
 
 ### Project Brief
 
-
-
 In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
 
 This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
-
-
-
 
 ## Project Outcome
 

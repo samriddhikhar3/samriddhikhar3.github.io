@@ -7,8 +7,8 @@ author:
 date: 2023-10-01
 image: cover.jpg
 categories:
+  - GIS
   - Python
-  - ArcGIS
   - Data Visualization
   - Raster Analysis
 subtitle: "Data Visualization and Raster Analysis for the New York City Tree Census."
