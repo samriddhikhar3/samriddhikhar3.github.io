@@ -12,8 +12,6 @@ project:
     - "portfolio/6_FightKit/index.qmd"
     - "portfolio/7_Ajni/index.qmd"
     - "portfolio/8_Writing/index.qmd"
-
-
 website:
   title: "Samriddhi Khare"
   site-url: "https://samriddhikhar3.github.io/"

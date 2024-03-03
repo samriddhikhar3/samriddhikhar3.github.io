@@ -11,18 +11,6 @@ resources:
   - "portfolio/6_FightKit/index.qmd"
   - "portfolio/7_Ajni/index.qmd"
   - "portfolio/8_Writing/index.qmd"
-listing:
-  - id: portfolio
-    contents: "portfolio/**/index.qmd"
-    type: grid
-    fields: [title, categories, image]
-    sort: "date asc"
-    sort-ui: false
-    filter-ui: [title, date, categories]
-    page-size: 3
-    image-align: left
-    image-height: 1 in
-    
 about:
   template: jolla
   image-width: 40em
@@ -43,7 +31,6 @@ about:
       href: https://www.linkedin.com/in/samriddhi-khare-3668821b1/ 
 page-layout: full
 toc: false
-
 execute: 
   freeze: false
   echo: true
@@ -59,15 +46,3 @@ I work mostly in R, ArcGIS and Python, as well as SQL for querying data and Adob
 
 I am a current Master of City Planning student at the University of Pennsylvania (expected May 2024), with a Bachelors in Architecture from the Visvesvarya National Institute of Technology, India.
 
-:::
-
-<br><br>
-
-
-
-## Portfolio
-
-::: {#portfolio}
-:::
-
-#### [See more projects &rarr;](/portfolio/portfolio.html)
