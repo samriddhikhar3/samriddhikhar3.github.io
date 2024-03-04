@@ -14,6 +14,7 @@ categories:
   - GIS
   - Community Engagement 
   - JavaScript
+  - SQL
   - Data Visualization
 subtitle: "A linear regression model to analyse socio-demographic variables across TOD and non-TOD tracts."
 about:
