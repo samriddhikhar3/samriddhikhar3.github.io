@@ -1,6 +1,6 @@
 ---
 title: "Samriddhi Khare"
-subtitle: "Urban Planner and Spatial Analyst"
+subtitle: "Data Analyst and Urban Planner"
 image: images/cell_towers.png
 resources: 
   - "portfolio/1_TOD_Boston/index.qmd"
@@ -19,7 +19,7 @@ about:
   links:
     - icon: envelope
       text: Email
-      href: mailto:skhare@design.upenn.edu
+      href: mailto:samriddhikhare8@gmail.com
     - icon: file-pdf
       text: Resume
       href: https://samriddhikhar3.github.io/resume
@@ -40,12 +40,14 @@ execute:
 
 ::: {#hero-heading}
 
-Hi! I'm Sam. I am an urban planner, spatial analyst, and map enthusiast. I am passionate about using my data and design skills to leverage urban data for building equitable and sustainable cities. 
+Hi! I'm Sam. I am an data analyst, urban planner, and map enthusiast. I am passionate about using my data and design skills to leverage urban data for building equitable and sustainable cities. 
 
-I most recently worked as a Research Fellow at Econsult Solutions: [Center for Future of Cities](https://econsultsolutions.com/future-cities/future-cities-agenda/#:~:text=ESI%20Center%20for%20the%20Future%20of%20Cities%20brings%20together%20experts,organizations%20working%20in%20urban%20settings.), focused on developing a [climate resilience index](https://econsultsolutions.com/climate-resilience-index-2023-update/) for major US cities. I also work as a Research Assitance with [Professor Akira Drake Rodriguez](https://www.akirarodriguez.com/about) to study Philadelphia schools' vulnerability to closure using data analysis and mapping. 
+I most recently worked as a data analyst at [Econsult Solutions](https://econsultsolutions.com/new-hampshires-housing-challenge-a-data-driven-approach/), developing statistical models to estimate economic and fiscal impacts of transit projects, housing, and urban green infrastructure supporting dozens of Philadelphia and nationwide agencies.
 
-I work mostly in R, ArcGIS and Python, as well as SQL for querying data and Adobe Creative Suite for design. I've written broadly for both academic and professional purposes, particularly on equity in urban techonology and planning. 
+I have also worked under [Professor Akira Drake Rodriguez](https://www.akirarodriguez.com/about) to study Philadelphia schools' vulnerability to closure using spatial analysis and community engagement. 
 
-I am a current Master of City Planning student at the University of Pennsylvania (expected May 2024), with a Bachelors in Architecture from the Visvesvarya National Institute of Technology, India.
+I work mostly in R, ArcGIS and Python, as well as many transit modeling and raster analysis platforms. I've also authored numerous policy memos and reports for heads of private and city/state institutions. I use these tools and Adobe Creative Suite to tell stories through data. 
+
+I am a Master of City Planning graduate from the University of Pennsylvania, with a Bachelors in Architecture from the Visvesvarya National Institute of Technology, India.
 
 :::
