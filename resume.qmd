@@ -1,6 +1,6 @@
 ---
 title: "Samriddhi Khare"
-subtitle: "Urban Planner and Spatial Analyst"
+subtitle: "Data Analyst and Urban Planner"
 about:
   id: hero-heading
   image-width: 0em
@@ -51,18 +51,34 @@ about:
 ## Projects and Certifications
 
 #### <b>TOD Planning and Benefit Cost Analyses</b>  *NJ Transit*
-###### Nov 2024 – Feb 2026
+###### (Nov 2024 – Feb 2026)
 * Led the modeling of ridership/revenue and train delays to optimize transit service planning and revenue performance. 
 * Developed a comparative tool to model financial metrics (ROI, IRR, NOI) for future capital projects and operational scenarios.  
 * Supported federal and state grant applications by conducting benefit–cost analyses for fleet electrification, rail yard improvements, bridge replacements, and track expansion projects.
 * Designed maps and data visualizations integrating transit routes, land use, and demographic data to support transit-oriented development (TOD) and capital planning.
 
+#### <b>[Return on Investment in the Environment](https://www.norcopa.gov/index.php?section=press-releases&prrid=199)</b>  *Northampton County, PA*
+###### (Dec 2024 – Aug 2025)
+* Developed machine learning models in R and Python to quantify the impact of parks and open space on property values.
+* Engineered features from Census and assessment datasets and classified using a logistic regression 
+* Calculated the economic impacts of agriculture and natural system services, including carbon sequestration, public health benefits, and outdoor recreation economics
+
+#### <b>[Interactive Housing Analysis Dashboard](https://www.nheconomy.com/office-of-planning-and-development/fiscal-housing-calculator)</b>  *State of New Hampshire*
+###### (Aug 2024 – June 2025)
+* Created an interactive Power BI dashboard to model assessed value of new construction, municipal expenditures, and impacts on the local tax base.
+* Developed a classification matrix for 145 municipalities across varying housing densities using k-means clustering in Python. 
+* Conducted regression analyses to quantify the marginal impact of increased housing density on municipal costs
+
+#### <b>Geographic Information Services Professional Certificate</b>  *GIS Vision, India*
+###### (Nov 2024 – Feb 2026)
+* Completed professional certification in GIS services such as ArcGIS Pro, 3D, QGIS, Network Analysis, Digital Elevation Models, Predictive Flood Modelling, and Raster Analysis
+
 ## Fellowships and Awards
 
 #### <b>[Center for the Living City, OAN Fellow](https://centerforthelivingcity.org/oan-fellows-2021#oanfellows2021-pehchaan:~:text=TEAM%20MEMBERS-,Samriddhi%20Khare,-Pranita%20Varma)</b> *Scranton, PA + New Delhi/Nagpur/Bangalore, India*
-* Established an Indian think tank for interdisciplinary focused urban research
+* Established an Indian think tank for interdisciplinary urban research
 * Designed labels for public space/transport, and toolkits for mobility mapping of sexual minorities 
-* Spearheaded the construction and curation of a travelling, modular public art exhibition featuring queer artists 
+* Spearheaded the construction and curation of a travelling, modular public art exhibition featuring minority artists 
 
 
 #### <b>[15 Minute City Competition, Honorary Mention](https://thecharette.org/15-minute-city-2022-results/#:~:text=Honourable%20Mention-,Samriddhi%20Khare,-%E2%80%A2%C2%A0%20Pranita%20Varma%C2%A0%20%E2%80%A2%C2%A0%20Raunak)</b> *The Charette, International Competition*           
@@ -71,7 +87,7 @@ about:
 #### <b>[Berkeley Essay Prize, Fourth Place](https://berkeleyprize.org/competition/essay/2022/winning-essays/samriddhi-khare-and-jiya-anand-essay)</b> *University of California, Berkeley*
 * Essay titled “New Delhi and the Planning of Carcerality” examining inadequacies in affordable housing in relation to recidivism and incarceration in New Delhi, with the help of geo-statistical analyses   
 
-#### <b>SURF 2020 Conference, Presenter</b> *Bearys Institute of Technology, Mangalore, India*                                   
+#### <b>SURF 2020 Conference, Research Author</b> *Bearys Institute of Technology, Mangalore, India*                                   
 * Publication titled “Chitar Oli and the Analysis of Caste” studying the developmental manifestation of caste-based income inequality and residential segregation 
 
 
