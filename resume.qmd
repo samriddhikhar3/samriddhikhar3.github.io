@@ -15,7 +15,7 @@ about:
 
 #### <b>University of Pennsylvania</b>  *Philadelphia, PA*
 ###### Master of City Planning; Concentration in Urban Technology and Spatial Analytics 
-* Relevant coursework: Quantitative Planning Methods, Land Use and Environmental Modeling, Geospatial Analysis in Python, Public Policy Analytics, Communication in Urban Spatial Analytics, Geospatial Cloud Computing, Machine Learning in Remote Sensing, Planning Workshop
+* Coursework: Urban Spatial Analysis, GIS, Quantitative Planning Methods, Land Use and Environmental Modeling, Geospatial Analysis in Python, Public Policy Analytics, Communication in Urban Spatial Analytics, Geospatial Cloud Computing, Machine Learning in Remote Sensing, Planning Workshop
 * Honors/Awards: Dean’s Merit Scholarship ($50,000) 
 
 #### <b>Visvesvarya National Institute of Technology</b>  *Nagpur, India*
