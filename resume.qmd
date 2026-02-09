@@ -11,6 +11,31 @@ about:
       href: https://github.com/samriddhikhar3/samriddhikhar3.github.io/blob/main/images/SK_Resume.pdf
 ---
 
+
+## Experience
+
+#### <b>Econsult Solutions</b>  *Philadelphia, PA*
+###### Data Analyst (June 2023 – Present)
+* Led the development of machine learning models in Python and R to estimate economic and fiscal impacts of transit projects, housing, and urban green infrastructure supporting over 30 local and nationwide agencies.
+* Designed static and interactive geospatial data visualizations and dashboards using ArcGIS, QGIS, R, Python and Power BI; Drove firm-wide integration of Adobe Creative Suite to elevate creative production.
+* Conducted economic and fiscal impact studies for institutional, housing, and transit projects using R, Excel, and IMPLAN for public and private sector clients.
+* Authored memos and reports for heads of city, state and transit agencies to inform regional and institutional policy.
+
+#### <b>PennPraxis</b>  *Philadelphia, PA*
+###### Research Assistant Intern (February 2023 – Present)
+* Calculated a school closure vulnerability index to inform the School District of Philadelphia’s facilities planning process using R and ArcGIS
+* Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure
+
+#### <b>Studio Sakha Ajni</b>  *Nagpur, India*
+###### GIS Consultant (October 2021 – January 2022)
+* Prepared a site plan for airport construction using Landsat raster classification, predictive spatial analysis in Google Earth Engine, and remote sensing workflows in Python. 
+* Mobilized groups of over 200 volunteers and professionals to prevent the destruction of 500+ acres of green buffer. 
+
+#### <b>City for All: Alliance Française and Social Design Collaborative</b>  *New Delhi, India*
+###### Program Facilitator (May 2022 – June 2022)
+* Facilitated trans-national focus group discussions between French and Indian city planners and lower-income queer communities in New Delhi.
+* Mapped different marginalized groups’ access to public spaces across multiple cities in India and France to be published as open source data.
+
 ## Education
 
 #### <b>University of Pennsylvania</b>  *Philadelphia, PA*
@@ -23,38 +48,22 @@ about:
 * Honors/Awards: Graduated 95th Percentile. Awarded distinction in Architecture Design, Landscape Design, Urban Planning and Design, and Climatology
 * Elected Batch Representative, 2017; Elected English Literary Secretary, Collegiate Magazine, 2020
 
-## Professional Experience
+## Projects and Certifications
 
-#### <b>Econsult Solutions: Center for the Future of Cities</b>  *Philadelphia, PA*
-###### Research and Analysis Intern (June 2023 – Present)
-* Developed a comprehensive climate resilience index using R for major US cities through statistical analysis and qualitative research to inform city policy, rigorously evaluating the data using sensitivity training to minimize errors and optimize accuracy.
-* Conducted queries on big data pipelines in Python and crafted policy memos for the City of Philadelphia. Topics included assessing the influence of smart city technology on housing equity and community engagement, analyzing the impact of work-from-home trends on American downtowns, and participatory planning. 
-* Authored multiple [articles](https://econsultsolutions.com/?s=samriddhi+khare) focusing on urban planning and data equity, with a particular emphasis on urban technology.
-* Conducted interviews with thought leadership senior advisors, gathering valuable insights to inform the creation of client-based reports.
-
-#### <b>PennPraxis</b>  *Philadelphia, PA*
-###### Analysis and Design Intern (February 2023 – Present)
-* Analyzed spatial data in R and ArcGIS to determine a vulnerability to closure for Philadelphia’s school for local government and school districts to inform their facilities planning process.
-* Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure. 
-* Coordinated stakeholder meetings for activists and public school stakeholders.
-
-#### <b>City for All: Alliance Française and Social Design Collaborative</b>  *New Delhi, India*
-###### Program Facilitator (May 2022 – June 2022)
-* Facilitated trans-national focus group discussions between French and Indian city planners and lower-income queer communities in New Delhi.
-* Mapped different marginalized groups’ access to public spaces across multiple cities in India and France to be published as open source data.
-
-#### <b>Saving Ajni</b>  *Nagpur, India*
-###### GIS Consultant (October 2021 – January 2022)
-* Worked on a site proposal using predictive spatial analysis using raster data (Landsat), Google Earth Engine and remote sensing in ArcGIS.  
-* Mobilized groups of over 200 volunteers and professionals to prevent the destruction of 500+ acres of green buffer. 
+#### <b>TOD Planning and Benefit Cost Analyses</b>  *NJ Transit*
+###### Nov 2024 – Feb 2026
+* Led the modeling of ridership/revenue and train delays to optimize transit service planning and revenue performance. 
+* Developed a comparative tool to model financial metrics (ROI, IRR, NOI) for future capital projects and operational scenarios.  
+* Supported federal and state grant applications by conducting benefit–cost analyses for fleet electrification, rail yard improvements, bridge replacements, and track expansion projects.
+* Designed maps and data visualizations integrating transit routes, land use, and demographic data to support transit-oriented development (TOD) and capital planning.
 
 ## Fellowships and Awards
 
 #### <b>[Center for the Living City, OAN Fellow](https://centerforthelivingcity.org/oan-fellows-2021#oanfellows2021-pehchaan:~:text=TEAM%20MEMBERS-,Samriddhi%20Khare,-Pranita%20Varma)</b> *Scranton, PA + New Delhi/Nagpur/Bangalore, India*
-* Established an Indian think tank for interdisciplinary, LGBTQ+ focused urban research
-* Designed labels for LGBT-affirming public space/transport, and toolkits for mobility mapping of sexual minorities 
+* Established an Indian think tank for interdisciplinary focused urban research
+* Designed labels for public space/transport, and toolkits for mobility mapping of sexual minorities 
 * Spearheaded the construction and curation of a travelling, modular public art exhibition featuring queer artists 
-* Organized sexual orientation and gender identity sensitization workshops for architects and planners 
+
 
 #### <b>[15 Minute City Competition, Honorary Mention](https://thecharette.org/15-minute-city-2022-results/#:~:text=Honourable%20Mention-,Samriddhi%20Khare,-%E2%80%A2%C2%A0%20Pranita%20Varma%C2%A0%20%E2%80%A2%C2%A0%20Raunak)</b> *The Charette, International Competition*           
 * Developing a context driven solution to urban issues in Nagpur, India focusing on planning amenities within a 15 minute walkability radius  
@@ -68,10 +77,8 @@ about:
 
 ## Skills and Interests
 
-* <b>Technical:</b> R, Python, SQL, ArcGIS, Google Earth Engine, MS Suite, Adobe Creative Suite, CAD, Rhino + Grasshopper
-* <b>Skills:</b> GIS Mapping and Spatial Analytics, Machine Learning Algorithms, Written and Verbal Communication, Data Visualization, Consensus Building, Public Outreach
+* <b>Technical:</b>  R, Python, SQL, JavaScript, ArcGIS (Pro and Online), QGIS, VISUM/VISSIM, Google Earth Engine, MS Suite, Adobe Creative Suite, CAD, Rhino + Grasshopper
+* <b>Skills:</b> Spatial & Statistical Analysis, GIS, Machine Learning, Data Visualization and Storytelling, Policy-Oriented Technical Writing
 * <b>Professional Interests:</b> Digital Equity, Fair Algorithms, Transportation Planning, Climate Tech, Climate Change Mitigation/Adaptation, Urban Data, Smart Cities
-* <b>Languages:</b> English, Hindi
-
 
 #### [See my portfolio &rarr;](/portfolio/portfolio.html)
