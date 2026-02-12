@@ -11,7 +11,6 @@ about:
       href: https://github.com/samriddhikhar3/samriddhikhar3.github.io/blob/main/images/SK_Resume.pdf
 ---
 
-
 ## Experience
 
 #### <b>Econsult Solutions</b>  *Philadelphia, PA*
@@ -22,7 +21,7 @@ about:
 * Authored memos and reports for heads of city, state and transit agencies to inform regional and institutional policy.
 
 #### <b>PennPraxis</b>  *Philadelphia, PA*
-###### Research Assistant Intern (February 2023 – Present)
+###### Research Assistant (February 2023 – February 2024)
 * Calculated a school closure vulnerability index to inform the School District of Philadelphia’s facilities planning process using R and ArcGIS
 * Created statistical models to preemptively mitigate the student redistribution at schools at risk for closure
 
