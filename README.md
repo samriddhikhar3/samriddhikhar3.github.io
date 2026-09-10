@@ -1,4 +1,4 @@
-# Samriddhi Khare: Urban Geospatial Analysis Portfolio
+# Samriddhi Khare: Urban Analytics Portfolio
 
 
 
