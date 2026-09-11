@@ -13,8 +13,13 @@ about:
 
 ## Experience
 
+#### <b>Penn Praxis</b>  *Philadelphia, PA*
+###### Data Analyst (March 2026 - Present)
+* Led the production of public-facing printed and interactive maps of historical assets for community engagement using ArcGIS Pro, ArcGIS Online, and StoryMaps.  
+* Managed end-to-end community outreach and first-hand data collection through analytical fieldwork and surveys.
+
 #### <b>Econsult Solutions</b>  *Philadelphia, PA*
-###### Data Analyst (June 2023 – Present)
+###### Data Analyst (June 2023 – March 2026)
 * Led the development of machine learning models in Python and R to estimate economic and fiscal impacts of transit projects, housing, and urban green infrastructure supporting over 30 local and nationwide agencies.
 * Designed static and interactive geospatial data visualizations and dashboards using ArcGIS, QGIS, R, Python and Power BI; Drove firm-wide integration of Adobe Creative Suite to elevate creative production.
 * Conducted economic and fiscal impact studies for institutional, housing, and transit projects using R, Excel, and IMPLAN for public and private sector clients.
