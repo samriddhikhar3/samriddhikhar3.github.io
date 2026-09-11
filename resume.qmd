@@ -14,7 +14,7 @@ about:
 ## Experience
 
 #### <b>Penn Praxis</b>  *Philadelphia, PA*
-###### Data Analyst (March 2026 - Present)
+###### Data Analyst (March 2026 - Presnt)
 * Led the production of public-facing printed and interactive maps of historical assets for community engagement using ArcGIS Pro, ArcGIS Online, and StoryMaps.  
 * Managed end-to-end community outreach and first-hand data collection through analytical fieldwork and surveys.
 
