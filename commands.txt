@@ -1,0 +1,5 @@
+cd /d "D:\Portfolio\samriddhikhar3.github.io"
+
+del /s /q docs\*.qmd  
+
+quarto render
