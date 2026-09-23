@@ -29,14 +29,8 @@ format:
 
 ### Project Brief
 
-In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
+New Hampshire Department of Business and Economic Affairs commissioned my team at Econsult Solutions to develop a dashboard that estimates the fiscal impacts of building new units. The dashboard allows users to input details of a hypothetical housing development and informs them of the municipal costs and revenues estimated for that project. This tool has been developed as a resource for municipal decision makers and residents alike. The dashboard reframes the often hard to understand fiscal implications of housing in a dynamic, interactive platform that simplifies complex data. Designed with usability in mind, the Housing Needs Dashboard allows users to engage directly with localized data on municipal costs, revenues, and taxpayer impacts.  
 
-This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
+![Dashboard displaying modelled municipal costs and expenditures.](dashSS.png)
 
-## Project Outcome
 
-*Click the full analysis button at the top to view at full screen.*
-
-<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
-  <p>Hi SOF</p>
-</iframe>
