@@ -4,7 +4,7 @@ resources:
 - "portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html"
 author:
 - Samriddhi Khare
-date: 2023-10-01
+date: 2025-10-01
 image: cover.jpg
 categories:
   - GIS

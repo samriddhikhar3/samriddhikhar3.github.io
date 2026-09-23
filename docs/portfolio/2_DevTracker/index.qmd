@@ -5,7 +5,7 @@ resources:
 author:
   - Samriddhi Khare
   - Roshini Ganesh
-date: 2023-12-15
+date: 2024-7-15
 image: cover.png
 categories:
   - R
