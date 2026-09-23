@@ -21,6 +21,9 @@ about:
     - icon: journal-code
       text: Dashboard
       href: https://www.nheconomy.com/office-of-planning-and-development/fiscal-housing-calculator  
+    - icon: link
+      text: Published Writing
+      href: https://econsultsolutions.com/new-hampshires-housing-challenge-a-data-driven-approach/
 format:
   html:
     toc: true
