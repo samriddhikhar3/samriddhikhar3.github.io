@@ -1,0 +1,41 @@
+---
+title: "Fiscal Analysis of Housing Dashboard"
+resources: 
+- "portfolio/9_HousingDash/khare_samriddhi_assignment2.html"
+author:
+- Samriddhi Khare
+date: 2025-09-01
+image: cover.jpg
+categories:
+  - R
+  - Power BI
+  - Linear Regression
+  - Housing
+subtitle: "Power BI dashboard to communicate analyzed housing construction impacts, integrating datasets on assessed value, municipal expenditures, and tax base changes."
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: journal-code
+      text: Dashboard
+      href: https://www.nheconomy.com/office-of-planning-and-development/fiscal-housing-calculator  
+format:
+  html:
+    toc: true
+
+---
+
+### Project Brief
+
+In this project, I had the opportunity to explore Boston’s rapid transit system, known as the “T,” as a vital component of the city’s public transportation network. Using machine learning models and optimizing accuracy and minimizing errors, I used data analysis to make policy recommendations and aswer questions like do households value transit-rich neighborhoods compared to others? How certain can planners be about data-driven conclusions given some spatial biases?
+
+This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
+
+## Project Outcome
+
+*Click the full analysis button at the top to view at full screen.*
+
+<iframe src="khare_samriddhi_assignment2.html" width="800" height="800">
+  <p>Hi SOF</p>
+</iframe>
