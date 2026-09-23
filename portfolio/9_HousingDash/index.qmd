@@ -3,7 +3,7 @@ title: "Fiscal Analysis of Housing Dashboard"
 resources: 
 - "portfolio/9_HousingDash/khare_samriddhi_assignment2.html"
 author:
-- Samriddhi Khare
+- Samriddhi Khare for
 - Econsult Solutions
 date: 2025-09-01
 image: cover.jpg
