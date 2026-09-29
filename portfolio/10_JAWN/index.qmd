@@ -1,0 +1,34 @@
+---
+title: "JAWN: Virtual Tours and Asset Maps for America250"
+author:
+- Samriddhi Khare
+- Penn Praxis
+date: 2026-09-29
+image: cover.jpg
+categories:
+  - GIS
+  - Community Engagement
+  - Data Visualization
+  - JavaScript
+subtitle: "Virtual tours and asset mapping for community led tours of North Philadelphia for PHILA250."
+about:
+  id: hero-heading
+  image-width: 0em
+  template: solana
+  links:
+    - icon: journal-code
+      text: Interactive Maps
+      href: https://storymaps.arcgis.com/stories/65d2396a7d2f4ae393bf5eb394d43e08  
+format:
+  html:
+    toc: true
+
+---
+
+### Project Brief
+
+Developed GIS-based asset maps documenting North Philadelphia’s Black cultural, historic, and civic landscape. Conducted site visits and community-based research with local leaders and organizations to validate places and incorporate lived experience and intergenerational knowledge into the spatial record. Translated this research into interactive ArcGIS StoryMaps and virtual tours that connect individual sites to broader neighborhood histories, creating accessible digital tools for public history, community engagement, and place-based planning as part of Philadelphia’s 2026 Semiquincentennial.
+
+![Website displaying virtual tour.](dashSS.png)
+
+
