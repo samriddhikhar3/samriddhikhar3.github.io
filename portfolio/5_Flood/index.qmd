@@ -5,7 +5,7 @@ resources:
 author:
 - Samriddhi Khare
 - Lindsay Hoover
-- Anastasia Osorio
+- Anastasia Lyons Osorio
 date: 2023-03-22
 image: cover.jpg
 categories:
