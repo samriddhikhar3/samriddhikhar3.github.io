@@ -1,5 +1,5 @@
 ---
-title: "Data + Design Portfolio"
+title: "Portfolio"
 subtitle: |
   This portfolio includes highlights of my design and data science projects. 
 listing:
