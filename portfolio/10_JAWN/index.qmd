@@ -10,6 +10,7 @@ categories:
   - Community Engagement
   - Data Visualization
   - JavaScript
+  - Adobe
 subtitle: "Virtual tours and asset mapping for community led tours of North Philadelphia for PHILA250."
 about:
   id: hero-heading
