@@ -23,7 +23,7 @@ format:
 
 Here is a collection of academic and professional architectural design assignments created using a combination of design software for planning, 3D modelling and rendering and design. This work also includes extensive visualizations created using Adobe Suite. 
 
-<div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://issuu.com/samriddhikhare/docs/samriddhi_khare"></iframe></div>
+<div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://heyzine.com/flip-book/4727a903ae.html"></iframe></div>
 
 
 
