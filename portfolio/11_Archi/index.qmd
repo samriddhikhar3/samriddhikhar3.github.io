@@ -1,14 +1,14 @@
 ---
-title: "Architectural Design Portfolio"
+title: "Design Portfolio"
 author:
 - Samriddhi Khare
 date: 2022-10-01
 image: cover.jpg
 categories:
   - Architectural Design
-  - 3D Modeling
-  - Rendering
-  - Data Visualization
+  - 3D Modeling and Rendering
+  - Adobe
+  - Graphic Design
 about:
   id: hero-heading
   image-width: 0em
@@ -21,12 +21,16 @@ format:
 
 ### Portfolio Details
 
-Here is a collection of academic and professional architectural design assignments created using a combination of design software for planning, 3D modelling and rendering and design. This work also includes extensive visualizations created using Adobe Suite. 
+Here is a collection of academic and professional planning and architectural design work created using a combination of design software for planning, 3D modelling and rendering and design. This work also includes extensive visualizations created using Adobe Suite. 
 
 <div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://heyzine.com/flip-book/4727a903ae.html"></iframe></div>
 
+<div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://heyzine.com/flip-book/7db02a4b57.html"></iframe></div>
 
 
+See Also: Graphic Design Portfolio
+
+<div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://heyzine.com/flip-book/6d6af09699.html"></iframe></div>
 
 
 
