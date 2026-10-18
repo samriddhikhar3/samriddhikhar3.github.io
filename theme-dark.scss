@@ -1,8 +1,31 @@
 /*-- scss:defaults --*/
 // Base document colors
-$body-bg: #181818;
+$body-bg: #0c0c0d;
 $body-color: white;
 $link-color: #75AADB;
 
+// Navbar, title banners, cards and inputs (cosmo leaves these light)
+$navbar-bg: #18191b;
+$navbar-fg: #e2e5e8;
+$navbar-hl: #75AADB;
+$title-banner-bg: #18191b;
+$title-banner-color: #f2f2f2;
+$card-bg: #141517;
+$card-border-color: rgba(255, 255, 255, 0.12);
+$input-bg: #141517;
+$input-color: white;
+$input-border-color: rgba(255, 255, 255, 0.2);
+$input-group-addon-bg: #1d1f22;
+$input-group-addon-color: #e2e5e8;
+$input-group-addon-border-color: rgba(255, 255, 255, 0.2);
+
 // Code blocks
 $code-block-bg-alpha: -.8;
+
+/*-- scss:rules --*/
+// Portfolio listing tags. Quarto's selectors include the card class, so these need it too.
+body .quarto-grid-item .listing-categories .listing-category,
+body div.quarto-post .listing-categories .listing-category {
+  color: #f2f2f2;
+  border-color: rgba(255, 255, 255, 0.55);
+}

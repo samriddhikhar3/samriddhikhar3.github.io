@@ -22,7 +22,7 @@ about:
       href: https://samriddhikhar3.github.io/portfolio/1_TOD_Boston/khare_samriddhi_assignment2.html  
 format:
   html:
-    toc: true
+    toc: false
 
 ---
 
@@ -32,7 +32,63 @@ In this project, I had the opportunity to explore Boston’s rapid transit syste
 
 This policy brief attempts to address the value and citzen settlement patterns of transit-rich neighborhoods, comparing them to the city at large. It makes extensive use of the American Community Survey data, along with publically available information on the MBTA’s rapid transit routes and stops.
 
-## Project Outcome
+## The story in one scroll {#story}
+
+Scroll through the analysis on a map, starting with every T train running right now.
+
+::: {.column-screen}
+```{=html}
+<section class="tod-story" data-live="tod-story" data-bleed>
+  <div class="tod-steps">
+    <article class="tod-step" data-step="network">
+      <p class="live-eyebrow">Live now</p>
+      <h3>Boston moves on the T</h3>
+      <p>Each dot is a train on the Red, Orange, Blue or Green Line, a Mattapan trolley, or a Silver Line bus, placed from the MBTA’s real-time feed. <strong data-fill="vehicles">Dozens</strong> are running right now.</p>
+    </article>
+    <article class="tod-step" data-step="walkshed">
+      <p class="live-eyebrow">Walksheds</p>
+      <h3>A ten-minute walk</h3>
+      <p>Planners treat half a mile, about a ten-minute walk, as a station’s reach. These are the half-mile walksheds around the <span data-fill="stations">121</span> rapid transit stops in Suffolk County, which takes in Boston, Chelsea, Revere and Winthrop.</p>
+    </article>
+    <article class="tod-step" data-step="tod">
+      <p class="live-eyebrow">Transit-rich tracts</p>
+      <h3>Where the T reaches</h3>
+      <p>A census tract counts as transit-oriented when its center falls inside a walkshed: <span data-fill="todTracts">136</span> of the county’s <span data-fill="tracts">234</span> tracts in 2020.</p>
+    </article>
+    <article class="tod-step" data-step="rent">
+      <p class="live-eyebrow">Rent</p>
+      <h3>Rent is higher near the T</h3>
+      <p>In 2020, median rent in transit-rich tracts averaged <span data-fill="rentTod2020">$1,695</span>, against <span data-fill="rentOther2020">$1,457</span> in the rest of the county. Rents rose everywhere after 2016, and the premium for living near transit grew.</p>
+      <div data-compare="rent"></div>
+      <p class="live-source">*2016 values in 2020 dollars.</p>
+    </article>
+    <article class="tod-step" data-step="income">
+      <p class="live-eyebrow">Income</p>
+      <h3>Higher incomes near transit</h3>
+      <p>Median household income in transit-rich tracts rose from <span data-fill="incomeTod2016">$68,658</span> to <span data-fill="incomeTod2020">$82,324</span> in 2020 dollars, and the gap with the rest of the county widened.</p>
+      <div data-compare="income"></div>
+      <p class="live-source">*2016 values in 2020 dollars.</p>
+    </article>
+    <article class="tod-step" data-step="burden">
+      <p class="live-eyebrow">Rent burden</p>
+      <h3>Rent burden eased, but only near the T</h3>
+      <p>Households that spend more than 30% of their income on rent are rent-burdened. The typical share in transit-rich tracts fell from <span data-fill="burdenTod2016">31.4%</span> to <span data-fill="burdenTod2020">30.4%</span> while it edged up elsewhere. Rents rose too, so the likelier story is higher-income households moving in, not housing getting cheaper.</p>
+      <div data-compare="burden"></div>
+    </article>
+    <article class="tod-step" data-step="close">
+      <p class="live-eyebrow">What it means</p>
+      <h3>Where TOD has to work hardest</h3>
+      <p>Transit-rich neighborhoods are where Boston’s housing demand concentrates. Keeping homes near the T within reach of the people who rely on it most is where transit-oriented development has to work hardest.</p>
+      <p><a href="#project-outcome">Read the full analysis ↓</a></p>
+    </article>
+  </div>
+</section>
+```
+:::
+
+<p class="live-source">Recomputed for this page with the original method: ACS 5-year estimates (2012–2016 and 2016–2020) for Suffolk County tracts, MBTA rapid transit and Silver Line stops, and tracts whose center lies within half a mile of a stop. Vehicles: MBTA V3 API.</p>
+
+## Project Outcome {#project-outcome}
 
 *Click the full analysis button at the top to view at full screen.*
 

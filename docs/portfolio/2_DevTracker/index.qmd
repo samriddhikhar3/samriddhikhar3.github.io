@@ -5,7 +5,7 @@ resources:
 author:
   - Samriddhi Khare
   - Roshini Ganesh
-date: 2024-7-15
+date: 2026-10-15
 image: cover.png
 categories:
   - R
@@ -37,6 +37,16 @@ format:
       gutter-width: 1.5rem
 
 ---
+
+### Project Update {#project-update}
+
+DevTracker uses Philadelphia’s L&I permits to forecast where construction happens next, and identifies construction clusters in a handful of hot spots. This map checks whether that still holds. It compares the hot spots against every building permit the city has issued in the last 30 days. Press play to watch the month unfold.
+
+::: {.column-page .live-section}
+```{=html}
+<div data-live="dev-live"></div>
+```
+:::
 
 ### Project Brief
 

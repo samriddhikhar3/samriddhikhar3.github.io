@@ -1,0 +1,17 @@
+{
+  "name": "live-map-data",
+  "private": true,
+  "type": "module",
+  "description": "Builds the static data files behind the live maps (written to assets/live/data).",
+  "scripts": {
+    "philly": "node build-philly-limits.mjs",
+    "devtracker": "node build-dev-hotspots.mjs",
+    "tod": "node build-tod-boston.mjs",
+    "build": "node build-philly-limits.mjs && node build-dev-hotspots.mjs && node build-tod-boston.mjs && node build-sams-philly.mjs",
+    "philly-spots": "node build-sams-philly.mjs"
+  },
+  "devDependencies": {
+    "@turf/turf": "7.4.0",
+    "fflate": "0.8.2"
+  }
+}

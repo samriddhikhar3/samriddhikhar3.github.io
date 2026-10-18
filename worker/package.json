@@ -1,0 +1,14 @@
+{
+  "name": "samriddhi-live",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker behind the site's live maps: SEPTA relay, vehicle trails and Google reviews.",
+  "scripts": {
+    "dev": "wrangler dev --port 8787 --test-scheduled",
+    "deploy": "wrangler deploy",
+    "test": "node test/smoke.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.142.0"
+  }
+}

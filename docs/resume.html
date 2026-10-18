@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -34,10 +33,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -58,8 +59,87 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+  // Quarto 1.3 applies the saved dark theme ("alternate") only after load, so dark mode flashed
+  // white on every page. Switch the stylesheets before first paint instead.
+  (() => {
+    let dark = false;
+    try {
+      dark = localStorage.getItem('quarto-color-scheme') === 'alternate';
+    } catch {
+      // storage blocked, stay light
+    }
+    if (dark) {
+      document.documentElement.classList.add('quarto-dark-early');
+      for (const link of document.querySelectorAll('link.quarto-color-alternate')) link.rel = 'stylesheet';
+    }
+
+    // once Quarto has put quarto-light/quarto-dark on <body>, drop the early class
+    const sync = () => {
+      const mode = document.body.classList;
+      if (!mode.contains('quarto-dark') && !mode.contains('quarto-light')) return;
+      document.documentElement.classList.remove('quarto-dark-early');
+      const label = mode.contains('quarto-dark') ? 'Switch to light mode' : 'Switch to dark mode';
+      for (const toggle of document.querySelectorAll('.quarto-color-scheme-toggle')) {
+        toggle.title = label;
+        toggle.setAttribute('aria-label', label);
+      }
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+      sync(); // Quarto's handler may have run first
+      new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    });
+  })();
+</script>
+<style>
+  /* until the dark stylesheet is in; same color as $body-bg in theme-dark.scss */
+  html.quarto-dark-early,
+  html.quarto-dark-early body {
+    background-color: #0c0c0d;
+    color: #fff;
+  }
+
+  /* sun / switch / moon, active side bright. Bootstrap Icons glyphs pick up the navbar color. */
+  .navbar .quarto-color-scheme-toggle,
+  .navbar .quarto-color-scheme-toggle:hover,
+  .navbar .quarto-color-scheme-toggle:focus {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+  }
+  .navbar .quarto-color-scheme-toggle::before,
+  .navbar .quarto-color-scheme-toggle::after {
+    font-family: bootstrap-icons;
+    font-size: 0.9rem;
+    line-height: 1;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+  }
+  .navbar .quarto-color-scheme-toggle::before { content: "\f5a2"; } /* sun */
+  .navbar .quarto-color-scheme-toggle::after { content: "\f497"; } /* moon */
+  .navbar .quarto-color-scheme-toggle:not(.alternate)::before,
+  .navbar .quarto-color-scheme-toggle.alternate::after { opacity: 1; }
+  /* Quarto's switch is a grey SVG data URI that's barely visible on the dark navbar */
+  .navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before,
+  .navbar .quarto-color-scheme-toggle.alternate .bi::before {
+    width: auto;
+    height: auto;
+    background-image: none;
+    font-size: 1.15rem;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before { content: "\f5d5"; } /* toggle-off */
+  .navbar .quarto-color-scheme-toggle.alternate .bi::before { content: "\f5d6"; } /* toggle-on */
+  @media (prefers-reduced-motion: reduce) {
+    .navbar .quarto-color-scheme-toggle::before,
+    .navbar .quarto-color-scheme-toggle::after { transition: none; }
+  }
+</style>
 
 
+<link rel="stylesheet" href="assets/live/live.css">
 <meta name="twitter:title" content="Samriddhi Khare | Samriddhi Khare">
 <meta name="twitter:description" content="Data Analyst and Urban Planner">
 <meta name="twitter:card" content="summary">
@@ -95,9 +175,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Portfolio</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools tools-wide">
     <a href="https://github.com/samriddhikhar3" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://www.linkedin.com/in/samriddhi-khare-3668821b1/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -311,6 +392,13 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </div>
  <!-- /main -->
+<script type="module">
+  // only pages with a live map load main.js
+  if (document.querySelector('[data-live]')) {
+    const offset = document.querySelector('meta[name="quarto:offset"]')?.content ?? './';
+    import(new URL(`${offset}assets/live/main.js`, document.baseURI).href);
+  }
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -331,6 +419,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -550,8 +753,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="samriddhikhar3/samriddhikhar3.github.io" issue-term="title" theme="body-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">

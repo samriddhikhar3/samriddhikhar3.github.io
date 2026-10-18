@@ -1,6 +1,13 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - resume.qmd
+    - portfolio/portfolio.qmd
+    - portfolio/*/index.qmd
+  resources:
+    - "assets/live/**"
   preview:
     port: 3333
 website:
@@ -15,14 +22,8 @@ website:
   search: 
     location: navbar
     type: overlay
-  comments: 
-    utterances: 
-      repo: samriddhikhar3/samriddhikhar3.github.io
-      label: utterances
-      theme: body-light
-      issue-term: title
- 
   navbar:
+    pinned: true
     tools:
     - icon: github
       href: https://github.com/samriddhikhar3
@@ -30,7 +31,7 @@ website:
       href: https://www.linkedin.com/in/samriddhi-khare-3668821b1/
     right:
       - text: Home
-        aria-label: "Resume"
+        aria-label: "Home"
         href: index.qmd
       - text: Resume
         aria-label: "Resume"
@@ -38,7 +39,7 @@ website:
       - text: Portfolio
         aria-label: "Portfolio"
         href: portfolio/portfolio.qmd
-  
+
   page-footer:  
     center: >-
      Made with ❤️ and [Quarto](https://quarto.org)
@@ -51,14 +52,17 @@ format:
       margin-width: 250px
       gutter-width: 1.5rem
     link-external-newwindow: true
-    theme: cosmo
-      #light: cosmo         #FOR SOME REASON CAUSING ERRORS. FIX LATER
-      #dark: [cosmo, theme-dark.scss]
+    theme:
+      light: cosmo
+      dark: [cosmo, theme-dark.scss]
     highlight-style: solarized
     code-link: true
     code-copy: true
     toc: true
     pagetitle: "{{< meta title >}} | Samriddhi Khare"
+    css: assets/live/live.css
+    include-in-header: _includes/color-scheme.html
+    include-after-body: _includes/live-loader.html
 
 execute: 
   freeze: auto

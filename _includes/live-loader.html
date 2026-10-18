@@ -1,0 +1,7 @@
+<script type="module">
+  // only pages with a live map load main.js
+  if (document.querySelector('[data-live]')) {
+    const offset = document.querySelector('meta[name="quarto:offset"]')?.content ?? './';
+    import(new URL(`${offset}assets/live/main.js`, document.baseURI).href);
+  }
+</script>

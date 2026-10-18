@@ -22,7 +22,7 @@ about:
       href: mailto:samriddhikhare8@gmail.com
     - icon: file-pdf
       text: Resume
-      href: https://samriddhikhar3.github.io/resume
+      href: resume.qmd
     - icon: github
       text: GitHub
       href: https://github.com/samriddhikhar3
@@ -48,4 +48,25 @@ I work mostly in R, ArcGIS and Python, as well as many transit modeling and rast
 
 I am a Master of City Planning graduate from the University of Pennsylvania, with a Bachelors in Architecture from the Visvesvarya National Institute of Technology, India.
 
+:::
+
+::: {.column-screen .home-map}
+```{=html}
+<div data-live="sams-philly" data-bleed></div>
+```
+:::
+
+::: {.column-page}
+```{=html}
+<section class="home-update live-section">
+  <div class="home-update__text">
+    <a class="home-update__title" href="portfolio/2_DevTracker/index.html#project-update">
+      <span class="live-eyebrow">DevTracker</span>
+      <h2>Project Update</h2>
+    </a>
+    <p>I analyzed Philly's permit data in 2024 to identify the city's development hot spots. This map shows the construction permits issued in the past month and tests whether that pattern still holds. My recent analysis confirmed that, on average, 20% of the city’s new construction permits were within our identified hotspots.</p>
+  </div>
+  <div data-live="dev-live" data-variant="compact"></div>
+</section>
+```
 :::

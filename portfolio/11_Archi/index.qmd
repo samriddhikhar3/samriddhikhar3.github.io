@@ -2,7 +2,7 @@
 title: "Design Portfolios"
 author:
 - Samriddhi Khare
-date: today
+date: 2022-10-18
 image: cover.jpg
 categories:
   - Architectural Design

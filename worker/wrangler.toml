@@ -1,0 +1,22 @@
+name = "samriddhi-live"
+main = "src/index.js"
+compatibility_date = "2026-09-15"
+
+[vars]
+# Sites allowed to use the API (comma-separated).
+ALLOWED_ORIGINS = "https://samriddhikhar3.github.io,http://localhost:3333,http://127.0.0.1:3333,http://localhost:4000"
+
+[[durable_objects.bindings]]
+name = "TRACKS"
+class_name = "SeptaTracks"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SeptaTracks"]
+
+# Record SEPTA positions every minute so vehicle trails are ready for the next visitor.
+[triggers]
+crons = ["* * * * *"]
+
+# Optional secret (set with `npx wrangler secret put GOOGLE_MAPS_API_KEY`, or in .dev.vars locally):
+#   GOOGLE_MAPS_API_KEY  Places API (New) key for the favorite spots' Google reviews

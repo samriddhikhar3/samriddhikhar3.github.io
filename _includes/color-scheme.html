@@ -1,0 +1,78 @@
+<script>
+  // Quarto 1.3 applies the saved dark theme ("alternate") only after load, so dark mode flashed
+  // white on every page. Switch the stylesheets before first paint instead.
+  (() => {
+    let dark = false;
+    try {
+      dark = localStorage.getItem('quarto-color-scheme') === 'alternate';
+    } catch {
+      // storage blocked, stay light
+    }
+    if (dark) {
+      document.documentElement.classList.add('quarto-dark-early');
+      for (const link of document.querySelectorAll('link.quarto-color-alternate')) link.rel = 'stylesheet';
+    }
+
+    // once Quarto has put quarto-light/quarto-dark on <body>, drop the early class
+    const sync = () => {
+      const mode = document.body.classList;
+      if (!mode.contains('quarto-dark') && !mode.contains('quarto-light')) return;
+      document.documentElement.classList.remove('quarto-dark-early');
+      const label = mode.contains('quarto-dark') ? 'Switch to light mode' : 'Switch to dark mode';
+      for (const toggle of document.querySelectorAll('.quarto-color-scheme-toggle')) {
+        toggle.title = label;
+        toggle.setAttribute('aria-label', label);
+      }
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+      sync(); // Quarto's handler may have run first
+      new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    });
+  })();
+</script>
+<style>
+  /* until the dark stylesheet is in; same color as $body-bg in theme-dark.scss */
+  html.quarto-dark-early,
+  html.quarto-dark-early body {
+    background-color: #0c0c0d;
+    color: #fff;
+  }
+
+  /* sun / switch / moon, active side bright. Bootstrap Icons glyphs pick up the navbar color. */
+  .navbar .quarto-color-scheme-toggle,
+  .navbar .quarto-color-scheme-toggle:hover,
+  .navbar .quarto-color-scheme-toggle:focus {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+  }
+  .navbar .quarto-color-scheme-toggle::before,
+  .navbar .quarto-color-scheme-toggle::after {
+    font-family: bootstrap-icons;
+    font-size: 0.9rem;
+    line-height: 1;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+  }
+  .navbar .quarto-color-scheme-toggle::before { content: "\f5a2"; } /* sun */
+  .navbar .quarto-color-scheme-toggle::after { content: "\f497"; } /* moon */
+  .navbar .quarto-color-scheme-toggle:not(.alternate)::before,
+  .navbar .quarto-color-scheme-toggle.alternate::after { opacity: 1; }
+  /* Quarto's switch is a grey SVG data URI that's barely visible on the dark navbar */
+  .navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before,
+  .navbar .quarto-color-scheme-toggle.alternate .bi::before {
+    width: auto;
+    height: auto;
+    background-image: none;
+    font-size: 1.15rem;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before { content: "\f5d5"; } /* toggle-off */
+  .navbar .quarto-color-scheme-toggle.alternate .bi::before { content: "\f5d6"; } /* toggle-on */
+  @media (prefers-reduced-motion: reduce) {
+    .navbar .quarto-color-scheme-toggle::before,
+    .navbar .quarto-color-scheme-toggle::after { transition: none; }
+  }
+</style>

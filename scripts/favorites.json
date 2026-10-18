@@ -1,0 +1,112 @@
+[
+  {
+    "id": "penn-biopond",
+    "name": "Penn BioPond",
+    "emoji": "🐢",
+    "category": "Garden",
+    "neighborhood": "University City",
+    "address": "433 S University Ave, Philadelphia, PA 19104",
+    "lng": -75.19828,
+    "lat": 39.94914,
+    "description": "I spent a lot of time here during my master’s. One of the greenest, calmest spots on campus."
+  },
+  {
+    "id": "art-museum",
+    "name": "Philadelphia Museum of Art",
+    "emoji": "🏛️",
+    "category": "Museum",
+    "neighborhood": "Fairmount",
+    "address": "2600 Benjamin Franklin Pkwy, Philadelphia, PA 19130",
+    "lng": -75.18152,
+    "lat": 39.96557,
+    "description": "Saw Sunflowers and Water Lilies and much, much more."
+  },
+  {
+    "id": "spruce-harbor",
+    "name": "Spruce Street Harbor Park",
+    "emoji": "🌊",
+    "category": "Park",
+    "neighborhood": "Penn's Landing",
+    "address": "301 S Christopher Columbus Blvd, Philadelphia, PA 19106",
+    "lng": -75.14148,
+    "lat": 39.94445,
+    "description": "Watch the sun rise over Camden."
+  },
+  {
+    "id": "devils-pool",
+    "name": "Devil's Pool",
+    "emoji": "😈",
+    "category": "Swimming hole",
+    "neighborhood": "Wissahickon Valley Park",
+    "address": "Wissahickon Valley Park, Philadelphia, PA",
+    "lng": -75.21411,
+    "lat": 40.05125,
+    "description": "Beautiful nook along the Wissahickon. Authorities are constantly telling people not to swim here because there is poop in the water, but I’ve never seen this pool empty."
+  },
+  {
+    "id": "hangry-joes",
+    "name": "Hangry Joe's",
+    "emoji": "🍗",
+    "category": "Hot chicken",
+    "neighborhood": "University City",
+    "address": "125 S 40th St, Philadelphia, PA 19104",
+    "lng": -75.20236,
+    "lat": 39.95471,
+    "description": "Korean chain that has, in my opinion, perfect Nashville-style fried chicken wings. I used to live near here during grad school, it was the best."
+  },
+  {
+    "id": "yi-pin",
+    "name": "Yi Pin Szechuan Cuisine",
+    "emoji": "🌶️",
+    "category": "Szechuan",
+    "neighborhood": "Chinatown",
+    "address": "1026 Race St, Philadelphia, PA 19107",
+    "lng": -75.15707,
+    "lat": 39.95514,
+    "description": "Another late-night favorite. I love their wonton soup."
+  },
+  {
+    "id": "reading-terminal",
+    "name": "Reading Terminal Market",
+    "emoji": "🥨",
+    "category": "Market",
+    "neighborhood": "Center City",
+    "address": "51 N 12th St, Philadelphia, PA 19107",
+    "lng": -75.15905,
+    "lat": 39.95314,
+    "description": "Philadelphia's historic indoor food market, open since 1893."
+  },
+  {
+    "id": "belmont-plateau",
+    "name": "Belmont Plateau",
+    "emoji": "🌄",
+    "category": "Overlook",
+    "neighborhood": "West Fairmount Park",
+    "address": "1800 Belmont Mansion Dr, Philadelphia, PA 19131",
+    "lng": -75.21263,
+    "lat": 39.99037,
+    "description": "I’ve seen many beautiful sunsets overlooking the city from here after spending a day at adjoining Fairmount Park."
+  },
+  {
+    "id": "vernick",
+    "name": "Vernick Food & Drink",
+    "emoji": "🍷",
+    "category": "Restaurant",
+    "neighborhood": "Rittenhouse",
+    "address": "2031 Walnut St, Philadelphia, PA 19103",
+    "lng": -75.17489,
+    "lat": 39.95081,
+    "description": "My sister used to work here! Favorite menu and incredible team."
+  },
+  {
+    "id": "honeys",
+    "name": "Honey's Sit 'n Eat",
+    "emoji": "🍯",
+    "category": "Diner",
+    "neighborhood": "Northern Liberties",
+    "address": "800 N 4th St, Philadelphia, PA 19123",
+    "lng": -75.14453,
+    "lat": 39.9639,
+    "description": "Perfect maple lattes!"
+  }
+]
