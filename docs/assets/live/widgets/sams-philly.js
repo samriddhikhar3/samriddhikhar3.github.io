@@ -8,15 +8,14 @@ import { Overlay, Ripples, drawSprite, onFrame, reducedMotion, sprite } from '..
 import { transitColors } from '../lib/palette.js';
 import { poll } from '../lib/poll.js';
 import { RouteMovers, RouteNetwork, drawRouteTrails, screenTransform } from '../lib/routes.js';
-import { LiveStatus, Tooltip, ago, fmt, h, legendKey, localPoint, svg } from '../lib/ui.js';
+import { Tooltip, ago, fmt, h, legendKey, localPoint, svg } from '../lib/ui.js';
 import { SpotCard } from './spot-card.js';
 
 const SEPTA_EVERY = 15_000;
 const INDEGO_EVERY = 60_000; // Indego only updates about once a minute
 const TRAIL_MS = 4 * 60_000;
 const HALF_MILE = 804.672; // metres
-const LINKEDIN = 'https://www.linkedin.com/in/samriddhi-khare-3668821b1/';
-// left out of the opening view so it can stay zoomed in; Belmont would sit behind the title card
+// left out of the opening view so it can stay zoomed in
 const OUT_OF_FRAME = new Set(['devils-pool', 'belmont-plateau']);
 const CITY_HALL = [-75.16362, 39.95228];
 const GROUPS = ['bus', 'trolley', 'train'];
@@ -101,15 +100,8 @@ export async function mount(root) {
     role: 'region',
     'aria-label': 'My Philadelphia, now: a live map of Philadelphia with Sam’s favorite spots, SEPTA buses, trolleys and trains, and Indego bike share.',
   });
-  const status = new LiveStatus({ staleAfter: 75_000 });
-  const head = h('div', { class: 'live-head sams-head' },
-    h('h2', { class: 'sams-head__title' }, 'My Philadelphia, now 🔔'),
-    h('p', { class: 'sams-head__subtitle' },
-      'My favorite spots in the city of Philadelphia, from the 4 brief years I’ve spent here. ',
-      h('a', { href: LINKEDIN, target: '_blank', rel: 'noopener' }, 'Tell me what I missed!')),
-    h('p', { class: 'sams-head__status' }, status.el));
   const legend = h('div', { class: 'live-legend sams-legend' });
-  const frame = h('div', { class: `live-frame live-frame--hero${theme === 'night' ? ' live-frame--night' : ''}` }, mapEl, head, legend);
+  const frame = h('div', { class: `live-frame live-frame--hero${theme === 'night' ? ' live-frame--night' : ''}` }, mapEl, legend);
   root.replaceChildren(frame);
   const tip = new Tooltip(frame);
   const isPhone = () => frame.getBoundingClientRect().width <= 760;
@@ -148,12 +140,12 @@ export async function mount(root) {
   map.addControl(themeControl, 'top-right');
   addCityFrame(map, limits, { theme });
 
-  // Start on City Hall and zoom out until every spot (but OUT_OF_FRAME) is clear of the title
-  // card, legend and buttons.
+  // Start on City Hall and zoom out until every spot (but OUT_OF_FRAME) is clear of the legend
+  // and buttons.
   const framed = spots.filter((s) => !OUT_OF_FRAME.has(s.id));
   const frameBox = frame.getBoundingClientRect();
   const MARGIN = 24; // a bit more than half a marker
-  const blockers = [head, legend, ...mapEl.querySelectorAll('.maplibregl-ctrl-top-right, .maplibregl-ctrl-bottom-right')]
+  const blockers = [legend, ...mapEl.querySelectorAll('.maplibregl-ctrl-top-right, .maplibregl-ctrl-bottom-right')]
     .map((el) => el.getBoundingClientRect())
     .map((r) => ({
       left: r.left - frameBox.left - MARGIN,
@@ -292,7 +284,7 @@ export async function mount(root) {
     const ys = ring.map((p) => p[1]);
     const { height } = frame.getBoundingClientRect();
     map.fitBounds([[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]], {
-      // phones: the card is a bottom sheet over 55% of the map and the title card is hidden
+      // phones: the card is a bottom sheet over 55% of the map
       padding: isPhone()
         ? { top: 24, bottom: Math.round(height * 0.55) + 16, left: 52, right: 52 }
         : { top: 70, bottom: 60, left: 60, right: 440 },
@@ -413,9 +405,8 @@ export async function mount(root) {
     }
     seeded = true;
     if (inView && !reducedMotion()) schedulePings(moved, now);
-    status.ok(data.t);
     overlay.render(now);
-  }, { interval: SEPTA_EVERY, target: frame, onError: () => status.fail() });
+  }, { interval: SEPTA_EVERY, target: frame });
 
   const watcher = new DockWatcher();
   const stationIndex = new Map(stations.map((s) => [s.id, s]));
@@ -463,7 +454,7 @@ export async function mount(root) {
   }
 
   function inspect(event) {
-    if (event.target.closest('.live-legend, .live-head, .maplibregl-ctrl, .spot-card, .spot-marker')) return tip.hide();
+    if (event.target.closest('.live-legend, .maplibregl-ctrl, .spot-card, .spot-marker')) return tip.hide();
     const { x, y, vehicle, station } = hitTest(event);
     if (vehicle) {
       const v = vehicle.v;

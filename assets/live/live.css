@@ -294,47 +294,7 @@
   color: var(--live-muted);
 }
 
-.sams-head {
-  top: 18px;
-  left: 18px;
-  gap: 4px;
-  max-width: min(430px, calc(100% - 96px));
-  padding: 14px 18px 12px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: none;
-}
-.sams-head__title {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 1.65rem;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--live-ink);
-}
-.sams-head__subtitle {
-  margin: 0;
-  font-size: 0.93rem;
-  line-height: 1.4;
-  color: var(--live-ink-2);
-}
-.sams-head__subtitle a {
-  color: var(--live-accent);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.sams-head__status {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 6px 0 0;
-  font-size: 0.78rem;
-  color: var(--live-muted);
-}
-.sams-head__status .live-status { font-size: 0.78rem; }
-
-/* above the vehicle canvas, below the title card, legend and controls */
+/* above the vehicle canvas, below the legend and controls */
 .live-frame .maplibregl-marker { z-index: 1; }
 .live-frame .maplibregl-marker.is-selected { z-index: 2; }
 .spot-marker {
@@ -517,11 +477,6 @@
 }
 .live-frame--night .live-eyebrow { color: #c9d2db; }
 .live-frame--night .live-status { color: #aeb8c2; }
-.live-frame--night .sams-head { background: rgba(0, 0, 0, 0.7); }
-.live-frame--night .sams-head__title { color: #f3f6f9; }
-.live-frame--night .sams-head__subtitle { color: #b7c1cb; }
-.live-frame--night .sams-head__subtitle a { color: #8dbcf2; }
-.live-frame--night .sams-head__status { color: #8592a0; }
 .live-frame--night .live-legend__title { color: #e6ebf0; }
 .live-frame--night .live-key--dot,
 .live-frame--night .live-key--dot-lg { box-shadow: 0 0 0 1.5px #000; }
@@ -695,11 +650,18 @@
 /* target of the home page's Project Update link */
 #project-update { scroll-margin-top: 76px; }
 
-/* order: -1 puts the map above the about block; main.js handles the full width (data-bleed) */
+/* main.js stretches the map to the full window width (data-bleed). It sits inside the bio,
+   which the about template centers at its content width, so the bio is stretched to its
+   column instead; otherwise the wide map would widen it and shift both off center. */
 .home-map {
-  order: -1;
-  margin: 0 0 2.5rem;
+  margin: 1.5rem 0 0.5rem;
 }
+.quarto-about-jolla #hero-heading { align-self: stretch; }
+/* the template puts the links after the bio, under a line; show them under the subtitle,
+   without the line */
+div.quarto-about-jolla .about-links { order: 1; padding-bottom: 1.5em; }
+.quarto-about-jolla .about-sep { display: none; }
+.quarto-about-jolla #hero-heading { order: 2; }
 .home-map .live-frame--hero { border: 0; }
 .home-map [data-live]:not(.is-ready):not(.is-failed) { min-height: clamp(460px, 78vh, 780px); }
 
@@ -758,9 +720,6 @@ main iframe {
 @media (max-width: 760px) {
   .live-legend { max-width: calc(100% - 28px); bottom: 34px; }
   .live-legend--right { max-width: 180px; bottom: auto; }
-  .sams-head { top: 12px; left: 12px; max-width: calc(100% - 70px); padding: 10px 13px 9px; }
-  .sams-head__title { font-size: 1.3rem; }
-  .sams-head__subtitle { font-size: 0.84rem; }
   .sams-legend { gap: 4px 10px; font-size: 0.72rem; }
   .spot-card {
     top: auto;
@@ -775,7 +734,6 @@ main iframe {
   .live-frame.has-card .maplibregl-ctrl-top-right,
   .live-frame.has-card .maplibregl-ctrl-bottom-right { right: 0; }
   .live-frame.has-card .sams-legend { max-width: calc(100% - 28px); }
-  .live-frame.has-card .sams-head { display: none; }
   .tod-sticky + .tod-steps { padding: 75vh 0 40vh; }
   .tod-sticky + .tod-steps .tod-step { max-width: none; margin: 0 12px 85vh; padding: 14px 16px 12px; }
   .tod-step h3 { font-size: 1.02rem; }

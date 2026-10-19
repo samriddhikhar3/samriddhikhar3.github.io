@@ -48,12 +48,12 @@ I work mostly in R, ArcGIS and Python, as well as many transit modeling and rast
 
 I am a Master of City Planning graduate from the University of Pennsylvania, with a Bachelors in Architecture from the Visvesvarya National Institute of Technology, India.
 
-:::
+I use SEPTA (bus or metro) or Indego bikes to get to work. Explore their live tracking and bike/dock availabilities, and some of my favorite spots in Philly on the map below :)
 
-::: {.column-screen .home-map}
 ```{=html}
-<div data-live="sams-philly" data-bleed></div>
+<div class="home-map"><div data-live="sams-philly" data-bleed></div></div>
 ```
+
 :::
 
 ::: {.column-page}
